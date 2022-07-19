@@ -6,7 +6,7 @@ class Devotion {
   String content;
   String reflection;
   String conclusion;
-  String prayerPoint;
+  List <String> prayerPoint;
 
   Devotion(
       {required this.title,

@@ -13,7 +13,6 @@ class Daily extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     return Scaffold(
         backgroundColor: splashBackgroundColor,
-
         body: SafeArea(
           child: Container(
             // padding: const EdgeInsets.all(24.0),
@@ -22,14 +21,16 @@ class Daily extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const MyAppBar(),
-                Text(walk.topic,
+                Text(
+                  walk.topic,
                   style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 24,
-                    ),
+                  ),
                 ),
                 addVerticalSpace(6),
-                Text(walk.date,
+                Text(
+                  walk.date,
                   style: themeData.textTheme.subtitle1,
                 ),
                 addVerticalSpace(21),
@@ -39,26 +40,38 @@ class Daily extends StatelessWidget {
                       padding: const EdgeInsets.all(0.0),
                       child: Column(
                         children: [
-                        //  Section(title:'READ', content: walk.devotion.read),
-                        Section(title:'READ', content: walk.devotion.read),
-                        Section(title: 'MEMORY VERSE', content: walk.devotion.memoryVerse),
-                        Section(title: 'INTRODUCTION', content: walk.devotion.introduction),
-                        addVerticalSpace(10),
-                        Section(title: 'CONTENT', content: walk.devotion.content),
-                        addVerticalSpace(10),
-                        Section(title: 'CLIMAX', content: walk.devotion.conclusion),
-                        addVerticalSpace(10),
-                        Section(title: 'REFLECTION: /APPLICATION', content: walk.devotion.reflection),
-                        addVerticalSpace(10),
-                        Section(title: 'CONCLUSION', content: walk.devotion.conclusion),
-                        addVerticalSpace(10),
-                        Section(title: 'PRAYER POINT', content: walk.devotion.prayerPoint),
-                        addVerticalSpace(10),
+                          //  Section(title:'READ', content: walk.devotion.read),
+                          Section(title: 'READ', content: walk.devotion.read),
+                          Section(
+                              title: 'MEMORY VERSE',
+                              content: walk.devotion.memoryVerse),
+                          Section(
+                              title: 'INTRODUCTION',
+                              content: walk.devotion.introduction),
+                          addVerticalSpace(10),
+                          Section(
+                              title: 'CONTENT', content: walk.devotion.content),
+                          addVerticalSpace(10),
+                          Section(
+                              title: 'CLIMAX',
+                              content: walk.devotion.conclusion),
+                          addVerticalSpace(10),
+                          Section(
+                              title: 'REFLECTION: /APPLICATION',
+                              content: walk.devotion.reflection),
+                          addVerticalSpace(10),
+                          Section(
+                              title: 'CONCLUSION',
+                              content: walk.devotion.conclusion),
+                          addVerticalSpace(10),
+                          SectionPrayer(
+                              title: 'PRAYER POINT',
+                              prayerPoints: walk.devotion.prayerPoint),
+                          addVerticalSpace(10),
                         ],
                       ),
                     ),
                   ),
-
                 )
               ],
             ),
@@ -71,20 +84,37 @@ class Section extends StatelessWidget {
   final String title;
   final String content;
 
-  const Section( {Key? key, required this.title, required this.content}) : super(key: key);
+  const Section({Key? key, required this.title, required this.content})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
 
-    return RichText( text: TextSpan(children: [
-                          TextSpan(
-                            text: '$title: ',
-                            style: themeData.textTheme.headline4
-                          ),
-                          TextSpan(
-                             text: content,
-                             style: themeData.textTheme.bodyText1
-                          )
-                        ]));
+    return RichText(
+        text: TextSpan(children: [
+      TextSpan(text: '$title: ', style: themeData.textTheme.headline4),
+      TextSpan(text: content, style: themeData.textTheme.bodyText1)
+    ]));
+  }
+}
+
+class SectionPrayer extends StatelessWidget {
+  final String title;
+  final List<String> prayerPoints;
+
+  const SectionPrayer(
+      {Key? key, required this.title, required this.prayerPoints})
+      : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData themeData = Theme.of(context);
+
+    return RichText(
+        text: TextSpan(children: [
+      TextSpan(text: '$title: ', style: themeData.textTheme.headline4),
+      for (String prayer in prayerPoints) ...{
+        TextSpan(text: '\n$prayer', style: themeData.textTheme.bodyText1),
+      }
+    ]));
   }
 }

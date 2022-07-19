@@ -1,7 +1,4 @@
 import 'dart:ui';
-
-import 'package:cacsa/routes/routes.dart';
-import 'package:cacsa/screens/day_walk.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/text-theme.dart';
 import 'package:flutter/material.dart';
