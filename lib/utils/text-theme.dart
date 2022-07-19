@@ -51,4 +51,19 @@ const TextTheme TEXT_THEME_SMALL = TextTheme(
       fontWeight: FontWeight.w500,
       fontSize: 20,
       fontFamily: 'Euclid-Medium'),
+  headline4: TextStyle(
+      color: textColorBlack,
+      fontWeight: FontWeight.w600,
+      fontSize: 14,
+      fontFamily: 'Euclid-Bold'),
+  subtitle1: TextStyle(
+      color: textColorSub,
+      fontWeight: FontWeight.w400,
+      fontStyle: FontStyle.normal,
+      fontSize: 12),
+  bodyText1: TextStyle(
+      color: textColorBlack,
+      fontWeight: FontWeight.w400,
+      fontStyle: FontStyle.normal,
+      fontSize: 14),
 );

@@ -1,14 +1,14 @@
-List <String> months = [
+List<String> months = [
   'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
   'July',
+  'February',
   'August',
+  'March',
   'September',
+  'April',
   'October',
+  'May',
   'November',
+  'June',
   'December'
 ];
