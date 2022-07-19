@@ -41,32 +41,57 @@ class Daily extends StatelessWidget {
                       child: Column(
                         children: [
                           //  Section(title:'READ', content: walk.devotion.read),
-                          Section(title: 'READ', content: walk.devotion.read),
-                          Section(
-                              title: 'MEMORY VERSE',
-                              content: walk.devotion.memoryVerse),
-                          Section(
-                              title: 'INTRODUCTION',
-                              content: walk.devotion.introduction),
+                          walk.devotion.read.isNotEmpty
+                              ? Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Section(
+                                      title: 'READ',
+                                      content: walk.devotion.read),
+                                )
+                              : addVerticalSpace(0),
+                          walk.devotion.memoryVerse.isNotEmpty
+                              ? Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Section(
+                                      title: 'MEMORY VERSE',
+                                      content: walk.devotion.memoryVerse),
+                                )
+                              : addVerticalSpace(0),
+                          walk.devotion.introduction.isNotEmpty
+                              ? Section(
+                                  title: 'INTRODUCTION',
+                                  content: walk.devotion.introduction)
+                              : addVerticalSpace(0),
                           addVerticalSpace(10),
-                          Section(
-                              title: 'CONTENT', content: walk.devotion.content),
+                          walk.devotion.content.isNotEmpty
+                              ? Section(
+                                  title: 'CONTENT',
+                                  content: walk.devotion.content)
+                              : addVerticalSpace(0),
                           addVerticalSpace(10),
-                          Section(
-                              title: 'CLIMAX',
-                              content: walk.devotion.conclusion),
+                          walk.devotion.climax.isNotEmpty
+                              ? Section(
+                                  title: 'CLIMAX',
+                                  content: walk.devotion.climax)
+                              : addVerticalSpace(0),
                           addVerticalSpace(10),
-                          Section(
-                              title: 'REFLECTION: /APPLICATION',
-                              content: walk.devotion.reflection),
+                          walk.devotion.reflection.isNotEmpty
+                              ? Section(
+                                  title: 'REFLECTION: /APPLICATION',
+                                  content: walk.devotion.reflection)
+                              : addVerticalSpace(0),
                           addVerticalSpace(10),
-                          Section(
-                              title: 'CONCLUSION',
-                              content: walk.devotion.conclusion),
+                          walk.devotion.conclusion.isNotEmpty
+                              ? Section(
+                                  title: 'CONCLUSION',
+                                  content: walk.devotion.conclusion)
+                              : addVerticalSpace(0),
                           addVerticalSpace(10),
-                          SectionPrayer(
-                              title: 'PRAYER POINT',
-                              prayerPoints: walk.devotion.prayerPoint),
+                          walk.devotion.prayerPoint.isNotEmpty
+                              ? SectionPrayer(
+                                  title: 'PRAYER POINT',
+                                  prayerPoints: walk.devotion.prayerPoint)
+                              : addVerticalSpace(0),
                           addVerticalSpace(10),
                         ],
                       ),
@@ -91,10 +116,12 @@ class Section extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
 
     return RichText(
-        text: TextSpan(children: [
-      TextSpan(text: '$title: ', style: themeData.textTheme.headline4),
-      TextSpan(text: content, style: themeData.textTheme.bodyText1)
-    ]));
+      text: TextSpan(children: [
+        TextSpan(text: '$title: ', style: themeData.textTheme.headline4),
+        TextSpan(text: content, style: themeData.textTheme.bodyText1)
+      ]),
+      textAlign: TextAlign.left,
+    );
   }
 }
 

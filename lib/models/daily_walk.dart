@@ -4,9 +4,10 @@ class Devotion {
   String memoryVerse;
   String introduction;
   String content;
+  String climax;
   String reflection;
   String conclusion;
-  List <String> prayerPoint;
+  List<String> prayerPoint;
 
   Devotion(
       {required this.title,
@@ -14,6 +15,7 @@ class Devotion {
       required this.memoryVerse,
       required this.introduction,
       required this.content,
+      required this.climax,
       required this.reflection,
       required this.conclusion,
       required this.prayerPoint});

@@ -16,6 +16,8 @@ class DailyWalks {
                   'Gradually Christ was lifted up from the ground by Himself in the presence of all in to the Sky until the clouds did not allow them to see Him',
               content:
                   'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
+              climax:
+                  'Then Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               reflection:
                   'When it was exactly ten days after the ascension of Jesus, the Disciples who had been waiting in the upper room were divinely visited with the power from on high and after receiving the power continued the work of the Gospel. From them the news got to you and me, but what are you doing now to propagate it further? ',
               conclusion:
@@ -36,6 +38,8 @@ class DailyWalks {
                   'Gradually Christ was lifted up from the ground by Himself in the presence of all in to the Sky until the clouds did not allow them to see Him',
               content:
                   'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
+              climax:
+                  'Then Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               reflection:
                   'When it was exactly ten days after the ascension of Jesus, the Disciples who had been waiting in the upper room were divinely visited with the power from on high and after receiving the power continued the work of the Gospel. From them the news got to you and me, but what are you doing now to propagate it further? ',
               conclusion:
@@ -56,6 +60,8 @@ class DailyWalks {
                   'Gradually Christ was lifted up from the ground by Himself in the presence of all in to the Sky until the clouds did not allow them to see Him',
               content:
                   'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
+              climax:
+                  'Then Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               reflection:
                   'When it was exactly ten days after the ascension of Jesus, the Disciples who had been waiting in the upper room were divinely visited with the power from on high and after receiving the power continued the work of the Gospel. From them the news got to you and me, but what are you doing now to propagate it further? ',
               conclusion:
@@ -76,6 +82,8 @@ class DailyWalks {
                   'Gradually Christ was lifted up from the ground by Himself in the presence of all in to the Sky until the clouds did not allow them to see Him',
               content:
                   'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
+              climax:
+                  'Then Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               reflection:
                   'When it was exactly ten days after the ascension of Jesus, the Disciples who had been waiting in the upper room were divinely visited with the power from on high and after receiving the power continued the work of the Gospel. From them the news got to you and me, but what are you doing now to propagate it further? ',
               conclusion:
@@ -94,6 +102,8 @@ class DailyWalks {
               memoryVerse: 'Acts 1:9',
               introduction:
                   'Gradually Christ was lifted up from the ground by Himself in the presence of all in to the Sky until the clouds did not allow them to see Him',
+              climax:
+                  'Then Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               content:
                   'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               reflection:
@@ -116,6 +126,8 @@ class DailyWalks {
                   'Gradually Christ was lifted up from the ground by Himself in the presence of all in to the Sky until the clouds did not allow them to see Him',
               content:
                   'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
+              climax:
+                  'Then Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               reflection:
                   'When it was exactly ten days after the ascension of Jesus, the Disciples who had been waiting in the upper room were divinely visited with the power from on high and after receiving the power continued the work of the Gospel. From them the news got to you and me, but what are you doing now to propagate it further? ',
               conclusion:
@@ -136,6 +148,8 @@ class DailyWalks {
                   'Gradually Christ was lifted up from the ground by Himself in the presence of all in to the Sky until the clouds did not allow them to see Him',
               content:
                   'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
+              climax:
+                  'Then Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               reflection:
                   'When it was exactly ten days after the ascension of Jesus, the Disciples who had been waiting in the upper room were divinely visited with the power from on high and after receiving the power continued the work of the Gospel. From them the news got to you and me, but what are you doing now to propagate it further? ',
               conclusion:
@@ -156,6 +170,8 @@ class DailyWalks {
                   'Gradually Christ was lifted up from the ground by Himself in the presence of all in to the Sky until the clouds did not allow them to see Him',
               content:
                   'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
+              climax:
+                  'Then Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               reflection:
                   'When it was exactly ten days after the ascension of Jesus, the Disciples who had been waiting in the upper room were divinely visited with the power from on high and after receiving the power continued the work of the Gospel. From them the news got to you and me, but what are you doing now to propagate it further? ',
               conclusion:
@@ -174,8 +190,10 @@ class DailyWalks {
               memoryVerse: 'Acts 1:9',
               introduction:
                   'Gradually Christ was lifted up from the ground by Himself in the presence of all in to the Sky until the clouds did not allow them to see Him',
-              content:
-                  'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
+              content: '',
+              //    'Jesus after His resurrection stayed for forty days on the earth still teaching and doing many things that were infallible proof of His resurrection. Finally on the last day at Galilee where He asked the Disciples to assemble, He addressed and reminded them of those crucial points He had earlier mentioned to them. Then rasing up His hands He blessed them and they noticed that He was been lifted up from the ground as He was still talking, until the clouds received and covered Him from their sights. The Disciples then fell down and worshipped Him and they return to Jerusalem with great joy. As instructed they went to the upper room, their usual place of meeting offering praises and often in the temple throughout the period of their waiting for the baptism of the Holy Spirit. Climax: hen Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
+              climax:
+                  'Then Jesus was out of their sight and into the Heaven the Disciples now recognized Him as an object to be worshiped Rev. 5:8-14.7:10 ',
               reflection:
                   'When it was exactly ten days after the ascension of Jesus, the Disciples who had been waiting in the upper room were divinely visited with the power from on high and after receiving the power continued the work of the Gospel. From them the news got to you and me, but what are you doing now to propagate it further? ',
               conclusion:
