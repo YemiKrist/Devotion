@@ -42,20 +42,13 @@ class Daily extends StatelessWidget {
                         children: [
                           //  Section(title:'READ', content: walk.devotion.read),
                           walk.devotion.read.isNotEmpty
-                              ? Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Section(
-                                      title: 'READ',
-                                      content: walk.devotion.read),
-                                )
+                              ? Section(
+                                  title: 'READ', content: walk.devotion.read)
                               : addVerticalSpace(0),
                           walk.devotion.memoryVerse.isNotEmpty
-                              ? Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Section(
-                                      title: 'MEMORY VERSE',
-                                      content: walk.devotion.memoryVerse),
-                                )
+                              ? Section(
+                                  title: 'MEMORY VERSE',
+                                  content: walk.devotion.memoryVerse)
                               : addVerticalSpace(0),
                           walk.devotion.introduction.isNotEmpty
                               ? Section(
@@ -115,12 +108,15 @@ class Section extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
 
-    return RichText(
-      text: TextSpan(children: [
-        TextSpan(text: '$title: ', style: themeData.textTheme.headline4),
-        TextSpan(text: content, style: themeData.textTheme.bodyText1)
-      ]),
-      textAlign: TextAlign.left,
+    return Align(
+      alignment: Alignment.topLeft,
+      child: RichText(
+        text: TextSpan(children: [
+          TextSpan(text: '$title: ', style: themeData.textTheme.headline4),
+          TextSpan(text: content, style: themeData.textTheme.bodyText1)
+        ]),
+        textAlign: TextAlign.left,
+      ),
     );
   }
 }

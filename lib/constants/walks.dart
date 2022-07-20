@@ -180,6 +180,25 @@ class DailyWalks {
                 'Whatever I must do for my empowerment help me to do it now. for your service Awaken all Believers for your work at this time’ Create a burning zeal in the heart of all Christians for soul wining Let me be among those who will be full of joy at your coming Lord.'
               ])),
       Walk(
+          id: '01082022',
+          month: 'August',
+          date: 'MONDAY, 1st AUGUST 2022',
+          topic: 'Hot coconut water',
+          devotion: Devotion(
+              title: 'Hot coconut water',
+              read: 'Micah 7:7-10',
+              memoryVerse: '',
+              introduction: '',
+              content:
+                  'Cut 2 to 3 thin coconut flakes in a cup \nAdd hot water(Alkaline water)\nDrink every day\nIt releases an anticancer substance which is the latest advance in the effective treatment of cancer in the medical field\nIt has an effect on cysts and tumors, proven to remedy all types of cancer\nIt destroys malignant cells without affecting healthy cells\nThe Amino acid and coconut polyphenol in coconut juice can regulate:\nHigh blood pressure\nEffectively prevent deep vein thrombosis\nAdjust blood circulation\nReduce blood clots\nInformations: Dr Abbas Hussain kazmi of sheikh zaid hospital',
+              climax: 'Try and see how it works',
+              reflection: '',
+              conclusion: '',
+              prayerPoint: [
+                'I will look and wait for the God of my salvation in all things',
+                'Cover my enemies that are mocking my life with shame'
+              ])),
+      Walk(
           id: '12353',
           month: 'July',
           date: 'SATURDAY, 25th JUNE 2022',
