@@ -1,9 +1,13 @@
 import 'package:cacsa/bindings/splash_binding.dart';
 import 'package:cacsa/screens/about/about.dart';
+import 'package:cacsa/screens/branches/branches.dart';
 import 'package:cacsa/screens/day_walk.dart';
 import 'package:cacsa/screens/events/upcoming_events.dart';
+import 'package:cacsa/screens/give/give.dart';
+import 'package:cacsa/screens/manuals/manuals.dart';
 import 'package:cacsa/screens/months_screen.dart';
 import 'package:cacsa/screens/splash_screen.dart';
+import 'package:cacsa/screens/support/support.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:get/get.dart';
 
@@ -39,6 +43,10 @@ class Pages {
     ),
     GetPage(name: Routes.ABOUT, page: () => const About()),
     GetPage(name: Routes.EVENTS, page: () => const UpcomingEvents()),
+    GetPage(name: Routes.BRANCHES, page: () => const Branches()),
+    GetPage(name: Routes.GIVE, page: () => const Give()),
+    GetPage(name: Routes.MANUALS, page: () => const Manuals()),
+    GetPage(name: Routes.SUPPORT, page: () => const Support()),
     // GetPage(
     //   name: Routes.DEVOTION,
     //   page: () => DayWalk(),
