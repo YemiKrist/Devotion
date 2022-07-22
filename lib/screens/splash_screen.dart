@@ -1,8 +1,10 @@
 import 'package:cacsa/constants/assets_path.dart';
+import 'package:cacsa/constants/controllers/splash_controller.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends GetView<SplashController> {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override

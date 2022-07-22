@@ -1,6 +1,6 @@
 class Menu {
   String name;
-  String bgImage;
+  String icon;
 
-  Menu({required this.name, required this.bgImage});
+  Menu({required this.name, required this.icon});
 }

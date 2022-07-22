@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/text-theme.dart';
 import 'package:flutter/material.dart';
@@ -19,12 +20,12 @@ class MyApp extends StatelessWidget {
       title: 'CACSA',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        textTheme: screenWidth < 500 ? TEXT_THEME_SMALL : TEXT_THEME_DEFAULT, fontFamily: "Euclid-Regular"
-      ),
-      // initialRoute: Pages.SPLASHSCREEN,
+          primarySwatch: Colors.blue,
+          textTheme: screenWidth < 500 ? TEXT_THEME_SMALL : TEXT_THEME_DEFAULT,
+          fontFamily: "Euclid-Regular"),
+      initialRoute: Pages.SPLASHSCREEN,
       home: WelcomePage(),
-      // getPages: Pages.routes,
+      getPages: Pages.routes,
     );
   }
 }

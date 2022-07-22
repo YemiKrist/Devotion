@@ -1,3 +1,4 @@
+import 'package:cacsa/bindings/splash_binding.dart';
 import 'package:cacsa/screens/day_walk.dart';
 import 'package:cacsa/screens/splash_screen.dart';
 import 'package:cacsa/screens/welcome_page.dart';
@@ -16,6 +17,7 @@ class Pages {
     GetPage(
       name: SPLASHSCREEN,
       page: () => const SplashScreen(),
+      binding: SplashBinding(),
     ),
     GetPage(
       name: Routes.MAIN_PAGE,

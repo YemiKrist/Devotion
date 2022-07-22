@@ -1,5 +1,3 @@
-import 'package:cacsa/routes/routes.dart';
-import 'package:cacsa/screens/day_walk.dart';
 import 'package:cacsa/screens/months_screen.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
@@ -32,57 +30,51 @@ class WelcomePage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                  child: ListView.builder(
+                  child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 0,
+                    childAspectRatio: 2),
+                shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 itemCount: menuItems.length,
                 itemBuilder: (BuildContext cont, int index) {
                   return GestureDetector(
-                    onTap:()=> Get.to(const Months()),
-                    child: Container(
-                    margin: const EdgeInsets.all(12),
-                    height: 124,
-                    child: Stack(
-                      children: [
-                        Positioned.fill(
-                          child: ClipRRect(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(22)),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    colorFilter: ColorFilter.mode(
-                                      Colors.black.withOpacity(0.4),
-                                      BlendMode.multiply,
-                                    ),
-                                    image: AssetImage(
-                                        'assets/${menuItems[index].bgImage}.png'),
-                                  ),
-                                  //   gradient: LinearGradient(colors: [
-                                  // gradientColor1.withOpacity(0.0),
-                                  // gradientColor2.withOpacity(1.0),
-                                  // ])
-                                ),
-                              )),
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                    onTap: () => Get.to(const Months()),
+                    child: SizedBox(
+                      height: 130,
+                      child: Container(
+                        margin: const EdgeInsets.all(12),
+                        child: Stack(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.all(24.0),
-                              child: Text(
-                                menuItems[index].name,
-                                style: themeData.textTheme.headline1,
-                              ),
-                            )
+                            // Positioned.fill(
+                            Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                child: ListTile(
+                                  leading: Image(
+                                    image: AssetImage(
+                                        'assets/icons/${menuItems[index].icon}.png'),
+                                  ),
+                                  title: Text(
+                                    menuItems[index].name,
+                                    style: themeData.textTheme.headline4,
+                                  ),
+                                  // subtitle: Text(daily_walks[index].topic,),
+                                  onTap: () {
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) =>
+                                    //             DayWalk(months[index])));
+                                  },
+                                )),
                           ],
-                        )
-                      ],
+                        ),
+                      ),
                     ),
-                  ),
                   );
-
                 },
               ))
             ],
