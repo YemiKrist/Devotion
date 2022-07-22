@@ -1,4 +1,5 @@
 import 'package:cacsa/bindings/splash_binding.dart';
+import 'package:cacsa/screens/about/about.dart';
 import 'package:cacsa/screens/day_walk.dart';
 import 'package:cacsa/screens/months_screen.dart';
 import 'package:cacsa/screens/splash_screen.dart';
@@ -35,6 +36,7 @@ class Pages {
       name: Routes.MONTHS,
       page: () => const Months(),
     ),
+    GetPage(name: Routes.ABOUT, page: () => const About())
     // GetPage(
     //   name: Routes.DEVOTION,
     //   page: () => DayWalk(),
