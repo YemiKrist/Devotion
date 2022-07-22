@@ -1,4 +1,4 @@
-import 'package:cacsa/constants/controllers/splash_controller.dart';
+import 'package:cacsa/controllers/splash_controller.dart';
 import 'package:get/get.dart';
 
 class SplashBinding extends Bindings {

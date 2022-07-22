@@ -1,3 +1,5 @@
+import 'package:cacsa/constants/months.dart';
+import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/screens/months_screen.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
@@ -63,11 +65,8 @@ class WelcomePage extends StatelessWidget {
                                   ),
                                   // subtitle: Text(daily_walks[index].topic,),
                                   onTap: () {
-                                    // Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute(
-                                    //         builder: (context) =>
-                                    //             DayWalk(months[index])));
+                                    String namer = "MONTHS";
+                                    Get.toNamed('/${menuItems[index].route}');
                                   },
                                 )),
                           ],

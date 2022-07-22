@@ -1,5 +1,6 @@
 import 'package:cacsa/bindings/splash_binding.dart';
 import 'package:cacsa/screens/day_walk.dart';
+import 'package:cacsa/screens/months_screen.dart';
 import 'package:cacsa/screens/splash_screen.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,13 @@ class Routes {
   static const MAIN_PAGE = '/main_page';
   static const DAILY_WALK = '/daily';
   static const DEVOTION = '/devotion';
+  static const MONTHS = '/months';
+  static const MANUALS = '/manuals';
+  static const EVENTS = '/events';
+  static const BRANCHES = '/branches';
+  static const ABOUT = '/about';
+  static const GIVE = '/give';
+  static const SUPPORT = '/support';
 }
 
 class Pages {
@@ -22,6 +30,10 @@ class Pages {
     GetPage(
       name: Routes.MAIN_PAGE,
       page: () => WelcomePage(),
+    ),
+    GetPage(
+      name: Routes.MONTHS,
+      page: () => const Months(),
     ),
     // GetPage(
     //   name: Routes.DEVOTION,
