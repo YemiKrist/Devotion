@@ -1,6 +1,7 @@
 import 'package:cacsa/bindings/splash_binding.dart';
 import 'package:cacsa/screens/about/about.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
+import 'package:cacsa/screens/auth/refral_view.dart';
 import 'package:cacsa/screens/auth/signUp_view.dart';
 import 'package:cacsa/screens/auth/success_view.dart';
 import 'package:cacsa/screens/branches/branches.dart';
@@ -29,6 +30,7 @@ class Routes {
   static const LOGIN = '/login';
   static const SIGNUP = '/signup';
   static const SUCCESS = '/success';
+  static const REFERAL = '/refral';
 }
 
 class Pages {
@@ -56,6 +58,7 @@ class Pages {
     GetPage(name: Routes.LOGIN, page: () => const Login()),
     GetPage(name: Routes.SIGNUP, page: () => const SignUp()),
     GetPage(name: Routes.SUCCESS, page: () => const Success()),
+    GetPage(name: Routes.REFERAL, page: () => const Refral()),
     // GetPage(
     //   name: Routes.DEVOTION,
     //   page: () => DayWalk(),

@@ -5,21 +5,21 @@ class AppButtons extends StatelessWidget {
   final Color backgroundColor;
   final Color borderColor;
   final String text;
-  //final Function()? onTap;
+  final Function()? onTap;
 
-  const AppButtons({
-    Key? key,
-    required this.textColor,
-    required this.backgroundColor,
-    required this.text,
-    required this.borderColor,
-    //required this.onTap
-  }) : super(key: key);
+  const AppButtons(
+      {Key? key,
+      required this.textColor,
+      required this.backgroundColor,
+      required this.text,
+      required this.borderColor,
+      required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      // onTap: onTap,
+      onTap: onTap,
       child: Container(
         width: double.maxFinite,
         height: MediaQuery.of(context).size.height / 18,

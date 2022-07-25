@@ -1,8 +1,10 @@
 import 'package:cacsa/commons/button.dart';
 import 'package:cacsa/commons/input_textfield.dart';
 import 'package:cacsa/constants/assets_path.dart';
+import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Success extends StatelessWidget {
   const Success({Key? key}) : super(key: key);
@@ -23,15 +25,19 @@ class Success extends StatelessWidget {
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text("Congrats!"),
-                  Text("Your Account has Been Successfully Created"),
+                children: [
+                  const Text("Congrats!"),
+                  const Text("Your Account has Been Successfully Created"),
                   AppButtons(
-                      textColor: Colors.white,
-                      backgroundColor: primaryBgColor,
-                      borderColor: Colors.transparent,
-                      text: "Subscribe Now"),
-                  SizedBox(height: 12),
+                    textColor: Colors.white,
+                    backgroundColor: primaryBgColor,
+                    borderColor: Colors.transparent,
+                    text: "Subscribe Now",
+                    onTap: () {
+                      Get.offAllNamed(Routes.REFERAL);
+                    },
+                  ),
+                  const SizedBox(height: 12),
                 ],
               ),
             ),

@@ -13,12 +13,13 @@ class Support extends StatelessWidget {
         body: SafeArea(
             child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 24),
-          child: const Center(
+          child: Center(
               child: AppButtons(
             backgroundColor: primaryBgColor,
             text: 'Support Page',
             textColor: Colors.white,
             borderColor: Colors.transparent,
+            onTap: (() {}),
           )
               // Text(
               // "Support Page!!!",
