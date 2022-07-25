@@ -1,3 +1,4 @@
+import 'package:cacsa/commons/button.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -8,15 +9,22 @@ class Support extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     return Scaffold(
-        backgroundColor: primaryBgColor,
+        backgroundColor: splashBackgroundColor,
         body: SafeArea(
             child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 24),
-          child: Center(
-              child: Text(
-            "Support Page!!!",
-            style: themeData.textTheme.headline1,
-          )),
+          child: const Center(
+              child: AppButtons(
+            backgroundColor: primaryBgColor,
+            text: 'Support Page',
+            textColor: Colors.white,
+            borderColor: Colors.transparent,
+          )
+              // Text(
+              // "Support Page!!!",
+              // style: themeData.textTheme.headline1,
+              // )
+              ),
         )));
   }
 }

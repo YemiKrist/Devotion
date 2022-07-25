@@ -1,5 +1,6 @@
 import 'package:cacsa/bindings/splash_binding.dart';
 import 'package:cacsa/screens/about/about.dart';
+import 'package:cacsa/screens/auth/login_view.dart';
 import 'package:cacsa/screens/branches/branches.dart';
 import 'package:cacsa/screens/day_walk.dart';
 import 'package:cacsa/screens/events/upcoming_events.dart';
@@ -23,6 +24,7 @@ class Routes {
   static const ABOUT = '/about';
   static const GIVE = '/give';
   static const SUPPORT = '/support';
+  static const LOGIN = '/login';
 }
 
 class Pages {
@@ -47,6 +49,7 @@ class Pages {
     GetPage(name: Routes.GIVE, page: () => const Give()),
     GetPage(name: Routes.MANUALS, page: () => const Manuals()),
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
+    GetPage(name: Routes.LOGIN, page: () => const Login()),
     // GetPage(
     //   name: Routes.DEVOTION,
     //   page: () => DayWalk(),
