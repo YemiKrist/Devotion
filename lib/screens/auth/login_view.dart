@@ -43,10 +43,12 @@ class Login extends StatelessWidget {
                     text: "Log in"),
                 SizedBox(height: 12),
                 AppButtons(
-                    textColor: Colors.black,
-                    backgroundColor: Colors.white,
-                    borderColor: Colors.black,
-                    text: "Sign Up"),
+                  textColor: Colors.black,
+                  backgroundColor: Colors.white,
+                  borderColor: Colors.black,
+                  text: "Sign Up",
+                  //onTap: ()=>,
+                ),
                 SizedBox(height: 12),
                 Text("Forgot Password?")
               ],
