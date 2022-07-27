@@ -13,6 +13,6 @@ class AuthController extends GetxController {
 
   void login(email, password) {
     isLoging = true;
-    print("Hello");
+    print(email);
   }
 }
