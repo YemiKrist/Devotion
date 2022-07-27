@@ -1,8 +1,10 @@
 import 'package:cacsa/commons/appbar.dart';
 import 'package:cacsa/constants/months.dart';
+import 'package:cacsa/screens/events/months_event_view.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class UpcomingEvents extends StatelessWidget {
   const UpcomingEvents({Key? key}) : super(key: key);
@@ -51,13 +53,9 @@ class UpcomingEvents extends StatelessWidget {
                                   style: themeData.textTheme.headline4,
                                 ),
                                 // subtitle: Text(daily_walks[index].topic,),
-                                // onTap: () {
-                                //   Navigator.push(
-                                //       context,
-                                //       MaterialPageRoute(
-                                //           builder: (context) =>
-                                //             DayWalk(months[index])));
-                                // },
+                                onTap: () {
+                                  Get.to(Events(months[index]));
+                                },
                               )),
                         ],
                       ),

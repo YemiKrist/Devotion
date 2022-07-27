@@ -6,8 +6,17 @@ import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
+
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final forgotEmailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +38,13 @@ class Login extends StatelessWidget {
             height: deviceHeight * 0.65,
             child: Column(
               children: [
-                const InputTextField(
+                InputTextField(
+                  controller: emailController,
                   label: "Email",
                   obscureText: false,
                 ),
-                const InputTextField(
+                InputTextField(
+                  controller: passwordController,
                   label: "Password",
                   obscureText: true,
                 ),

@@ -8,7 +8,13 @@ class EventsList {
           week: "1st Week",
           dates: "3RD - 4TH",
           title: "Pentecostal Wonder Night\nUshers Seminar"),
-      //Event(month: §, week: week, dates: dates, title: title)
+      Event(month: "June", week: "2nd week", dates: "", title: ""),
+      Event(
+          month: "June",
+          week: "3rd week",
+          dates: "3RD - 4TH",
+          title: "Teens and childrens teacher seminar\nchoir congress"),
+      Event(month: "June", week: "2nd week", dates: "", title: ""),
     ];
   }
 }
