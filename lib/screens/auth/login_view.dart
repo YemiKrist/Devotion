@@ -2,6 +2,7 @@ import 'package:cacsa/commons/button.dart';
 import 'package:cacsa/commons/input_textfield.dart';
 import 'package:cacsa/constants/assets_path.dart';
 import 'package:cacsa/routes/routes.dart';
+import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,7 +55,10 @@ class _LoginState extends State<Login> {
                   backgroundColor: primaryBgColor,
                   borderColor: Colors.transparent,
                   text: "Log in",
-                  onTap: (() {}),
+                  onTap: (() {
+                    AuthController.instance.login(emailController.text.trim(),
+                        passwordController.text.trim());
+                  }),
                 ),
                 const SizedBox(height: 12),
                 AppButtons(

@@ -1,5 +1,6 @@
 import 'package:cacsa/bindings/splash_binding.dart';
 import 'package:cacsa/screens/about/about.dart';
+import 'package:cacsa/screens/auth/auth_binding.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
 import 'package:cacsa/screens/auth/refral_view.dart';
 import 'package:cacsa/screens/auth/signUp_view.dart';
@@ -55,7 +56,8 @@ class Pages {
     GetPage(name: Routes.GIVE, page: () => const Give()),
     GetPage(name: Routes.MANUALS, page: () => const Manuals()),
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
-    GetPage(name: Routes.LOGIN, page: () => const Login()),
+    GetPage(
+        name: Routes.LOGIN, page: () => const Login(), binding: AuthBinding()),
     GetPage(name: Routes.SIGNUP, page: () => const SignUp()),
     GetPage(name: Routes.SUCCESS, page: () => const Success()),
     GetPage(name: Routes.REFERAL, page: () => const Refral()),
