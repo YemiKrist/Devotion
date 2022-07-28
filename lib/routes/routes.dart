@@ -45,10 +45,12 @@ class Pages {
     GetPage(
       name: Routes.MAIN_PAGE,
       page: () => WelcomePage(),
+      binding: AuthBinding(),
     ),
     GetPage(
       name: Routes.MONTHS,
       page: () => const Months(),
+      binding: AuthBinding(),
     ),
     GetPage(name: Routes.ABOUT, page: () => const About()),
     GetPage(name: Routes.EVENTS, page: () => const UpcomingEvents()),

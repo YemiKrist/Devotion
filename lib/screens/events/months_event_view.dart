@@ -31,7 +31,8 @@ class Events extends StatelessWidget {
                 Center(
                   child: Text(
                     month,
-                    style: themeData.textTheme.headline3,
+                    //style: themeData.textTheme.headline3,
+                    style: const TextStyle(color: textColorGreen),
                     //textAlign: TextAlign.center,
                   ),
                 ),

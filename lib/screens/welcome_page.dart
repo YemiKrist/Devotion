@@ -1,5 +1,6 @@
 import 'package:cacsa/constants/months.dart';
 import 'package:cacsa/routes/routes.dart';
+import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/screens/months_screen.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
@@ -75,7 +76,13 @@ class WelcomePage extends StatelessWidget {
                     ),
                   );
                 },
-              ))
+              )),
+              GestureDetector(
+                onTap: () {
+                  AuthController.instance.logout();
+                },
+                child: const Text("Logout"),
+              )
             ],
           ),
         ));

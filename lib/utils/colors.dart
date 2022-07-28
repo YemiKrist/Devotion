@@ -9,3 +9,4 @@ const eventsBgColor = Color(0xFFF8F8F8);
 const textColorBlack = Color(0xFF000000);
 const textColorWhite = Color(0xFFFFFFFF);
 const textColorSub = Color(0xFFA4A4A4);
+const textColorGreen = Color(0xFF00A551);
