@@ -31,9 +31,11 @@ class Events extends StatelessWidget {
                 Center(
                   child: Text(
                     month,
-                    //style: themeData.textTheme.headline3,
-                    style: const TextStyle(color: textColorGreen),
-                    //textAlign: TextAlign.center,
+                    style: const TextStyle(
+                        color: textColorGreen,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 26,
+                        fontFamily: 'Euclid-Medium'),
                   ),
                 ),
                 addVerticalSpace(15),
@@ -42,7 +44,7 @@ class Events extends StatelessWidget {
                   itemCount: months_events.length,
                   itemBuilder: (BuildContext cont, int index) {
                     return SizedBox(
-                      height: 92,
+                      height: 115,
                       child: Stack(
                         children: [
                           Positioned.fill(
@@ -53,10 +55,34 @@ class Events extends StatelessWidget {
                                           BorderRadius.circular(10.0)),
                                   child: Column(
                                     children: [
-                                      Text("Week goes In here"),
-                                      Divider(),
-                                      Text("Days go in here"),
-                                      Text("Devotion goes in here"),
+                                      Text(
+                                        months_events[index].week,
+                                        style: const TextStyle(
+                                          color: textColorBlack,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18,
+                                          fontFamily: 'Euclid-Medium',
+                                        ),
+                                      ),
+                                      const Divider(
+                                          thickness: 0.5,
+                                          indent: 7,
+                                          endIndent: 7,
+                                          color: borderColor),
+                                      Text(
+                                        months_events[index].dates,
+                                        style: const TextStyle(
+                                          color: textColorGreen,
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 11,
+                                          fontFamily: 'Euclid-Medium',
+                                        ),
+                                      ),
+                                      months_events[index].title == ""
+                                          ? const Text("No Event")
+                                          : Text(
+                                              months_events[index].title,
+                                            ),
                                     ],
                                   )
 

@@ -26,6 +26,7 @@ class Daily extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 24,
+                    fontFamily: 'Euclid-SemiBold',
                   ),
                 ),
                 addVerticalSpace(6),

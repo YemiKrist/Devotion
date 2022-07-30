@@ -15,24 +15,24 @@ const TextTheme TEXT_THEME_DEFAULT = TextTheme(
       fontFamily: 'Euclid-SemiBold'),
   headline3: TextStyle(
       color: textColorWhite,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w700,
       fontSize: 22,
       fontFamily: 'Euclid-Medium'),
   headline4: TextStyle(
       color: textColorBlack,
       fontWeight: FontWeight.w600,
-      fontSize: 14,
+      fontSize: 16,
       fontFamily: 'Euclid-Bold'),
   subtitle1: TextStyle(
       color: textColorSub,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
-      fontSize: 12),
+      fontSize: 16),
   bodyText1: TextStyle(
       color: textColorBlack,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
-      fontSize: 14),
+      fontSize: 16),
 );
 
 const TextTheme TEXT_THEME_SMALL = TextTheme(
@@ -48,22 +48,22 @@ const TextTheme TEXT_THEME_SMALL = TextTheme(
       fontFamily: 'Euclid-SemiBold'),
   headline3: TextStyle(
       color: textColorWhite,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w700,
       fontSize: 20,
       fontFamily: 'Euclid-Medium'),
   headline4: TextStyle(
       color: textColorBlack,
       fontWeight: FontWeight.w600,
-      fontSize: 14,
+      fontSize: 16,
       fontFamily: 'Euclid-Bold'),
   subtitle1: TextStyle(
       color: textColorSub,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
-      fontSize: 12),
+      fontSize: 14),
   bodyText1: TextStyle(
       color: textColorBlack,
       fontWeight: FontWeight.w400,
       fontStyle: FontStyle.normal,
-      fontSize: 14),
+      fontSize: 16),
 );

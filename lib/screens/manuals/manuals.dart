@@ -19,12 +19,19 @@ class Manuals extends StatelessWidget {
             //  margin: const EdgeInsets.symmetric(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 const MyWAppBar(),
                 addVerticalSpace(25),
-                Text(
-                  'CACSA Manuals',
-                  style: themeData.textTheme.headline3,
+                Expanded(
+                  child: Align(
+                    alignment: FractionalOffset.bottomLeft,
+                    child: Text(
+                      'CACSA Manuals',
+                      style: themeData.textTheme.headline3,
+                    ),
+                  ),
                 ),
                 addVerticalSpace(15),
                 Expanded(
@@ -49,6 +56,7 @@ class Manuals extends StatelessWidget {
                                     trailing: Image.asset(ArrowIcon),
                                     onTap: () {},
                                   ))),
+                          //addVerticalSpace(20),
                         ],
                       ),
                     );
