@@ -6,7 +6,6 @@ import 'package:cacsa/screens/auth/refral_view.dart';
 import 'package:cacsa/screens/auth/signUp_view.dart';
 import 'package:cacsa/screens/auth/success_view.dart';
 import 'package:cacsa/screens/branches/branches.dart';
-import 'package:cacsa/screens/day_walk.dart';
 import 'package:cacsa/screens/events/upcoming_events.dart';
 import 'package:cacsa/screens/give/give.dart';
 import 'package:cacsa/screens/manuals/manuals.dart';
@@ -40,7 +39,7 @@ class Pages {
     GetPage(
       name: SPLASHSCREEN,
       page: () => const SplashScreen(),
-      binding: SplashBinding(),
+      binding: AuthBinding(),
     ),
     GetPage(
       name: Routes.MAIN_PAGE,
@@ -60,7 +59,10 @@ class Pages {
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
     GetPage(
         name: Routes.LOGIN, page: () => const Login(), binding: AuthBinding()),
-    GetPage(name: Routes.SIGNUP, page: () => const SignUp()),
+    GetPage(
+        name: Routes.SIGNUP,
+        page: () => const SignUp(),
+        binding: AuthBinding()),
     GetPage(name: Routes.SUCCESS, page: () => const Success()),
     GetPage(name: Routes.REFERAL, page: () => const Refral()),
     // GetPage(

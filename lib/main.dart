@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:cacsa/routes/routes.dart';
+import 'package:cacsa/screens/auth/auth_binding.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/text-theme.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -9,6 +10,7 @@ import 'package:get/get.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           textTheme: screenWidth < 500 ? TEXT_THEME_SMALL : TEXT_THEME_DEFAULT,
           fontFamily: "Euclid-Regular"),
+      initialBinding: AuthBinding(),
       initialRoute: Pages.SPLASHSCREEN,
       home: WelcomePage(),
       getPages: Pages.routes,

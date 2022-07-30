@@ -1,8 +1,10 @@
 import 'dart:async';
-import 'package:cacsa/routes/routes.dart';
+import 'package:cacsa/models/user_model.dart';
+import 'package:cacsa/screens/auth/auth_binding.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/colors.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,6 +15,7 @@ class AuthController extends GetxController {
   bool isLoging = false;
   User? get user => _user.value;
   final FirebaseAuth auth = FirebaseAuth.instance;
+  final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
   @override
   void onReady() {
@@ -31,7 +34,7 @@ class AuthController extends GetxController {
       } else {
         isLoging = true;
         update();
-        Get.to(() => WelcomePage());
+        Get.off(() => WelcomePage());
       }
     });
   }
@@ -47,7 +50,37 @@ class AuthController extends GetxController {
     }
   }
 
-  void postDetailsToFirestore() async {}
+  void signUp(firstName, lastName, email, password, state, churchName) async {
+    try {
+      isLoging = true;
+      update();
+      await auth
+          .createUserWithEmailAndPassword(email: email, password: password)
+          .then((value) =>
+              {postDetailsToFirestore(firstName, lastName, state, churchName)});
+    } on FirebaseAuthException catch (e) {
+      getErrorSnackBar("Account creation Failed", e);
+    }
+  }
+
+  void postDetailsToFirestore(firstName, lastName, state, churchName) async {
+    //User? user = auth.currentUser;
+    UserModel userModel = UserModel();
+
+    userModel.firstName = firstName;
+    userModel.lastName = lastName;
+    userModel.state = state;
+    userModel.churchName = churchName;
+    userModel.email = user!.email;
+    userModel.uid = user!.uid;
+
+    // print(userModel.toMap());
+
+    await firebaseFirestore
+        .collection("users")
+        .doc(userModel.uid)
+        .set(userModel.toMap());
+  }
 
   void logout() async {
     await auth.signOut();
