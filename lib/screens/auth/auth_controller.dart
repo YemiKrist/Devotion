@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:cacsa/models/user_model.dart';
-import 'package:cacsa/screens/auth/auth_binding.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/colors.dart';
@@ -16,6 +15,7 @@ class AuthController extends GetxController {
   User? get user => _user.value;
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+  //const name;
 
   @override
   void onReady() {
@@ -85,6 +85,15 @@ class AuthController extends GetxController {
   void logout() async {
     await auth.signOut();
   }
+
+//   getUserDetails() async {
+//     //final firebaseUser = await FirebaseAuth.instance.currentUser!;
+//     if(user!=null){
+//       await firebaseFirestore.collection('users').doc(user?.uid).get().then((value){
+//         name = value.data['']
+//       })
+//     }
+//   }
 }
 
 getErrorSnackBar(String message, _) {

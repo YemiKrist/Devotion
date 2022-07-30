@@ -4,6 +4,7 @@ import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/screens/months_screen.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +18,7 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
+    //final Firebase user = AuthController.instance.user.uid;
     return Scaffold(
         backgroundColor: primaryBgColor,
         body: Container(
@@ -66,7 +68,7 @@ class WelcomePage extends StatelessWidget {
                                   ),
                                   // subtitle: Text(daily_walks[index].topic,),
                                   onTap: () {
-                                    String namer = "MONTHS";
+                                    String name = "MONTHS";
                                     Get.toNamed('/${menuItems[index].route}');
                                   },
                                 )),
