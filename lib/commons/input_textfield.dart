@@ -28,6 +28,7 @@ class InputTextField extends StatelessWidget {
         ),
         TextFormField(
           controller: controller,
+          validator: validator,
           obscureText: obscureText ? obscureText : false,
           decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),

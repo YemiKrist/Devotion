@@ -42,6 +42,15 @@ class _LoginState extends State<Login> {
                 InputTextField(
                   controller: emailController,
                   label: "Email",
+                  validator: (value) {
+                    bool _isEmailValid = RegExp(
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                        .hasMatch(value!);
+                    if (!_isEmailValid) {
+                      return 'Invalid email.';
+                    }
+                    return null;
+                  },
                   obscureText: false,
                 ),
                 InputTextField(

@@ -1,10 +1,7 @@
-import 'package:cacsa/constants/months.dart';
-import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/screens/months_screen.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,24 +12,35 @@ class WelcomePage extends StatelessWidget {
   WelcomePage({Key? key}) : super(key: key);
 
   List<Menu> menuItems = MenuItems.getMenuItems();
+  var name = Get.arguments;
+
+  //Future<String> name = AuthController.instance.getUserDetails().then((value) => );
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
-    //final Firebase user = AuthController.instance.user.uid;
+
+    //print(name);
     return Scaffold(
         backgroundColor: primaryBgColor,
         body: Container(
+          margin: const EdgeInsets.all(12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               addVerticalSpace(111),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Text(
-                  'Welcome, ',
-                  style: themeData.textTheme.headline2,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    child: Text(
+                      'Welcome , $name',
+                      style: themeData.textTheme.headline2,
+                    ),
+                  ),
+                  const Image(image: AssetImage('assets/icons/Hambuger.png'))
+                ],
               ),
               Expanded(
                   child: GridView.builder(
@@ -50,7 +58,7 @@ class WelcomePage extends StatelessWidget {
                     child: SizedBox(
                       height: 130,
                       child: Container(
-                        margin: const EdgeInsets.all(12),
+                        //margin: const EdgeInsets.all(12),
                         child: Stack(
                           children: [
                             // Positioned.fill(

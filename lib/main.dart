@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/screens/auth/auth_binding.dart';
+import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/text-theme.dart';
 import 'package:firebase_core/firebase_core.dart';

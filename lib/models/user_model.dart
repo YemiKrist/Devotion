@@ -16,6 +16,10 @@ class UserModel {
       this.state,
       this.churchName});
 
+  UserModel.fromData(Map<String, dynamic> data)
+      : uid = data['uid'],
+        firstName = data["firstName"];
+
   Map<String, dynamic> toMap() {
     return {
       'uid': uid,
