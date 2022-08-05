@@ -5,6 +5,7 @@ class InputTextField extends StatelessWidget {
   final bool obscureText;
   final TextEditingController? controller;
   final validator;
+  final keyboardType;
 
   const InputTextField({
     Key? key,
@@ -12,6 +13,7 @@ class InputTextField extends StatelessWidget {
     required this.obscureText,
     this.controller,
     this.validator,
+    this.keyboardType,
   }) : super(key: key);
 
   @override
@@ -29,6 +31,7 @@ class InputTextField extends StatelessWidget {
         TextFormField(
           controller: controller,
           validator: validator,
+          keyboardType: keyboardType,
           obscureText: obscureText ? obscureText : false,
           decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),

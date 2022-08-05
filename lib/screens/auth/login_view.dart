@@ -15,6 +15,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final forgotEmailController = TextEditingController();
@@ -26,65 +27,78 @@ class _LoginState extends State<Login> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          SizedBox(
-            height: deviceHeight * 0.25,
-            width: deviceWidth * 0.25,
-            child: Image.asset(splashLogo),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 21),
-            height: deviceHeight * 0.65,
-            child: Column(
-              children: [
-                InputTextField(
-                  controller: emailController,
-                  label: "Email",
-                  validator: (value) {
-                    bool _isEmailValid = RegExp(
-                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                        .hasMatch(value!);
-                    if (!_isEmailValid) {
-                      return 'Invalid email.';
-                    }
-                    return null;
-                  },
-                  obscureText: false,
-                ),
-                InputTextField(
-                  controller: passwordController,
-                  label: "Password",
-                  obscureText: true,
-                ),
-                const SizedBox(height: 28),
-                AppButtons(
-                  textColor: Colors.white,
-                  backgroundColor: primaryBgColor,
-                  borderColor: Colors.transparent,
-                  text: "Log in",
-                  onTap: (() {
-                    AuthController.instance.login(emailController.text.trim(),
-                        passwordController.text.trim());
-                  }),
-                ),
-                const SizedBox(height: 12),
-                AppButtons(
-                  textColor: Colors.black,
-                  backgroundColor: Colors.white,
-                  borderColor: Colors.black,
-                  text: "Sign Up",
-                  onTap: () {
-                    Get.offAllNamed(Routes.SIGNUP);
-                  },
-                ),
-                const SizedBox(height: 12),
-                const Text("Forgot Password?")
-              ],
+          child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            SizedBox(
+              height: deviceHeight * 0.25,
+              width: deviceWidth * 0.25,
+              child: Image.asset(splashLogo),
             ),
-          )
-        ],
+            Form(
+              key: _formkey,
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 21),
+                height: deviceHeight * 0.65,
+                child: Column(
+                  children: [
+                    InputTextField(
+                      controller: emailController,
+                      keyboardType: TextInputType.emailAddress,
+                      label: "Email",
+                      validator: (value) {
+                        bool _isEmailValid = RegExp(
+                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            .hasMatch(value!);
+                        if (!_isEmailValid) {
+                          return 'Invalid email.';
+                        } else if (!value) {
+                          return "Please enter email";
+                        } else {
+                          return null;
+                        }
+                      },
+                      obscureText: false,
+                    ),
+                    InputTextField(
+                      controller: passwordController,
+                      label: "Password",
+                      obscureText: true,
+                    ),
+                    const SizedBox(height: 28),
+                    AppButtons(
+                      textColor: Colors.white,
+                      backgroundColor: primaryBgColor,
+                      borderColor: Colors.transparent,
+                      text: "Log in",
+                      onTap: (() {
+                        if (_formkey.currentState!.validate()) {
+                          AuthController.instance.login(
+                              emailController.text.trim(),
+                              passwordController.text.trim());
+                        }
+                      }),
+                    ),
+                    const SizedBox(height: 12),
+                    AppButtons(
+                      textColor: Colors.black,
+                      backgroundColor: Colors.white,
+                      borderColor: Colors.black,
+                      text: "Sign Up",
+                      onTap: () {
+                        Get.offAllNamed(Routes.SIGNUP);
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    const Text("Forgot Password?")
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       )),
     );
   }

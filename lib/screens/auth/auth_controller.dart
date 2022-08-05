@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:cacsa/models/user_model.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
+import 'package:cacsa/screens/auth/success_view.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -12,6 +13,7 @@ class AuthController extends GetxController {
   static AuthController instance = Get.find();
   late Rx<User?> _user;
   bool isLoging = false;
+  bool isSignUp = false;
   User? get user => _user.value;
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
@@ -32,6 +34,8 @@ class AuthController extends GetxController {
         isLoging = false;
         update();
         Get.offAll(() => const Login());
+      } else if (isSignUp) {
+        Get.offAll(() => const Success());
       } else {
         isLoging = true;
         update();
@@ -53,16 +57,19 @@ class AuthController extends GetxController {
   }
 
   void signUp(firstName, lastName, email, password, state, churchName) async {
-    try {
-      isLoging = true;
-      update();
-      await auth
-          .createUserWithEmailAndPassword(email: email, password: password)
-          .then((value) =>
-              {postDetailsToFirestore(firstName, lastName, state, churchName)});
-    } on FirebaseAuthException catch (e) {
-      getErrorSnackBar("Account creation Failed", e);
-    }
+    isSignUp = true;
+    Get.offAll(() => const Success());
+    // try {
+    //   isLoging = true;
+    //   isSignUp = true;
+    //   update();
+    //   await auth
+    //       .createUserWithEmailAndPassword(email: email, password: password)
+    //       .then((value) =>
+    //           {postDetailsToFirestore(firstName, lastName, state, churchName)});
+    // } on FirebaseAuthException catch (e) {
+    //   getErrorSnackBar("Account creation Failed", e);
+    // }
   }
 
   void postDetailsToFirestore(firstName, lastName, state, churchName) async {

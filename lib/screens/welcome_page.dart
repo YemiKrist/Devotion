@@ -1,5 +1,4 @@
 import 'package:cacsa/screens/auth/auth_controller.dart';
-import 'package:cacsa/screens/months_screen.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
@@ -43,50 +42,60 @@ class WelcomePage extends StatelessWidget {
                 ],
               ),
               Expanded(
-                  child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                child: Container(
+                    child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 0,
-                    childAspectRatio: 2),
-                shrinkWrap: true,
-                physics: const BouncingScrollPhysics(),
-                itemCount: menuItems.length,
-                itemBuilder: (BuildContext cont, int index) {
-                  return GestureDetector(
-                    onTap: () => Get.to(const Months()),
-                    child: SizedBox(
-                      height: 130,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    childAspectRatio: 1.7,
+                  ),
+                  itemCount: menuItems.length,
+                  itemBuilder: (BuildContext cont, int index) {
+                    return GestureDetector(
+                      onTap: () => Get.toNamed('/${menuItems[index].route}'),
                       child: Container(
-                        //margin: const EdgeInsets.all(12),
-                        child: Stack(
+                        alignment: Alignment.topLeft,
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: splashBackgroundColor),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Positioned.fill(
-                            Card(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0)),
-                                child: ListTile(
-                                  leading: Image(
-                                    image: AssetImage(
-                                        'assets/icons/${menuItems[index].icon}.png'),
-                                  ),
-                                  title: Text(
-                                    menuItems[index].name,
-                                    style: themeData.textTheme.headline4,
-                                  ),
-                                  // subtitle: Text(daily_walks[index].topic,),
-                                  onTap: () {
-                                    String name = "MONTHS";
-                                    Get.toNamed('/${menuItems[index].route}');
-                                  },
-                                )),
+                            Image.asset(
+                                'assets/icons/${menuItems[index].icon}.png'),
+                            addVerticalSpace(10),
+                            Text(
+                              menuItems[index].name,
+                              style: themeData.textTheme.headline4,
+                            ),
                           ],
                         ),
+                        // child: ListTile(
+                        //   dense: true,
+                        //   visualDensity:
+                        //       const VisualDensity(vertical: 1),
+                        //   leading: Image(
+                        //     image: AssetImage(
+                        //         'assets/icons/${menuItems[index].icon}.png'),
+                        //   ),
+                        //   title: Text(
+                        //     menuItems[index].name,
+                        //     style: themeData.textTheme.headline4,
+                        //   ),
+                        //   // subtitle: Text(daily_walks[index].topic,),
+                        //   onTap: () {
+                        //     String name = "MONTHS";
+                        //     Get.toNamed('/${menuItems[index].route}');
+                        //   },
+                        // )
                       ),
-                    ),
-                  );
-                },
-              )),
+                    );
+                  },
+                )),
+              ),
               GestureDetector(
                 onTap: () {
                   AuthController.instance.logout();

@@ -21,13 +21,19 @@ class Success extends StatelessWidget {
         children: [
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 21),
-            height: deviceHeight * 0.55,
+            height: deviceHeight * 0.85,
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Text("Congrats!"),
-                  const Text("Your Account has Been Successfully Created"),
+                  const Text(
+                    "Congrats!",
+                  ),
+                  Image.asset(successCheck),
+                  const Text(
+                    "Your Account has Been\nSuccessfully Created!",
+                    textAlign: TextAlign.center,
+                  ),
                   AppButtons(
                     textColor: Colors.white,
                     backgroundColor: primaryBgColor,
@@ -37,7 +43,6 @@ class Success extends StatelessWidget {
                       Get.offAllNamed(Routes.REFERAL);
                     },
                   ),
-                  const SizedBox(height: 12),
                 ],
               ),
             ),
