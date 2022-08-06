@@ -49,13 +49,13 @@ class _LoginState extends State<Login> {
                       keyboardType: TextInputType.emailAddress,
                       label: "Email",
                       validator: (value) {
-                        bool _isEmailValid = RegExp(
+                        bool isEmailValid = RegExp(
                                 r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                             .hasMatch(value!);
-                        if (!_isEmailValid) {
-                          return 'Invalid email.';
-                        } else if (!value) {
-                          return "Please enter email";
+                        if (value == null || value.isEmpty) {
+                          return 'Email cannot be left empty';
+                        } else if (!isEmailValid) {
+                          return 'email is invalid';
                         } else {
                           return null;
                         }

@@ -7,6 +7,7 @@ class Devotion {
   String climax;
   String reflection;
   String conclusion;
+  String? foodForThought;
   List<String> prayerPoint;
 
   Devotion(
@@ -18,6 +19,7 @@ class Devotion {
       required this.climax,
       required this.reflection,
       required this.conclusion,
+      this.foodForThought,
       required this.prayerPoint});
 }
 

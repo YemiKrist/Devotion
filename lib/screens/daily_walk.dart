@@ -75,6 +75,12 @@ class Daily extends StatelessWidget {
                                   content: walk.devotion.reflection)
                               : addVerticalSpace(0),
                           addVerticalSpace(10),
+                          walk.devotion.foodForThought != null
+                              ? Section(
+                                  title: 'FOOD FOR THOUGHT',
+                                  content:
+                                      walk.devotion.foodForThought.toString())
+                              : addVerticalSpace(0),
                           walk.devotion.conclusion.isNotEmpty
                               ? Section(
                                   title: 'CONCLUSION',
