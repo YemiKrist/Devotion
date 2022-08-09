@@ -1,23 +1,23 @@
+import 'package:cacsa/commons/appbar.dart';
 import 'package:cacsa/commons/button.dart';
 import 'package:cacsa/commons/input_textfield.dart';
 import 'package:cacsa/constants/assets_path.dart';
 import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/screens/auth/auth_controller.dart';
-import 'package:cacsa/screens/auth/forgot_password.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../utils/widget_functions.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({Key? key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _ForgotPasswordState createState() => _ForgotPasswordState();
 }
 
-class _LoginState extends State<Login> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -27,27 +27,41 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
+    final ThemeData themeData = Theme.of(context);
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-          child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: deviceHeight * 0.25,
-              width: deviceWidth * 0.25,
-              child: Image.asset(splashLogo),
-            ),
-            addVerticalSpace(deviceHeight * 0.09),
+            const MyAppBar(),
             Form(
               key: _formkey,
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 21),
                 height: deviceHeight * 0.65,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 40),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Forgot Password?",
+                            style: themeData.textTheme.headline4,
+                          ),
+                          addVerticalSpace(9),
+                          Text(
+                            "Kindly enter your email address to receive a reset code",
+                            textAlign: TextAlign.center,
+                            style: themeData.textTheme.bodyText1,
+                          ),
+                        ],
+                      ),
+                    ),
+                    addVerticalSpace(15),
                     InputTextField(
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
@@ -66,53 +80,26 @@ class _LoginState extends State<Login> {
                       },
                       obscureText: false,
                     ),
-                    InputTextField(
-                      controller: passwordController,
-                      label: "Password",
-                      obscureText: true,
-                      password: true,
-                    ),
-                    const SizedBox(height: 28),
+                    const SizedBox(height: 10),
                     AppButtons(
                       textColor: Colors.white,
                       backgroundColor: primaryBgColor,
                       borderColor: Colors.transparent,
-                      text: "Log in",
+                      text: "Send",
                       onTap: (() {
                         if (_formkey.currentState!.validate()) {
-                          AuthController.instance.login(
-                              emailController.text.trim(),
-                              passwordController.text.trim());
+                          AuthController.instance
+                              .resetPassword(emailController.text.trim());
                         }
                       }),
                     ),
-                    addVerticalSpace(12),
-                    AppButtons(
-                      textColor: Colors.black,
-                      backgroundColor: Colors.white,
-                      borderColor: Colors.black,
-                      text: "Sign Up",
-                      onTap: () {
-                        Get.offAllNamed(Routes.SIGNUP);
-                      },
-                    ),
-                    //addVerticalSpace(5),
-                    TextButton(
-                      onPressed: () {
-                        Get.to(const ForgotPassword());
-                      },
-                      child: const Text(
-                        "Forgot Password?",
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    )
                   ],
                 ),
               ),
             )
           ],
         ),
-      )),
+      ),
     );
   }
 }

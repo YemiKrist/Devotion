@@ -112,6 +112,15 @@ class AuthController extends GetxController {
     //
     //return name;
   }
+
+  void resetPassword(email) async {
+    try {
+      await auth.sendPasswordResetEmail(email: email);
+      getSuccessSnackBar("Password reset Email has been sent !");
+    } on FirebaseAuthException catch (e) {
+      getErrorSnackBar("Email error", e);
+    }
+  }
 }
 
 getErrorSnackBar(String message, _) {

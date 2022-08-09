@@ -1,11 +1,9 @@
 import 'package:cacsa/commons/button.dart';
 import 'package:cacsa/commons/input_textfield.dart';
-import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
