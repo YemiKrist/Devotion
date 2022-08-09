@@ -38,9 +38,10 @@ class WelcomePage extends StatelessWidget {
                       style: themeData.textTheme.headline2,
                     ),
                   ),
-                  const Image(image: AssetImage('assets/icons/Hambuger.png'))
+                  //const Image(image: AssetImage('assets/icons/Hambuger.png'))
                 ],
               ),
+              addVerticalSpace(10),
               Expanded(
                 child: Container(
                     child: GridView.builder(

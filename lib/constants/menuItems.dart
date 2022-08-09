@@ -9,7 +9,8 @@ class MenuItems {
       Menu(name: 'Branch\nLocations', icon: 'map_pin', route: 'branches'),
       Menu(name: 'About\nCACSA', icon: 'info', route: 'about'),
       Menu(name: 'Give', icon: 'naira', route: 'give'),
-      Menu(name: 'Support', icon: 'help_circle', route: 'support')
+      Menu(name: 'Support', icon: 'help_circle', route: 'support'),
+      Menu(name: 'Log Out', icon: 'log-out', route: 'logout')
     ];
   }
 }

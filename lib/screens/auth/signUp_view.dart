@@ -51,9 +51,14 @@ class _SignUpState extends State<SignUp> {
                       label: "First Name",
                       obscureText: false,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Name cannot be left empty';
+                        RegExp regex = RegExp(r'^.{3,}$');
+                        if (value! == null || value!.isEmpty) {
+                          return 'First Name cannot be Empty';
                         }
+                        if (!regex.hasMatch(value)) {
+                          return ("Enter a Valid name(Min. 3 Characters)");
+                        }
+                        return null;
                       },
                     ),
                     InputTextField(
@@ -106,6 +111,7 @@ class _SignUpState extends State<SignUp> {
                         controller: churchNameController,
                         label: "Church Name",
                         obscureText: false,
+                        textInputAction: true,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please Enter your Church name';

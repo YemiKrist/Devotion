@@ -7,11 +7,13 @@ class InputTextField extends StatefulWidget {
   final TextEditingController? controller;
   final validator;
   final keyboardType;
+  final bool textInputAction;
 
   const InputTextField({
     Key? key,
     required this.label,
     required this.obscureText,
+    this.textInputAction = false,
     this.controller,
     this.password = false,
     this.validator,
@@ -47,6 +49,9 @@ class _InputTextFieldState extends State<InputTextField> {
           controller: widget.controller,
           validator: widget.validator,
           keyboardType: widget.keyboardType,
+          textInputAction: !widget.textInputAction
+              ? TextInputAction.next
+              : TextInputAction.done,
           obscureText: widget.obscureText ? !_passwordVisible : false,
           decoration: InputDecoration(
               suffixIcon: widget.password

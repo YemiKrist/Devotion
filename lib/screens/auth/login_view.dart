@@ -69,6 +69,7 @@ class _LoginState extends State<Login> {
                     InputTextField(
                       controller: passwordController,
                       label: "Password",
+                      textInputAction: true,
                       obscureText: true,
                       password: true,
                     ),
