@@ -87,6 +87,7 @@ class _SignUpState extends State<SignUp> {
                         controller: passwordController,
                         label: "Password",
                         obscureText: true,
+                        password: true,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'password cannot be left empty';

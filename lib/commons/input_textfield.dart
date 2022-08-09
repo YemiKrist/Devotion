@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-class InputTextField extends StatelessWidget {
+class InputTextField extends StatefulWidget {
   final String label;
   final bool obscureText;
+  final bool password;
   final TextEditingController? controller;
   final validator;
   final keyboardType;
@@ -12,9 +13,23 @@ class InputTextField extends StatelessWidget {
     required this.label,
     required this.obscureText,
     this.controller,
+    this.password = false,
     this.validator,
     this.keyboardType,
   }) : super(key: key);
+
+  @override
+  State<InputTextField> createState() => _InputTextFieldState();
+}
+
+class _InputTextFieldState extends State<InputTextField> {
+  bool _passwordVisible = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _passwordVisible = false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,23 +37,36 @@ class InputTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          label,
+          widget.label,
           style: const TextStyle(color: Colors.black),
         ),
         const SizedBox(
           height: 5,
         ),
         TextFormField(
-          controller: controller,
-          validator: validator,
-          keyboardType: keyboardType,
-          obscureText: obscureText ? obscureText : false,
-          decoration: const InputDecoration(
-              contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-              enabledBorder: OutlineInputBorder(
+          controller: widget.controller,
+          validator: widget.validator,
+          keyboardType: widget.keyboardType,
+          obscureText: widget.obscureText ? !_passwordVisible : false,
+          decoration: InputDecoration(
+              suffixIcon: widget.password
+                  ? IconButton(
+                      icon: Icon(_passwordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      onPressed: () {
+                        setState(() {
+                          _passwordVisible = !_passwordVisible;
+                        });
+                      },
+                    )
+                  : null,
+              contentPadding:
+                  const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+              enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey),
               ),
-              border: OutlineInputBorder(
+              border: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.grey))),
         ),
         const SizedBox(

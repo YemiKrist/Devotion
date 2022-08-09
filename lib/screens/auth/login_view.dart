@@ -66,6 +66,7 @@ class _LoginState extends State<Login> {
                       controller: passwordController,
                       label: "Password",
                       obscureText: true,
+                      password: true,
                     ),
                     const SizedBox(height: 28),
                     AppButtons(
