@@ -1,13 +1,16 @@
+import 'dart:ui';
+
 import 'package:cacsa/commons/button.dart';
+import 'package:cacsa/commons/input_textfield.dart';
 import 'package:cacsa/constants/assets_path.dart';
-import 'package:cacsa/screens/auth/make_payment.dart';
+import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterwave_standard/flutterwave.dart';
 import 'package:get/get.dart';
 
-class Success extends StatelessWidget {
-  const Success({Key? key}) : super(key: key);
+class MakePayment extends StatelessWidget {
+  const MakePayment({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,22 +30,32 @@ class Success extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   const Text(
-                    "Congrats!",
+                    "Make Payment",
                   ),
-                  Image.asset(successCheck),
-                  const Text(
-                    "Your Account has Been\nSuccessfully Created!",
+                  Image.asset(creditCard),
+                  RichText(
                     textAlign: TextAlign.center,
+                    text: const TextSpan(
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                        text: 'Proceed to make a payment',
+                        children: <TextSpan>[
+                          TextSpan(text: " of\n"),
+                          TextSpan(
+                              text: "NGN3000",
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                        ]),
                   ),
                   AppButtons(
                     textColor: Colors.white,
                     backgroundColor: primaryBgColor,
                     borderColor: Colors.transparent,
-                    text: "Proceed to Subscribe",
+                    text: "Subscribe",
                     onTap: () {
-                      //_handlePaymentInitialization(context);
+                      _handlePaymentInitialization(context);
 
-                      Get.to(const MakePayment());
+                      //Get.offAllNamed(Routes.REFERAL);
                     },
                   ),
                 ],

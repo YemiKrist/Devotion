@@ -2,6 +2,7 @@ const String imageAssetRoot = "assets/";
 
 final String splashLogo = _getImagePath("logo.png");
 final String thinkTech = _getImagePath("thinkTech.png");
+final String creditCard = _getImagePath("credit-card.png");
 final String successCheck = _getImagePath("check.png");
 final String manualsIcon = _getImagePath("icons/manual.png");
 final String ArrowIcon = _getImagePath("icons/arrow.png");
