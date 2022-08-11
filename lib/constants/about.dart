@@ -16,4 +16,12 @@ Despite all odds, today the group is waxing stronger in the Lord. The Vision is 
 Ours truly is a divine vision with a divine mission. It cannot die! Christ surely leads, and we follow. Praise God! Alleluia!
 ''';
   }
+
+  static String getMission() {
+    return ''' Mission Sttatement''';
+  }
+
+  static String getVision() {
+    return ''' Vission Statement''';
+  }
 }

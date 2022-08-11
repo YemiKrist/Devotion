@@ -6,6 +6,7 @@ class UserModel {
   String? password;
   String? state;
   String? churchName;
+  bool? subscribed;
 
   UserModel(
       {this.uid,
@@ -14,7 +15,8 @@ class UserModel {
       this.email,
       this.password,
       this.state,
-      this.churchName});
+      this.churchName,
+      this.subscribed});
 
   UserModel.fromData(Map<String, dynamic> data)
       : uid = data['uid'],
@@ -29,6 +31,7 @@ class UserModel {
       'password': password,
       'state': state,
       'churchName': churchName,
+      'subscribed': subscribed,
     };
   }
 }

@@ -5,12 +5,13 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        IconButton(iconSize: 70.0, icon: Image.asset('assets/back.png'), onPressed: () => Navigator.of(context).pop(),)
-      ]
-    );
+    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+      IconButton(
+        iconSize: 70.0,
+        icon: Image.asset('assets/back.png'),
+        onPressed: () => Navigator.of(context).pop(),
+      )
+    ]);
   }
 }
 
@@ -19,11 +20,12 @@ class MyWAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        IconButton(iconSize: 70.0, icon: Image.asset('assets/backWhite.png'), onPressed: () => Navigator.of(context).pop(),)
-      ]
-    );
+    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+      IconButton(
+        iconSize: 70.0,
+        icon: Image.asset('assets/backWhite.png'),
+        onPressed: () => Navigator.of(context).pop(),
+      )
+    ]);
   }
 }

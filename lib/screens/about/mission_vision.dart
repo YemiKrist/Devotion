@@ -4,13 +4,16 @@ import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 
+import '../../commons/title_2.dart';
+
 class About extends StatelessWidget {
   const About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
-    String about = AboutData.getAbout();
+    String mission = AboutData.getMission();
+    String vision = AboutData.getVision();
     return Scaffold(
         backgroundColor: splashBackgroundColor,
         body: SafeArea(
@@ -22,21 +25,14 @@ class About extends StatelessWidget {
               children: [
                 const MyAppBar(),
                 addVerticalSpace(25),
-                const Text(
-                  'About CACSA',
-                  style: TextStyle(
-                      color: textColorGreen,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                      fontFamily: 'Euclid-Medium'),
-                ),
+                const MyTitle2(text: "About CACSA"),
                 addVerticalSpace(15),
                 Expanded(
                     flex: 2,
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
                       child: Text(
-                        about,
+                        vision,
                         style: themeData.textTheme.bodyText1,
                       ),
                     ))
