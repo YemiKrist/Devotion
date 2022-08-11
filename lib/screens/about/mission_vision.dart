@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 
 import '../../commons/title_2.dart';
 
-class About extends StatelessWidget {
-  const About({Key? key}) : super(key: key);
+class MissionVision extends StatelessWidget {
+  const MissionVision({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +25,34 @@ class About extends StatelessWidget {
               children: [
                 const MyAppBar(),
                 addVerticalSpace(25),
-                const MyTitle2(text: "About CACSA"),
-                addVerticalSpace(15),
                 Expanded(
                     flex: 2,
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
-                      child: Text(
-                        vision,
-                        style: themeData.textTheme.bodyText1,
+                      child: Column(
+                        children: [
+                          const MyTitle2(text: "Our Vision"),
+                          addVerticalSpace(15),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              vision,
+                              style: themeData.textTheme.bodyText1,
+                            ),
+                          ),
+                          addVerticalSpace(55),
+                          const MyTitle2(text: "Our Mission"),
+                          addVerticalSpace(15),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              mission,
+                              style: themeData.textTheme.bodyText1,
+                            ),
+                          ),
+                        ],
                       ),
-                    ))
+                    )),
               ],
             ),
           ),

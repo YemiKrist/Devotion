@@ -7,6 +7,8 @@ import 'package:cacsa/constants/manuals.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../utils/widget_functions.dart';
+
 class Manuals extends StatelessWidget {
   const Manuals({Key? key}) : super(key: key);
 
@@ -24,28 +26,33 @@ class Manuals extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 const MyWAppBar(),
+                addVerticalSpace(35),
                 const MyTitle(text: 'CACSA\nMANUALS'),
-                const Spacer(),
                 Expanded(
                   child: Align(
-                    ///alignment: FractionalOffset.bottomCenter,
-                    child: ListView.builder(
-                      //padding: const EdgeInsets.only(bottom: 60),
+                    alignment: FractionalOffset.bottomCenter,
+                    child: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              childAspectRatio: 5),
+                      padding: const EdgeInsets.only(bottom: 60),
+                      shrinkWrap: true,
                       itemCount: manuals.length,
                       itemBuilder: (BuildContext cont, int index) {
-                        return Container(
-                          height: 70,
-                          child: Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0)),
-                              child: ListTile(
-                                title: Text(
-                                  manuals[index],
-                                  style: themeData.textTheme.headline4,
-                                ),
-                                trailing: Image.asset(ArrowIcon),
-                                onTap: () {},
-                              )),
+                        return Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: ListTile(
+                            title: Text(
+                              manuals[index],
+                              style: themeData.textTheme.headline4,
+                            ),
+                            trailing: Image.asset(ArrowIcon),
+                            onTap: () {},
+                          ),
                           //addVerticalSpace(20),
                         );
                       },

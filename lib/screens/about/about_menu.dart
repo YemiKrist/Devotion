@@ -59,7 +59,6 @@ class AboutMenu extends StatelessWidget {
                                 trailing: Image.asset(ArrowIcon),
                                 onTap: () => Get.toNamed(
                                     '/${aboutItems[index].route}')));
-                        //addVerticalSpace(20),
                       },
                     ),
                   ),

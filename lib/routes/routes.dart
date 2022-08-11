@@ -1,6 +1,7 @@
 import 'package:cacsa/bindings/splash_binding.dart';
 import 'package:cacsa/screens/about/about_menu.dart';
 import 'package:cacsa/screens/about/history.dart';
+import 'package:cacsa/screens/about/mission_vision.dart';
 import 'package:cacsa/screens/auth/auth_binding.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
 import 'package:cacsa/screens/auth/refral_view.dart';
@@ -33,6 +34,7 @@ class Routes {
   static const SUCCESS = '/success';
   static const REFERAL = '/refral';
   static const HISTORY = '/history';
+  static const MISSION = '/mission';
 }
 
 class Pages {
@@ -55,6 +57,7 @@ class Pages {
     ),
     GetPage(name: Routes.ABOUT, page: () => AboutMenu()),
     GetPage(name: Routes.HISTORY, page: () => const History()),
+    GetPage(name: Routes.MISSION, page: () => const MissionVision()),
     GetPage(name: Routes.EVENTS, page: () => const UpcomingEvents()),
     GetPage(name: Routes.BRANCHES, page: () => const Branches()),
     GetPage(name: Routes.GIVE, page: () => const Give()),

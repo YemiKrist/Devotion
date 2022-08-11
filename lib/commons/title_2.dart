@@ -11,13 +11,16 @@ class MyTitle2 extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'About CACSA',
-      style: TextStyle(
-          color: textColorGreen,
-          fontWeight: FontWeight.w500,
-          fontSize: 20,
-          fontFamily: 'Euclid-Medium'),
+    return Align(
+      alignment: Alignment.topLeft,
+      child: Text(
+        text,
+        style: const TextStyle(
+            color: textColorGreen,
+            fontWeight: FontWeight.w500,
+            fontSize: 20,
+            fontFamily: 'Euclid-Medium'),
+      ),
     );
   }
 }
