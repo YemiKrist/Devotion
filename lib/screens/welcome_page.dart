@@ -1,17 +1,40 @@
+import 'package:cacsa/models/user_model.dart';
 import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../constants/menuItems.dart';
 import '../models/menu.dart';
 
-class WelcomePage extends StatelessWidget {
+class WelcomePage extends StatefulWidget {
   WelcomePage({Key? key}) : super(key: key);
 
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
   List<Menu> menuItems = MenuItems.getMenuItems();
-  var name = Get.arguments;
+
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
 
   //Future<String> name = AuthController.instance.getUserDetails().then((value) => );
   @override
@@ -34,7 +57,7 @@ class WelcomePage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: Text(
-                      'Welcome , $name',
+                      'Welcome, ${loggedInUser.firstName}',
                       style: themeData.textTheme.headline2,
                     ),
                   ),
@@ -54,7 +77,34 @@ class WelcomePage extends StatelessWidget {
                   itemCount: menuItems.length,
                   itemBuilder: (BuildContext cont, int index) {
                     return GestureDetector(
-                      onTap: () => Get.toNamed('/${menuItems[index].route}'),
+                      onTap: () => {
+                        if (menuItems[index].route == 'logout')
+                          {
+                            Get.defaultDialog(
+                                title: "",
+                                content: Column(
+                                  children: [
+                                    Image.asset(("assets/icons/log-out.png")),
+                                    const Text(
+                                      "Log Out",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black),
+                                    ),
+                                    const Text(
+                                        "Are you sure you\nwant to logout")
+                                  ],
+                                ),
+                                textConfirm: "Yes",
+                                confirmTextColor: Colors.white,
+                                textCancel: "no",
+                                onConfirm: () =>
+                                    AuthController.instance.logout(),
+                                cancelTextColor: Colors.black)
+                          }
+                        else
+                          Get.toNamed('/${menuItems[index].route}')
+                      },
                       child: Container(
                         alignment: Alignment.topLeft,
                         padding: const EdgeInsets.all(15),
@@ -97,45 +147,14 @@ class WelcomePage extends StatelessWidget {
                   },
                 )),
               ),
-              GestureDetector(
-                onTap: () {
-                  AuthController.instance.logout();
-                },
-                child: const Text("Logout"),
-              )
+              // GestureDetector(
+              //   onTap: () {
+              //     AuthController.instance.logout();
+              //   },
+              //   child: const Text("Logout"),
+              // )
             ],
           ),
         ));
   }
 }
-
-
-
-// class _WelcomePageState extends State<WelcomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: primaryBgColor,
-//       appBar: AppBar(
-//         title: const Text('Welcome'),
-//       ),
-//       body: Container(
-//         child: Column(
-//           children: const [
-//             Text('Welcome, '),
-//             Expanded(
-//               child: ListView.builder(
-//                 itemCount: 5,
-//                 itemBuilder: (BuildContext cont, int index){
-
-//                 }
-//               )
-//             )
-//           ],
-//         ),
-//       )
-//     );
-//   }
-// }
-
-

@@ -39,7 +39,7 @@ class AuthController extends GetxController {
       } else {
         isLoging = true;
         update();
-        Get.off(() => WelcomePage(), arguments: name);
+        Get.off(() => WelcomePage());
       }
     });
   }
@@ -49,7 +49,7 @@ class AuthController extends GetxController {
       isLoging = true;
       update();
       await auth.signInWithEmailAndPassword(email: email, password: password);
-      getUserDetails();
+      // getUserDetails();
       getSuccessSnackBar("Successfully logged in as ${_user.value!.email}");
     } on FirebaseAuthException catch (e) {
       getErrorSnackBar("Login Failed", e);
@@ -95,23 +95,23 @@ class AuthController extends GetxController {
     await auth.signOut();
   }
 
-  void getUserDetails() async {
-    await firebaseFirestore
-        .collection('users')
-        .doc(user?.uid)
-        .get()
-        .then((value) => (name = value.data()?["firstName"]));
-    print(name);
+  // void getUserDetails() async {
+  //   await firebaseFirestore
+  //       .collection('users')
+  //       .doc(user?.uid)
+  //       .get()
+  //       .then((value) => (name = value.data()?["firstName"]));
+  //   print(name);
 
-    //final firebaseUser = await FirebaseAuth.instance.currentUser!;
-    // if(user!=null){
-    //   await firebaseFirestore.collection('users').doc(user?.uid).get().then((value){
-    //     name = value.data['']
-    //   })
-    // }
-    //
-    //return name;
-  }
+  //   //final firebaseUser = await FirebaseAuth.instance.currentUser!;
+  //   // if(user!=null){
+  //   //   await firebaseFirestore.collection('users').doc(user?.uid).get().then((value){
+  //   //     name = value.data['']
+  //   //   })
+  //   // }
+  //   //
+  //   //return name;
+  // }
 
   void resetPassword(email) async {
     try {

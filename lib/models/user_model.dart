@@ -18,7 +18,7 @@ class UserModel {
       this.churchName,
       this.subscribed});
 
-  UserModel.fromData(Map<String, dynamic> data)
+  UserModel.fromMap(data)
       : uid = data['uid'],
         firstName = data["firstName"];
 
