@@ -1,22 +1,75 @@
+import 'package:cacsa/commons/appbar.dart';
+import 'package:cacsa/commons/title.dart';
+import 'package:cacsa/constants/assets_path.dart';
+import 'package:cacsa/constants/branch_locations.dart';
+import 'package:cacsa/constants/manuals.dart';
+import 'package:cacsa/screens/branches/Branch_list.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class Branches extends StatelessWidget {
-  const Branches({Key? key}) : super(key: key);
+import '../../models/branches.dart';
 
+class Branches extends StatelessWidget {
+  Branches({Key? key}) : super(key: key);
+
+  List<BranchState> branches = BranchLocations.getBranches();
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     return Scaffold(
-        backgroundColor: primaryBgColor,
-        body: SafeArea(
-            child: Container(
+      backgroundColor: primaryBgColor,
+      body: SafeArea(
+        child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 24),
-          child: Center(
-              child: Text(
-            "Branch Location!!!",
-            style: themeData.textTheme.headline1,
-          )),
-        )));
+          //  margin: const EdgeInsets.symmetric(),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                const MyWAppBar(),
+                //addVerticalSpace(5),
+                const MyTitle(text: 'Branch\nLocations'),
+                Expanded(
+                  child: Align(
+                    alignment: FractionalOffset.bottomCenter,
+                    child: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 6,
+                              childAspectRatio: 6),
+                      padding: const EdgeInsets.only(bottom: 60),
+                      shrinkWrap: true,
+                      itemCount: branches.length,
+                      itemBuilder: (BuildContext cont, int index) {
+                        return Card(
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: ListTile(
+                            title: Text(
+                              branches[index].state,
+                              style: themeData.textTheme.headline4,
+                            ),
+                            trailing: Image.asset(ArrowIcon),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          BranchList(branches[index])));
+                            },
+                          ),
+                          //addVerticalSpace(20),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ]),
+        ),
+      ),
+    );
   }
 }

@@ -59,7 +59,7 @@ class Pages {
     GetPage(name: Routes.HISTORY, page: () => const History()),
     GetPage(name: Routes.MISSION, page: () => const MissionVision()),
     GetPage(name: Routes.EVENTS, page: () => const UpcomingEvents()),
-    GetPage(name: Routes.BRANCHES, page: () => const Branches()),
+    GetPage(name: Routes.BRANCHES, page: () => Branches()),
     GetPage(name: Routes.GIVE, page: () => const Give()),
     GetPage(name: Routes.MANUALS, page: () => const Manuals()),
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
