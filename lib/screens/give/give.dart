@@ -14,7 +14,6 @@ class Give extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData themeData = Theme.of(context);
     List<Accounts> accounts = AccountDetails.getAccountDetails();
 
     return Scaffold(
@@ -44,6 +43,7 @@ class Give extends StatelessWidget {
                         itemCount: accounts.length,
                         itemBuilder: (BuildContext cont, int index) {
                           return Card(
+                            elevation: 10,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0)),
 
@@ -51,45 +51,62 @@ class Give extends StatelessWidget {
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          const Text("Account Number"),
-                                          Text(accounts[index]
-                                              .accountNumber
-                                              .toString())
+                                          const Text(
+                                            "Account Number",
+                                            style: TextStyle(
+                                              color: textColorGrey,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 12,
+                                              fontFamily: 'Euclid-Normal',
+                                            ),
+                                          ),
+                                          Text(
+                                            accounts[index]
+                                                .accountNumber
+                                                .toString(),
+                                            style: const TextStyle(
+                                              color: textColorGreen,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 20,
+                                              fontFamily: 'Euclid-Bold',
+                                            ),
+                                          )
                                         ],
                                       ),
-                                      InkWell(
-                                          onTap: () => FlutterClipboard.copy(
-                                                  accounts[index]
-                                                      .accountNumber
-                                                      .toString())
-                                              .then((value) =>
-                                                  Get.snackbar("", "Copied!")),
-                                          child: Container(
-                                            decoration: const BoxDecoration(
-                                              color: primaryBgColor,
-                                            ),
-                                            child: const Center(
-                                              child: Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 10.0,
-                                                    vertical: 4.0),
-                                                child: Text(
-                                                  "Copy",
-                                                  style: TextStyle(
-                                                    fontSize: 16,
-                                                    color: textColorWhite,
-                                                  ),
-                                                ),
+                                      ElevatedButton(
+                                        onPressed: () => FlutterClipboard.copy(
+                                                accounts[index]
+                                                    .accountNumber
+                                                    .toString())
+                                            .then((value) => Get.snackbar(
+                                                "", "Copied!",
+                                                backgroundColor: primaryBgColor,
+                                                colorText: textColorWhite)),
+                                        child: const Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 10.0,
+                                                vertical: 4.0),
+                                            child: Text(
+                                              "Copy",
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: textColorWhite,
                                               ),
                                             ),
-                                          ))
+                                          ),
+                                        ),
+                                      )
                                     ],
                                   ),
                                   addVerticalSpace(10),
@@ -98,15 +115,49 @@ class Give extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            const Text("Account Name"),
-                                            Text(accounts[index].accountName)
+                                            const Text(
+                                              "Account Name",
+                                              style: TextStyle(
+                                                color: textColorGrey,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 12,
+                                                fontFamily: 'Euclid-Normal',
+                                              ),
+                                            ),
+                                            Text(
+                                              accounts[index].accountName,
+                                              style: const TextStyle(
+                                                color: textColorBlack,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 14,
+                                                fontFamily: 'Euclid-Normal',
+                                              ),
+                                            )
                                           ],
                                         ),
                                         Column(
                                           children: [
-                                            const Text("Bank Name"),
-                                            Text(accounts[index].bankName)
+                                            const Text(
+                                              "Bank Name",
+                                              style: TextStyle(
+                                                color: textColorGrey,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 12,
+                                                fontFamily: 'Euclid-Normal',
+                                              ),
+                                            ),
+                                            Text(
+                                              accounts[index].bankName,
+                                              style: const TextStyle(
+                                                color: textColorBlack,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 14,
+                                                fontFamily: 'Euclid-Normal',
+                                              ),
+                                            )
                                           ],
                                         ),
                                       ])

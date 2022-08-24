@@ -44,7 +44,7 @@ class Branches extends StatelessWidget {
                       itemCount: branches.length,
                       itemBuilder: (BuildContext cont, int index) {
                         return Card(
-                          elevation: 5,
+                          elevation: 10,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0)),
                           child: ListTile(

@@ -42,7 +42,7 @@ class Success extends StatelessWidget {
                     onTap: () {
                       //_handlePaymentInitialization(context);
 
-                      Get.to(const MakePayment());
+                      Get.to(() => const MakePayment());
                     },
                   ),
                 ],

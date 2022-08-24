@@ -59,17 +59,17 @@ class AuthController extends GetxController {
   void signUp(firstName, lastName, email, password, state, churchName) async {
     isSignUp = true;
     Get.offAll(() => const Success());
-    // try {
-    //   isLoging = true;
-    //   isSignUp = true;
-    //   update();
-    //   await auth
-    //       .createUserWithEmailAndPassword(email: email, password: password)
-    //       .then((value) =>
-    //           {postDetailsToFirestore(firstName, lastName, state, churchName)});
-    // } on FirebaseAuthException catch (e) {
-    //   getErrorSnackBar("Account creation Failed", e);
-    // }
+    try {
+      isLoging = true;
+      isSignUp = true;
+      update();
+      await auth
+          .createUserWithEmailAndPassword(email: email, password: password)
+          .then((value) =>
+              {postDetailsToFirestore(firstName, lastName, state, churchName)});
+    } on FirebaseAuthException catch (e) {
+      getErrorSnackBar("Account creation Failed", e);
+    }
   }
 
   void postDetailsToFirestore(firstName, lastName, state, churchName) async {
@@ -82,6 +82,7 @@ class AuthController extends GetxController {
     userModel.churchName = churchName;
     userModel.email = user!.email;
     userModel.uid = user!.uid;
+    userModel.subscribed = false;
 
     // print(userModel.toMap());
 

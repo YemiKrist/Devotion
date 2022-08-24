@@ -49,6 +49,7 @@ class AboutMenu extends StatelessWidget {
                       itemCount: manuals.length,
                       itemBuilder: (BuildContext cont, int index) {
                         return Card(
+                            elevation: 10,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0)),
                             child: ListTile(

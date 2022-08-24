@@ -43,6 +43,8 @@ class _SignUpState extends State<SignUp> {
                     addVerticalSpace(100),
                     const Text(
                       "Please Fill the Form Below",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                     addVerticalSpace(20),
                     InputTextField(

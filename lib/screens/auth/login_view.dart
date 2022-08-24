@@ -94,7 +94,7 @@ class _LoginState extends State<Login> {
                       borderColor: Colors.black,
                       text: "Sign Up",
                       onTap: () {
-                        Get.offAllNamed(Routes.SIGNUP);
+                        Get.toNamed(Routes.SIGNUP);
                       },
                     ),
                     //addVerticalSpace(5),

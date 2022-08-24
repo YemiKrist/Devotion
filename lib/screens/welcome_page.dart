@@ -28,7 +28,7 @@ class _WelcomePageState extends State<WelcomePage> {
     super.initState();
     FirebaseFirestore.instance
         .collection("users")
-        .doc(user!.uid)
+        .doc(user?.uid)
         .get()
         .then((value) {
       loggedInUser = UserModel.fromMap(value.data());

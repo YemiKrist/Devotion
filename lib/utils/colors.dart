@@ -10,6 +10,7 @@ const textColorBlack = Color(0xFF000000);
 const textColorWhite = Color(0xFFFFFFFF);
 const textColorSub = Color(0xFFA4A4A4);
 const textColorGreen = Color(0xFF00A551);
+const textColorGrey = Color(0xFFBBBBBB);
 
 //border
 const borderColor = Color(0xFF1F1F1F);

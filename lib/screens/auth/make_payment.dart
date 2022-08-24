@@ -70,11 +70,12 @@ class MakePayment extends StatelessWidget {
   _handlePaymentInitialization(BuildContext context) async {
     final style = FlutterwaveStyle(
         appBarText: "Subscribe",
-        buttonColor: const Color(0xffd0ebff),
-        appBarIcon: const Icon(Icons.message, color: Color(0xffd0ebff)),
+        buttonColor: primaryBgColor,
+        appBarIcon: const Icon(Icons.message, color: primaryBgColor),
         buttonTextStyle: const TextStyle(
             color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
-        appBarColor: const Color(0xffd0ebff),
+        appBarColor: primaryBgColor,
+        appBarTitleTextStyle: const TextStyle(color: textColorWhite),
         dialogCancelTextStyle:
             const TextStyle(color: Colors.redAccent, fontSize: 18),
         dialogContinueTextStyle:

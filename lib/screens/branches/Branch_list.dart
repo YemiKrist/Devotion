@@ -39,14 +39,58 @@ class BranchList extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Headquarters"),
-                          Text(stateBranches.headQuarters.name),
-                          Text(stateBranches.headQuarters.address),
-                          Text("Other Assembly Address"),
+                          const Text(
+                            "Headquarters",
+                            style: TextStyle(
+                                color: primaryBgColor,
+                                fontFamily: 'Euclid-Medium',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16),
+                          ),
+                          addVerticalSpace(5),
+                          Text(
+                            stateBranches.headQuarters.name,
+                            style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Euclid-Normalormal',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20),
+                          ),
+                          Text(
+                            stateBranches.headQuarters.address,
+                            style: const TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Euclid-Normal',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16),
+                          ),
+                          addVerticalSpace(14),
+                          const Text(
+                            "Other Assembly Address",
+                            style: TextStyle(
+                                color: primaryBgColor,
+                                fontFamily: 'Euclid-Medium',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16),
+                          ),
+                          addVerticalSpace(5),
                           for (Branch assembly
                               in stateBranches.otherAssemblies) ...{
-                            Text(assembly.name),
-                            Text(assembly.address),
+                            Text(
+                              assembly.name,
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'Euclid-Normalormal',
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 20),
+                            ),
+                            Text(assembly.address,
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Euclid-Normal',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16)),
+                            addVerticalSpace(10),
                           }
                         ],
                       ),
