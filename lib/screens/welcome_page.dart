@@ -66,86 +66,91 @@ class _WelcomePageState extends State<WelcomePage> {
               ),
               addVerticalSpace(10),
               Expanded(
-                child: Container(
-                    child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                    childAspectRatio: 1.7,
-                  ),
-                  itemCount: menuItems.length,
-                  itemBuilder: (BuildContext cont, int index) {
-                    return GestureDetector(
-                      onTap: () => {
-                        if (menuItems[index].route == 'logout')
-                          {
-                            Get.defaultDialog(
-                                title: "",
-                                content: Column(
-                                  children: [
-                                    Image.asset(("assets/icons/log-out.png")),
-                                    const Text(
-                                      "Log Out",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black),
-                                    ),
-                                    const Text(
-                                        "Are you sure you\nwant to logout")
-                                  ],
-                                ),
-                                textConfirm: "Yes",
-                                confirmTextColor: Colors.white,
-                                textCancel: "no",
-                                onConfirm: () =>
-                                    AuthController.instance.logout(),
-                                cancelTextColor: Colors.black)
-                          }
-                        else
-                          Get.toNamed('/${menuItems[index].route}')
-                      },
-                      child: Container(
-                        alignment: Alignment.topLeft,
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
-                            color: splashBackgroundColor),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                                'assets/icons/${menuItems[index].icon}.png'),
-                            addVerticalSpace(10),
-                            Text(
-                              menuItems[index].name,
-                              style: themeData.textTheme.headline4,
-                            ),
-                          ],
+                child: Align(
+                  alignment: FractionalOffset.bottomCenter,
+                  child: GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                      childAspectRatio: 1.7,
+                    ),
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.only(bottom: 60),
+                    itemCount: menuItems.length,
+                    itemBuilder: (BuildContext cont, int index) {
+                      return GestureDetector(
+                        onTap: () => {
+                          if (menuItems[index].route == 'logout')
+                            {
+                              Get.defaultDialog(
+                                  title: "",
+                                  content: Column(
+                                    children: [
+                                      Image.asset(("assets/icons/log-out.png")),
+                                      const Text(
+                                        "Log Out",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black),
+                                      ),
+                                      const Text(
+                                          "Are you sure you\nwant to logout")
+                                    ],
+                                  ),
+                                  textConfirm: "Yes",
+                                  confirmTextColor: Colors.white,
+                                  textCancel: "no",
+                                  onConfirm: () =>
+                                      AuthController.instance.logout(),
+                                  cancelTextColor: Colors.black)
+                            }
+                          else
+                            Get.toNamed('/${menuItems[index].route}')
+                        },
+                        child: Container(
+                          alignment: Alignment.topLeft,
+                          padding: const EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              color: splashBackgroundColor),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                  'assets/icons/${menuItems[index].icon}.png'),
+                              addVerticalSpace(10),
+                              Text(
+                                menuItems[index].name,
+                                style: themeData.textTheme.headline4,
+                              ),
+                            ],
+                          ),
+                          // child: ListTile(
+                          //   dense: true,
+                          //   visualDensity:
+                          //       const VisualDensity(vertical: 1),
+                          //   leading: Image(
+                          //     image: AssetImage(
+                          //         'assets/icons/${menuItems[index].icon}.png'),
+                          //   ),
+                          //   title: Text(
+                          //     menuItems[index].name,
+                          //     style: themeData.textTheme.headline4,
+                          //   ),
+                          //   // subtitle: Text(daily_walks[index].topic,),
+                          //   onTap: () {
+                          //     String name = "MONTHS";
+                          //     Get.toNamed('/${menuItems[index].route}');
+                          //   },
+                          // )
                         ),
-                        // child: ListTile(
-                        //   dense: true,
-                        //   visualDensity:
-                        //       const VisualDensity(vertical: 1),
-                        //   leading: Image(
-                        //     image: AssetImage(
-                        //         'assets/icons/${menuItems[index].icon}.png'),
-                        //   ),
-                        //   title: Text(
-                        //     menuItems[index].name,
-                        //     style: themeData.textTheme.headline4,
-                        //   ),
-                        //   // subtitle: Text(daily_walks[index].topic,),
-                        //   onTap: () {
-                        //     String name = "MONTHS";
-                        //     Get.toNamed('/${menuItems[index].route}');
-                        //   },
-                        // )
-                      ),
-                    );
-                  },
-                )),
+                      );
+                    },
+                  ),
+                ),
               ),
               // GestureDetector(
               //   onTap: () {

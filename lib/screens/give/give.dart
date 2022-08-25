@@ -48,7 +48,11 @@ class Give extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10.0)),
 
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(
+                                  top: 9.0,
+                                  bottom: 9.0,
+                                  left: 15.0,
+                                  right: 15.0),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,7 +71,7 @@ class Give extends StatelessWidget {
                                               color: textColorGrey,
                                               fontWeight: FontWeight.w500,
                                               fontSize: 12,
-                                              fontFamily: 'Euclid-Normal',
+                                              fontFamily: 'Euclid-Regular',
                                             ),
                                           ),
                                           Text(
@@ -101,6 +105,7 @@ class Give extends StatelessWidget {
                                               "Copy",
                                               style: TextStyle(
                                                 fontSize: 16,
+                                                fontFamily: 'Euclid-Regular',
                                                 color: textColorWhite,
                                               ),
                                             ),
@@ -124,7 +129,7 @@ class Give extends StatelessWidget {
                                                 color: textColorGrey,
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 12,
-                                                fontFamily: 'Euclid-Normal',
+                                                fontFamily: 'Euclid-Regular',
                                               ),
                                             ),
                                             Text(
@@ -133,7 +138,7 @@ class Give extends StatelessWidget {
                                                 color: textColorBlack,
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 14,
-                                                fontFamily: 'Euclid-Normal',
+                                                fontFamily: 'Euclid-Regular',
                                               ),
                                             )
                                           ],
@@ -146,7 +151,7 @@ class Give extends StatelessWidget {
                                                 color: textColorGrey,
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 12,
-                                                fontFamily: 'Euclid-Normal',
+                                                fontFamily: 'Euclid-Regular',
                                               ),
                                             ),
                                             Text(
@@ -155,7 +160,7 @@ class Give extends StatelessWidget {
                                                 color: textColorBlack,
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 14,
-                                                fontFamily: 'Euclid-Normal',
+                                                fontFamily: 'Euclid-Regular',
                                               ),
                                             )
                                           ],

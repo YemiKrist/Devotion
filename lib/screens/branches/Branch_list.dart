@@ -52,7 +52,7 @@ class BranchList extends StatelessWidget {
                             stateBranches.headQuarters.name,
                             style: const TextStyle(
                                 color: Colors.black,
-                                fontFamily: 'Euclid-Normalormal',
+                                fontFamily: 'Euclid-Regular',
                                 fontWeight: FontWeight.w600,
                                 fontSize: 20),
                           ),
@@ -60,7 +60,7 @@ class BranchList extends StatelessWidget {
                             stateBranches.headQuarters.address,
                             style: const TextStyle(
                                 color: Colors.black,
-                                fontFamily: 'Euclid-Normal',
+                                fontFamily: 'Euclid-Regular',
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16),
                           ),
@@ -80,14 +80,14 @@ class BranchList extends StatelessWidget {
                               assembly.name,
                               style: const TextStyle(
                                   color: Colors.black,
-                                  fontFamily: 'Euclid-Normalormal',
+                                  fontFamily: 'Euclid-Regular',
                                   fontWeight: FontWeight.w600,
                                   fontSize: 20),
                             ),
                             Text(assembly.address,
                                 style: const TextStyle(
                                     color: Colors.black,
-                                    fontFamily: 'Euclid-Normal',
+                                    fontFamily: 'Euclid-Regular',
                                     fontWeight: FontWeight.w400,
                                     fontSize: 16)),
                             addVerticalSpace(10),

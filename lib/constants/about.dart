@@ -17,17 +17,21 @@ Ours truly is a divine vision with a divine mission. It cannot die! Christ surel
 ''';
   }
 
-  static String getMission() {
-    return '''Despite all odds, today the group is waxing stronger in the Lord. The Vision is alive and aglow!
-
-Ours truly is a divine vision with a divine mission. It cannot die! Christ surely leads, and we follow. Praise God! Alleluia!
-''';
+  static String getVision() {
+    return '''Becoming a dynamic group of Christians committed to rescuing the lost and discipling them for Christ''';
   }
 
-  static String getVision() {
-    return '''Despite all odds, today the group is waxing stronger in the Lord. The Vision is alive and aglow!
+  static String getMission() {
+    return '''Rescuing the lost for Christ and discipling believers''';
+  }
 
-Ours truly is a divine vision with a divine mission. It cannot die! Christ surely leads, and we follow. Praise God! Alleluia!
-''';
+  static String getCoreValues() {
+    return '''\u2022 Indwelling and guidiance of Holyghost
+\u2022 Seeking the lost, Evangelism
+\u2022 Establishing them in the Lord through the Word, especially the young ones
+\u2022 Love aming the brethren
+\u2022 Power of prayers
+\u2022 Holiness
+\u2022 Loyalty''';
   }
 }

@@ -14,6 +14,7 @@ class MissionVision extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     String mission = AboutData.getMission();
     String vision = AboutData.getVision();
+    String coreValues = AboutData.getCoreValues();
     return Scaffold(
         backgroundColor: splashBackgroundColor,
         body: SafeArea(
@@ -40,13 +41,23 @@ class MissionVision extends StatelessWidget {
                               style: themeData.textTheme.bodyText1,
                             ),
                           ),
-                          addVerticalSpace(55),
+                          addVerticalSpace(35),
                           const MyTitle2(text: "Our Mission"),
                           addVerticalSpace(15),
                           Align(
                             alignment: Alignment.topLeft,
                             child: Text(
                               mission,
+                              style: themeData.textTheme.bodyText1,
+                            ),
+                          ),
+                          addVerticalSpace(35),
+                          const MyTitle2(text: "Our Core Values"),
+                          addVerticalSpace(15),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              coreValues,
                               style: themeData.textTheme.bodyText1,
                             ),
                           ),

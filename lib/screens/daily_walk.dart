@@ -21,6 +21,7 @@ class Daily extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const MyAppBar(),
+                addVerticalSpace(25),
                 Text(
                   walk.topic,
                   style: const TextStyle(

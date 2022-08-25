@@ -1,17 +1,35 @@
 import 'package:flutter/material.dart';
 
+import '../utils/colors.dart';
+
 class MyAppBar extends StatelessWidget {
   const MyAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-      IconButton(
-        iconSize: 70.0,
-        icon: Image.asset('assets/back.png'),
-        onPressed: () => Navigator.of(context).pop(),
-      )
-    ]);
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextButton.icon(
+            // <-- TextButton
+
+            onPressed: () => Navigator.of(context).pop(),
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              size: 24.0,
+              color: Colors.black,
+            ),
+            label: const Text(
+              'Back',
+              style: TextStyle(
+                  color: textColorBlack,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20,
+                  fontFamily: 'Euclid-Medium'),
+            ),
+          ),
+        ]);
   }
 }
 
@@ -20,12 +38,33 @@ class MyWAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.start, children: [
-      IconButton(
-        iconSize: 70.0,
-        icon: Image.asset('assets/backWhite.png'),
-        onPressed: () => Navigator.of(context).pop(),
-      )
-    ]);
+    final ThemeData themeData = Theme.of(context);
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextButton.icon(
+            // <-- TextButton
+            onPressed: () => Navigator.of(context).pop(),
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              size: 24.0,
+              color: Colors.white,
+            ),
+            label: const Text(
+              'Back',
+              style: TextStyle(
+                  color: textColorWhite,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20,
+                  fontFamily: 'Euclid-Medium'),
+            ),
+          ),
+          // IconButton(
+          //   iconSize: 70.0,
+          //   icon: Image.asset('assets/backWhite.png'),
+          //   onPressed: () => Navigator.of(context).pop(),
+          // )
+        ]);
   }
 }
