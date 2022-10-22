@@ -60,11 +60,6 @@ class MyWAppBar extends StatelessWidget {
                   fontFamily: 'Euclid-Medium'),
             ),
           ),
-          // IconButton(
-          //   iconSize: 70.0,
-          //   icon: Image.asset('assets/backWhite.png'),
-          //   onPressed: () => Navigator.of(context).pop(),
-          // )
         ]);
   }
 }

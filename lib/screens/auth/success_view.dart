@@ -20,7 +20,7 @@ class Success extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 21),
+            margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             height: deviceHeight * 0.85,
             child: Center(
               child: Column(

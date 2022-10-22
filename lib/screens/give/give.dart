@@ -20,7 +20,7 @@ class Give extends StatelessWidget {
         backgroundColor: primaryBgColor,
         body: SafeArea(
           child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 24),
+              margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,

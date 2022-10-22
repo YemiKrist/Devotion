@@ -39,7 +39,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             Form(
               key: _formkey,
               child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 21),
+                margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                 height: deviceHeight * 0.65,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

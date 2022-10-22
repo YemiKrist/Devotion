@@ -14,3 +14,6 @@ const textColorGrey = Color(0xFFBBBBBB);
 
 //border
 const borderColor = Color(0xFF1F1F1F);
+
+//padding
+const double kDefaultPadding = 16.0;

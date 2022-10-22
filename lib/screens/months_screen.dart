@@ -20,7 +20,7 @@ class Months extends StatelessWidget {
         backgroundColor: primaryBgColor,
         body: SafeArea(
           child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 24),
+            margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             //  margin: const EdgeInsets.symmetric(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,51 +28,55 @@ class Months extends StatelessWidget {
               children: [
                 const MyWAppBar(),
                 addVerticalSpace(35),
-                const MyTitle(
-                  text: 'Daily Walk\n2022',
+                const Expanded(
+                  child: MyTitle(
+                    text: 'Daily Walk\n2022',
+                  ),
                 ),
                 Expanded(
+                    flex: 2,
                     child: Align(
-                  alignment: FractionalOffset.bottomCenter,
-                  child: GridView.builder(
-                    padding: const EdgeInsets.only(bottom: 60),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 8,
-                            mainAxisSpacing: 0,
-                            childAspectRatio: 3),
-                    shrinkWrap: true,
-                    itemCount: months.length,
-                    itemBuilder: (BuildContext cont, int index) {
-                      return SizedBox(
-                        height: 8,
-                        child: Stack(
-                          children: [
-                            // Positioned.fill(
-                            Card(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0)),
-                                child: ListTile(
-                                  title: Text(
-                                    months[index],
-                                    style: themeData.textTheme.headline4,
-                                  ),
-                                  // subtitle: Text(daily_walks[index].topic,),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                DayWalk(months[index])));
-                                  },
-                                )),
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                ))
+                      alignment: FractionalOffset.bottomCenter,
+                      child: GridView.builder(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 8,
+                                mainAxisSpacing: 0,
+                                childAspectRatio: 3),
+                        shrinkWrap: true,
+                        itemCount: months.length,
+                        itemBuilder: (BuildContext cont, int index) {
+                          return SizedBox(
+                            height: 8,
+                            child: Stack(
+                              children: [
+                                // Positioned.fill(
+                                Card(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10.0)),
+                                    child: ListTile(
+                                      title: Text(
+                                        months[index],
+                                        style: themeData.textTheme.headline4,
+                                      ),
+                                      // subtitle: Text(daily_walks[index].topic,),
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DayWalk(months[index])));
+                                      },
+                                    )),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ))
               ],
             ),
           ),

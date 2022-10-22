@@ -19,7 +19,7 @@ class Manuals extends StatelessWidget {
       backgroundColor: primaryBgColor,
       body: SafeArea(
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 24),
+          margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
           //  margin: const EdgeInsets.symmetric(),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +27,7 @@ class Manuals extends StatelessWidget {
               children: [
                 const MyWAppBar(),
                 addVerticalSpace(35),
-                const MyTitle(text: 'CACSA\nMANUALS'),
+                const Expanded(child: MyTitle(text: 'CACSA\nMANUALS')),
                 Expanded(
                   child: Align(
                     alignment: FractionalOffset.bottomCenter,
@@ -38,7 +38,7 @@ class Manuals extends StatelessWidget {
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 8,
                               childAspectRatio: 5),
-                      padding: const EdgeInsets.only(bottom: 60),
+                      padding: const EdgeInsets.only(bottom: 20),
                       shrinkWrap: true,
                       itemCount: manuals.length,
                       itemBuilder: (BuildContext cont, int index) {
@@ -50,7 +50,10 @@ class Manuals extends StatelessWidget {
                               manuals[index],
                               style: themeData.textTheme.headline4,
                             ),
-                            trailing: Image.asset(ArrowIcon),
+                            trailing: Padding(
+                              padding: const EdgeInsets.only(top: 10.0),
+                              child: Image.asset(ArrowIcon),
+                            ),
                             onTap: () {},
                           ),
                           //addVerticalSpace(20),

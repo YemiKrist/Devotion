@@ -45,17 +45,17 @@ class _WelcomePageState extends State<WelcomePage> {
     return Scaffold(
         backgroundColor: primaryBgColor,
         body: Container(
-          margin: const EdgeInsets.all(12),
+          margin: const EdgeInsets.all(kDefaultPadding),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              addVerticalSpace(111),
+              addVerticalSpace(150),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 0.0),
                     child: Text(
                       'Welcome, ${loggedInUser.firstName}',
                       style: themeData.textTheme.headline2,
@@ -74,10 +74,10 @@ class _WelcomePageState extends State<WelcomePage> {
                       crossAxisCount: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10,
-                      childAspectRatio: 1.7,
+                      childAspectRatio: 1.4,
                     ),
                     shrinkWrap: true,
-                    padding: const EdgeInsets.only(bottom: 60),
+                    //padding: const EdgeInsets.only(bottom: 60),
                     itemCount: menuItems.length,
                     itemBuilder: (BuildContext cont, int index) {
                       return GestureDetector(
@@ -85,26 +85,77 @@ class _WelcomePageState extends State<WelcomePage> {
                           if (menuItems[index].route == 'logout')
                             {
                               Get.defaultDialog(
-                                  title: "",
-                                  content: Column(
+                                title: "",
+                                content: Column(
+                                  children: [
+                                    Image.asset(("assets/icons/log-out.png")),
+                                    const Text(
+                                      "Log Out",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black),
+                                    ),
+                                    const Text(
+                                      "Are you sure you\nwant to logout",
+                                      style: TextStyle(
+                                          color: textColorBlack,
+                                          fontSize: 16,
+                                          fontFamily: 'Euclid-Medium'),
+                                    )
+                                  ],
+                                ),
+                                actions: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Image.asset(("assets/icons/log-out.png")),
-                                      const Text(
-                                        "Log Out",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          AuthController.instance.logout();
+                                        },
+                                        style: ElevatedButton.styleFrom(
+                                          primary: Colors.white,
+                                          side: const BorderSide(
+                                              color: borderColor),
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(12.0)),
+                                          minimumSize: const Size(120, 35),
+                                        ),
+                                        child: const Text(
+                                          "yes",
+                                          style: TextStyle(
+                                              color: textColorBlack,
+                                              fontFamily: 'Euclid-Normal'),
+                                        ),
                                       ),
-                                      const Text(
-                                          "Are you sure you\nwant to logout")
+                                      ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        12.0)),
+                                            minimumSize: const Size(120, 35),
+                                          ),
+                                          onPressed: () {
+                                            Get.close(1);
+                                          },
+                                          child: const Text(
+                                            "no",
+                                            style: TextStyle(
+                                                fontFamily: 'Euclid-Normal'),
+                                          ))
                                     ],
-                                  ),
-                                  textConfirm: "Yes",
-                                  confirmTextColor: Colors.white,
-                                  textCancel: "no",
-                                  onConfirm: () =>
-                                      AuthController.instance.logout(),
-                                  cancelTextColor: Colors.black)
+                                  )
+                                ],
+                                // textConfirm: "Yes",
+                                // confirmTextColor: Colors.white,
+                                // textCancel: "no",
+                                // onConfirm: () =>
+                                //     AuthController.instance.logout(),
+                                // cancelTextColor: Colors.black
+                              )
                             }
                           else
                             Get.toNamed('/${menuItems[index].route}')
@@ -128,24 +179,6 @@ class _WelcomePageState extends State<WelcomePage> {
                               ),
                             ],
                           ),
-                          // child: ListTile(
-                          //   dense: true,
-                          //   visualDensity:
-                          //       const VisualDensity(vertical: 1),
-                          //   leading: Image(
-                          //     image: AssetImage(
-                          //         'assets/icons/${menuItems[index].icon}.png'),
-                          //   ),
-                          //   title: Text(
-                          //     menuItems[index].name,
-                          //     style: themeData.textTheme.headline4,
-                          //   ),
-                          //   // subtitle: Text(daily_walks[index].topic,),
-                          //   onTap: () {
-                          //     String name = "MONTHS";
-                          //     Get.toNamed('/${menuItems[index].route}');
-                          //   },
-                          // )
                         ),
                       );
                     },

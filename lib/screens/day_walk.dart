@@ -21,7 +21,7 @@ class DayWalk extends StatelessWidget {
         backgroundColor: primaryBgColor,
         body: SafeArea(
           child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 24),
+            margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             //  margin: const EdgeInsets.symmetric(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

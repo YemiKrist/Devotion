@@ -17,7 +17,7 @@ class BranchList extends StatelessWidget {
         body: SafeArea(
           child: Container(
             // padding: const EdgeInsets.all(24.0),
-            margin: const EdgeInsets.symmetric(horizontal: 24),
+            margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

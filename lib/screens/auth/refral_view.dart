@@ -19,7 +19,7 @@ class Refral extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 21),
+            margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Center(
               child: Card(
                 elevation: 10,

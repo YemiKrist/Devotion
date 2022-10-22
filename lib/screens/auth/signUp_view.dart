@@ -36,7 +36,7 @@ class _SignUpState extends State<SignUp> {
             Form(
               key: _formkey,
               child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 21),
+                margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

@@ -20,7 +20,7 @@ class Branches extends StatelessWidget {
       backgroundColor: primaryBgColor,
       body: SafeArea(
         child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 24),
+          margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
           //  margin: const EdgeInsets.symmetric(),
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,8 +28,9 @@ class Branches extends StatelessWidget {
               children: [
                 const MyWAppBar(),
                 //addVerticalSpace(5),
-                const MyTitle(text: 'Branch\nLocations'),
+                const Expanded(child: MyTitle(text: 'Branch\nLocations')),
                 Expanded(
+                  flex: 3,
                   child: Align(
                     alignment: FractionalOffset.bottomCenter,
                     child: GridView.builder(
@@ -39,7 +40,7 @@ class Branches extends StatelessWidget {
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 6,
                               childAspectRatio: 6),
-                      padding: const EdgeInsets.only(bottom: 60),
+                      padding: const EdgeInsets.only(bottom: 20),
                       shrinkWrap: true,
                       itemCount: branches.length,
                       itemBuilder: (BuildContext cont, int index) {
