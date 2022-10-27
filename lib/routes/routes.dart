@@ -12,6 +12,7 @@ import 'package:cacsa/screens/events/upcoming_events.dart';
 import 'package:cacsa/screens/give/give.dart';
 import 'package:cacsa/screens/manuals/manuals.dart';
 import 'package:cacsa/screens/months_screen.dart';
+import 'package:cacsa/screens/settings/settings.dart';
 import 'package:cacsa/screens/splash_screen.dart';
 import 'package:cacsa/screens/support/support.dart';
 import 'package:cacsa/screens/welcome_page.dart';
@@ -35,6 +36,7 @@ class Routes {
   static const REFERAL = '/refral';
   static const HISTORY = '/history';
   static const MISSION = '/mission';
+  static const SETTINGS = '/settings';
 }
 
 class Pages {
@@ -63,6 +65,7 @@ class Pages {
     GetPage(name: Routes.GIVE, page: () => const Give()),
     GetPage(name: Routes.MANUALS, page: () => const Manuals()),
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
+    GetPage(name: Routes.SETTINGS, page: () => const Settings()),
     GetPage(
         name: Routes.LOGIN, page: () => const Login(), binding: AuthBinding()),
     GetPage(

@@ -1,3 +1,4 @@
+import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/models/user_model.dart';
 import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/utils/colors.dart';
@@ -5,6 +6,7 @@ import 'package:cacsa/utils/widget_functions.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import '../constants/menuItems.dart';
@@ -44,6 +46,7 @@ class _WelcomePageState extends State<WelcomePage> {
     //print(name);
     return Scaffold(
         backgroundColor: primaryBgColor,
+        bottomNavigationBar: const MyNavBar(),
         body: Container(
           margin: const EdgeInsets.all(kDefaultPadding),
           child: Column(
@@ -61,9 +64,18 @@ class _WelcomePageState extends State<WelcomePage> {
                       style: themeData.textTheme.headline2,
                     ),
                   ),
+                  IconButton(
+                      onPressed: (() {
+                        Get.toNamed('/settings');
+                      }),
+                      icon: const Icon(
+                        FontAwesomeIcons.gear,
+                        color: splashBackgroundColor,
+                      ))
                   //const Image(image: AssetImage('assets/icons/Hambuger.png'))
                 ],
               ),
+
               addVerticalSpace(10),
               Expanded(
                 child: Align(
