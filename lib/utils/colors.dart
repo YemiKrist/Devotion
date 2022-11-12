@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 const splashBackgroundColor = Color(0xFFF5F5F5);
 const primaryBgColor = Color(0xFF00A551);
+const bgGrey = Color(0xFFF5F5F5);
+const bgWhite = Color(0xFFFFFFFF);
 const gradientColor1 = Color(0xFFD9D9D9);
 const gradientColor2 = Color(0xFF3D3C3C);
 const eventsBgColor = Color(0xFFD9D9D9);

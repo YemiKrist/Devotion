@@ -43,7 +43,6 @@ dependencies:
   share_plus: ^4.1.0
   flutter_local_notifications: ^10.0.0
   google_nav_bar: ^5.0.6
-  font_awesome_flutter: ^10.2.1
 
 dev_dependencies:
   flutter_test:
@@ -99,6 +98,9 @@ flutter:
     - family: Euclid-Light
       fonts:
         - asset: assets/fonts/Euclid-Circular-A-Light.ttf
+    - family: CACSAIcons
+      fonts:
+        - asset: assets/icons/CACSAIcons.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

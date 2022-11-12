@@ -1,6 +1,6 @@
+import 'package:cacsa/c_a_c_s_a_icons_icons.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 //import '../utils/colors.dart';
 
@@ -9,15 +9,37 @@ class MyNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GNav(
-        backgroundColor: splashBackgroundColor,
-        color: primaryBgColor,
-        tabs: [
-          GButton(
-            icon: FontAwesomeIcons.house,
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(55.0),
+          color: splashBackgroundColor),
+      child: const Padding(
+        padding: EdgeInsets.all(0.0),
+        child: SafeArea(
+          child: GNav(
+            backgroundColor: bgWhite,
+            color: primaryBgColor,
+            activeColor: primaryBgColor,
+            //tabBackgroundColor: Colors.amberAccent,
+            gap: 5,
+            tabs: [
+              GButton(
+                icon: CACSAIcons.homebold,
+                text: "Home",
+              ),
+              GButton(
+                icon: CACSAIcons.calendarbold,
+                text: "Event",
+              ),
+              GButton(
+                icon: CACSAIcons.notificationbold,
+                text: "Notification",
+              )
+            ],
+            selectedIndex: 0,
           ),
-          GButton(icon: FontAwesomeIcons.calendar),
-          GButton(icon: FontAwesomeIcons.bell)
-        ]);
+        ),
+      ),
+    );
   }
 }
