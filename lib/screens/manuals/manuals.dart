@@ -26,7 +26,7 @@ class Manuals extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 const MyWAppBar(),
-                addVerticalSpace(35),
+                // addVerticalSpace(10),
                 const Expanded(child: MyTitle(text: 'CACSA\nMANUALS')),
                 Expanded(
                   child: Align(

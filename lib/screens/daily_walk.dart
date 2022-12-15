@@ -9,7 +9,7 @@ import 'package:share_plus/share_plus.dart';
 class Daily extends StatelessWidget {
   final Walk walk;
 
-  Daily(this.walk);
+  const Daily(this.walk);
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);

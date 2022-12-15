@@ -1,4 +1,3 @@
-import 'package:cacsa/bindings/splash_binding.dart';
 import 'package:cacsa/screens/about/about_menu.dart';
 import 'package:cacsa/screens/about/history.dart';
 import 'package:cacsa/screens/about/mission_vision.dart';
@@ -11,14 +10,18 @@ import 'package:cacsa/screens/branches/branches.dart';
 import 'package:cacsa/screens/events/upcoming_events.dart';
 import 'package:cacsa/screens/give/give.dart';
 import 'package:cacsa/screens/manuals/manuals.dart';
+import 'package:cacsa/screens/media/MediaView.dart';
 import 'package:cacsa/screens/months_screen.dart';
+import 'package:cacsa/screens/notifications/notifications.dart';
 import 'package:cacsa/screens/settings/settings.dart';
 import 'package:cacsa/screens/splash_screen.dart';
 import 'package:cacsa/screens/support/support.dart';
 import 'package:cacsa/screens/welcome_page.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Routes {
+  static const NOTIFICATIONS = "/notifications";
   static const INITIAL = '/splash';
   static const MAIN_PAGE = '/main_page';
   static const DAILY_WALK = '/daily';
@@ -37,6 +40,7 @@ class Routes {
   static const HISTORY = '/history';
   static const MISSION = '/mission';
   static const SETTINGS = '/settings';
+  static const MEDIA = "/media";
 }
 
 class Pages {
@@ -66,6 +70,8 @@ class Pages {
     GetPage(name: Routes.MANUALS, page: () => const Manuals()),
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
     GetPage(name: Routes.SETTINGS, page: () => const Settings()),
+    GetPage(name: Routes.MEDIA, page: (() => const MediaView())),
+
     GetPage(
         name: Routes.LOGIN, page: () => const Login(), binding: AuthBinding()),
     GetPage(

@@ -23,6 +23,7 @@ class Give extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   const MyWAppBar(),
@@ -116,60 +117,61 @@ class Give extends StatelessWidget {
                                   ),
                                   addVerticalSpace(10),
                                   Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: const [
+                                        Text(
+                                          "Account Name",
+                                          style: TextStyle(
+                                            color: textColorGrey,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 12,
+                                            fontFamily: 'Euclid-Regular',
+                                          ),
+                                        ),
+                                        Text(
+                                          "Bank Name",
+                                          style: TextStyle(
+                                            color: textColorGrey,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 12,
+                                            fontFamily: 'Euclid-Regular',
+                                          ),
+                                        ),
+                                      ]),
+                                  Expanded(
+                                    child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const Text(
-                                              "Account Name",
-                                              style: TextStyle(
-                                                color: textColorGrey,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 12,
-                                                fontFamily: 'Euclid-Regular',
-                                              ),
-                                            ),
-                                            Text(
-                                              accounts[index].accountName,
-                                              style: const TextStyle(
-                                                color: textColorBlack,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 14,
-                                                fontFamily: 'Euclid-Regular',
-                                              ),
-                                            )
-                                          ],
+                                        Text(
+                                          accounts[index].accountName,
+                                          style: const TextStyle(
+                                            color: textColorBlack,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14,
+                                            fontFamily: 'Euclid-Regular',
+                                          ),
                                         ),
-                                        Column(
-                                          children: [
-                                            const Text(
-                                              "Bank Name",
-                                              style: TextStyle(
-                                                color: textColorGrey,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 12,
-                                                fontFamily: 'Euclid-Regular',
-                                              ),
-                                            ),
-                                            Text(
-                                              accounts[index].bankName,
-                                              style: const TextStyle(
-                                                color: textColorBlack,
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 14,
-                                                fontFamily: 'Euclid-Regular',
-                                              ),
-                                            )
-                                          ],
+                                        Text(
+                                          accounts[index].bankName,
+                                          style: const TextStyle(
+                                            color: textColorBlack,
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 14,
+                                            fontFamily: 'Euclid-Regular',
+                                          ),
                                         ),
-                                      ])
+                                      ],
+                                    ),
+                                  )
+                                  //addVerticalSpace(20),
                                 ],
                               ),
                             ),
-                            //addVerticalSpace(20),
+                            // addVerticalSpace(20),
                           );
                         },
                       ),

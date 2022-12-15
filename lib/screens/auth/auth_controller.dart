@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:cacsa/models/user_model.dart';
+import 'package:cacsa/routes/routes.dart';
+import 'package:cacsa/screens/Bottombar.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
 import 'package:cacsa/screens/auth/success_view.dart';
-import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,8 +13,8 @@ import 'package:get/get.dart';
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
   late Rx<User?> _user;
-  bool isLoging = false;
-  bool isSignUp = false;
+  Rx<bool> isLoging = false.obs;
+  Rx<bool> isSignUp = false.obs;
   User? get user => _user.value;
   final FirebaseAuth auth = FirebaseAuth.instance;
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
@@ -29,24 +30,24 @@ class AuthController extends GetxController {
   }
 
   loginRedirect(User? user) {
-    Timer(Duration(seconds: isLoging ? 0 : 2), () {
+    Timer(Duration(seconds: isLoging.value ? 0 : 2), () {
       if (user == null) {
-        isLoging = false;
+        isLoging.value = false;
         update();
         Get.offAll(() => const Login());
-      } else if (isSignUp) {
+      } else if (isSignUp.value) {
         Get.offAll(() => const Success());
       } else {
-        isLoging = true;
+        isLoging.value = true;
         update();
-        Get.off(() => WelcomePage());
+        Get.off(() => const BottomBar());
       }
     });
   }
 
   void login(email, password) async {
     try {
-      isLoging = true;
+      isLoging.value = true;
       update();
       await auth.signInWithEmailAndPassword(email: email, password: password);
       // getUserDetails();
@@ -57,11 +58,11 @@ class AuthController extends GetxController {
   }
 
   void signUp(firstName, lastName, email, password, state, churchName) async {
-    isSignUp = true;
+    isSignUp.value = true;
     Get.offAll(() => const Success());
     try {
-      isLoging = true;
-      isSignUp = true;
+      isLoging.value = true;
+      isSignUp.value = true;
       update();
       await auth
           .createUserWithEmailAndPassword(email: email, password: password)
@@ -92,8 +93,9 @@ class AuthController extends GetxController {
         .set(userModel.toMap());
   }
 
-  void logout() async {
+  logout() async {
     await auth.signOut();
+    isLoging.value = false;
   }
 
   // void getUserDetails() async {

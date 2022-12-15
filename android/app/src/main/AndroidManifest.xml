@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cacsa">
    <application
-        android:label="cacsa"
+        android:label="CACSA"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

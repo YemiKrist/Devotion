@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           fontFamily: "Euclid-Regular"),
       initialBinding: AuthBinding(),
       initialRoute: Pages.SPLASHSCREEN,
-      home: WelcomePage(),
+      home: const WelcomePage(),
       getPages: Pages.routes,
     );
   }

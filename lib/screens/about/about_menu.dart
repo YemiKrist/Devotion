@@ -31,40 +31,36 @@ class AboutMenu extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 const MyWAppBar(),
-                addVerticalSpace(35),
                 const Expanded(child: MyTitle(text: 'About\nCACSA')),
                 Expanded(
-                  child: Align(
-                    alignment: FractionalOffset.bottomCenter,
-                    child: GridView.builder(
-                      //padding: const EdgeInsets.only(bottom: 60),
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 1,
-                              crossAxisSpacing: 8,
-                              mainAxisSpacing: 8,
-                              childAspectRatio: 5),
-                      padding: const EdgeInsets.only(bottom: 20),
-                      shrinkWrap: true,
-                      itemCount: manuals.length,
-                      itemBuilder: (BuildContext cont, int index) {
-                        return Card(
-                            elevation: 10,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0)),
-                            child: ListTile(
-                                title: Text(
-                                  aboutItems[index].name,
-                                  style: themeData.textTheme.headline4,
-                                ),
-                                trailing: Padding(
-                                  padding: const EdgeInsets.only(top: 10.0),
-                                  child: Image.asset(ArrowIcon),
-                                ),
-                                onTap: () => Get.toNamed(
-                                    '/${aboutItems[index].route}')));
-                      },
-                    ),
+                  child: GridView.builder(
+                    //padding: const EdgeInsets.only(bottom: 60),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 1,
+                            crossAxisSpacing: 8,
+                            mainAxisSpacing: 8,
+                            childAspectRatio: 5),
+                    padding: const EdgeInsets.only(bottom: 20),
+                    shrinkWrap: true,
+                    itemCount: manuals.length,
+                    itemBuilder: (BuildContext cont, int index) {
+                      return Card(
+                          elevation: 10,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: ListTile(
+                              title: Text(
+                                aboutItems[index].name,
+                                style: themeData.textTheme.headline4,
+                              ),
+                              trailing: Padding(
+                                padding: const EdgeInsets.only(top: 10.0),
+                                child: Image.asset(ArrowIcon),
+                              ),
+                              onTap: () =>
+                                  Get.toNamed('/${aboutItems[index].route}')));
+                    },
                   ),
                 ),
               ]),
