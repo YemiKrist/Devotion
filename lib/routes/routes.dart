@@ -20,6 +20,8 @@ import 'package:cacsa/screens/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../screens/manuals/study_list.dart';
+
 class Routes {
   static const NOTIFICATIONS = "/notifications";
   static const INITIAL = '/splash';
@@ -41,6 +43,9 @@ class Routes {
   static const MISSION = '/mission';
   static const SETTINGS = '/settings';
   static const MEDIA = "/media";
+
+  // routes for bible study
+  static const STUDIES = '/studies';
 }
 
 class Pages {
@@ -67,7 +72,7 @@ class Pages {
     GetPage(name: Routes.EVENTS, page: () => const UpcomingEvents()),
     GetPage(name: Routes.BRANCHES, page: () => Branches()),
     GetPage(name: Routes.GIVE, page: () => const Give()),
-    GetPage(name: Routes.MANUALS, page: () => const Manuals()),
+    GetPage(name: Routes.MANUALS, page: () => Manuals()),
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
     GetPage(name: Routes.SETTINGS, page: () => const Settings()),
     GetPage(name: Routes.MEDIA, page: (() => const MediaView())),
@@ -80,6 +85,9 @@ class Pages {
         binding: AuthBinding()),
     GetPage(name: Routes.SUCCESS, page: () => const Success()),
     GetPage(name: Routes.REFERAL, page: () => const Refral()),
+
+    // pages route for bible study
+    GetPage(name: Routes.STUDIES, page: () => Studies()),
     // GetPage(
     //   name: Routes.DEVOTION,
     //   page: () => DayWalk(),
