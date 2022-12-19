@@ -94,10 +94,10 @@ logout(BuildContext context) {
   return showDialog(
       context: context,
       builder: ((context) => AlertDialog(
-            icon: const Icon(
-              Icons.logout_sharp,
-              color: primaryBgColor,
-            ),
+            // icon: const Icon(
+            //   Icons.logout_sharp,
+            //   color: primaryBgColor,
+            // ),
             title: const Text('Log Out'),
             actions: [
               const Center(child: Text("Are you sure you")),
