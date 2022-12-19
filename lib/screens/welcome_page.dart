@@ -90,8 +90,8 @@ class _WelcomePageState extends State<WelcomePage> {
                   physics: const BouncingScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 25,
+                    crossAxisSpacing: 25,
                     childAspectRatio: 1.3,
                   ),
                   //padding: const EdgeInsets.only(bottom: 60),
@@ -191,6 +191,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               Icon(
                                 icons[index],
                                 color: primaryBgColor,
+                                size: 35,
                               ),
 
                               // Image.asset(
