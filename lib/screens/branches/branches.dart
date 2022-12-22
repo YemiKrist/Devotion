@@ -3,7 +3,6 @@ import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/commons/title.dart';
 import 'package:cacsa/constants/assets_path.dart';
 import 'package:cacsa/constants/branch_locations.dart';
-import 'package:cacsa/constants/manuals.dart';
 import 'package:cacsa/screens/branches/Branch_list.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';

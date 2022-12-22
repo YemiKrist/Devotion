@@ -104,11 +104,26 @@ class _EventsState extends State<Events> {
                                         child: months_events[index].title == ""
                                             ? const Center(
                                                 child: Text(" NO Event"))
-                                            : Text(
-                                                months_events[index].title,
-                                                style: const TextStyle(
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 15),
+                                            : Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    months_events[index].title,
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 15),
+                                                  ),
+                                                  Text(
+                                                    months_events[index]
+                                                        .description,
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 15),
+                                                  ),
+                                                ],
                                               )),
                                   ],
                                 )

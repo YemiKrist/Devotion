@@ -1,3 +1,4 @@
+import 'package:cacsa/screens/Misc.dart';
 import 'package:cacsa/screens/about/about_menu.dart';
 import 'package:cacsa/screens/about/history.dart';
 import 'package:cacsa/screens/about/mission_vision.dart';
@@ -44,6 +45,9 @@ class Routes {
   static const SETTINGS = '/settings';
   static const MEDIA = "/media";
 
+  // routes for miscelleaneus
+  static const MISC = "/misc";
+
   // routes for bible study
   static const STUDIES = '/studies';
 }
@@ -88,6 +92,7 @@ class Pages {
 
     // pages route for bible study
     GetPage(name: Routes.STUDIES, page: () => Studies()),
+    GetPage(name: Routes.MISC, page: (() => const Misc())),
     // GetPage(
     //   name: Routes.DEVOTION,
     //   page: () => DayWalk(),

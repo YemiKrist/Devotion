@@ -30,7 +30,7 @@ class Manuals extends StatelessWidget {
               children: [
                 const MyWAppBar(),
                 addVerticalSpace(35),
-                const Expanded(child: MyTitle(text: 'CACSA\nMANUALS')),
+                const Expanded(child: MyTitle(text: 'CACSA\nManuals')),
                 Expanded(
                   child: Align(
                     alignment: FractionalOffset.bottomCenter,

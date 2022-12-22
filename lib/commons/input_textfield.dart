@@ -40,7 +40,9 @@ class _InputTextFieldState extends State<InputTextField> {
       children: <Widget>[
         Text(
           widget.label,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(
+            color: Colors.black,
+          ),
         ),
         const SizedBox(
           height: 5,
@@ -48,6 +50,9 @@ class _InputTextFieldState extends State<InputTextField> {
         TextFormField(
           controller: widget.controller,
           validator: widget.validator,
+          style: const TextStyle(
+            color: Colors.black,
+          ),
           keyboardType: widget.keyboardType,
           textInputAction: !widget.textInputAction
               ? TextInputAction.next
