@@ -1,7 +1,6 @@
 import 'package:cacsa/commons/appbar.dart';
 import 'package:cacsa/commons/title.dart';
 import 'package:cacsa/constants/assets_path.dart';
-import 'package:cacsa/constants/manuals.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,7 +42,7 @@ class AboutMenu extends StatelessWidget {
                             childAspectRatio: 5),
                     padding: const EdgeInsets.only(bottom: 20),
                     shrinkWrap: true,
-                    itemCount: manuals.length,
+                    itemCount: aboutItems.length,
                     itemBuilder: (BuildContext cont, int index) {
                       return Card(
                           elevation: 10,

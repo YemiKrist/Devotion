@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../../commons/navigation_bar.dart';
 import '../../utils/widget_functions.dart';
+import '../auth/auth_controller.dart';
 
 class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);
@@ -58,7 +59,7 @@ class Settings extends StatelessWidget {
                   ),
                   Item(
                     text: "Log Out",
-                    route: "/",
+                    route: "logout",
                   ),
                 ],
               ),
@@ -82,7 +83,72 @@ class Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       InkWell(
-        onTap: () => {Get.toNamed(route)},
+        onTap: () => {
+          if (route == 'logout')
+            {
+              Get.defaultDialog(
+                title: "",
+                content: Column(
+                  children: [
+                    Image.asset(("assets/icons/log-out.png")),
+                    const Text(
+                      "Log Out",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.black),
+                    ),
+                    const Text(
+                      "Are you sure you\nwant to logout",
+                      style: TextStyle(
+                          color: textColorBlack,
+                          fontSize: 16,
+                          fontFamily: 'Euclid-Medium'),
+                    )
+                  ],
+                ),
+                actions: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          AuthController.instance.logout();
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                          side: const BorderSide(color: borderColor),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0)),
+                          minimumSize: const Size(120, 35),
+                        ),
+                        child: const Text(
+                          "yes",
+                          style: TextStyle(
+                              color: textColorBlack,
+                              fontFamily: 'Euclid-Normal'),
+                        ),
+                      ),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12.0)),
+                            minimumSize: const Size(120, 35),
+                          ),
+                          onPressed: () {
+                            Get.close(1);
+                          },
+                          child: const Text(
+                            "no",
+                            style: TextStyle(fontFamily: 'Euclid-Normal'),
+                          ))
+                    ],
+                  )
+                ],
+              )
+            }
+          else
+            Get.toNamed('/$route')
+        },
         child: Text(
           text,
           style: const TextStyle(
