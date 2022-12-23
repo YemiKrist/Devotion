@@ -1,7 +1,5 @@
 import 'package:cacsa/c_a_c_s_a_icons_icons.dart';
-import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/models/user_model.dart';
-import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -60,8 +58,23 @@ class _WelcomePageState extends State<WelcomePage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              addVerticalSpace(50),
-              Center(child: Image.asset(("assets/ads.png"))),
+              addVerticalSpace(40),
+              // Center(child: Image.asset(("assets/ads.png"))),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 150,
+                padding: const EdgeInsets.only(left: 20, bottom: 20),
+                decoration: const BoxDecoration(
+                    color: backgroundyellow,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                child: const Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      "Ads or\n Upcoming Events",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    )),
+              ),
 
               addVerticalSpace(20),
               Row(
