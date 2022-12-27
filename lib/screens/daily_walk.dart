@@ -6,6 +6,8 @@ import 'package:selectable/selectable.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../commons/navigation_bar.dart';
+
 class Daily extends StatelessWidget {
   final Walk walk;
 
@@ -14,6 +16,7 @@ class Daily extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     return Scaffold(
+      bottomNavigationBar: const MyNavBar(),
         backgroundColor: splashBackgroundColor,
         body: SafeArea(
           child: Container(

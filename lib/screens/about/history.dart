@@ -1,4 +1,5 @@
 import 'package:cacsa/commons/appbar.dart';
+import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/constants/about.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
@@ -12,6 +13,7 @@ class History extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     String about = AboutData.getAbout();
     return Scaffold(
+        bottomNavigationBar: const MyNavBar(),
         backgroundColor: splashBackgroundColor,
         body: SafeArea(
           child: Container(

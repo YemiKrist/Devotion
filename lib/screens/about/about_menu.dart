@@ -1,4 +1,5 @@
 import 'package:cacsa/commons/appbar.dart';
+import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/commons/title.dart';
 import 'package:cacsa/constants/assets_path.dart';
 import 'package:cacsa/utils/colors.dart';
@@ -18,6 +19,7 @@ class AboutMenu extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
 
     return Scaffold(
+      bottomNavigationBar:const MyNavBar(),
       backgroundColor: primaryBgColor,
       body: SafeArea(
         child: Container(

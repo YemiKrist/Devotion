@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../commons/appbar.dart';
+import '../../commons/navigation_bar.dart';
 import '../../commons/title.dart';
 import '../../utils/widget_functions.dart';
 
@@ -17,6 +18,7 @@ class Give extends StatelessWidget {
     List<Accounts> accounts = AccountDetails.getAccountDetails();
 
     return Scaffold(
+        bottomNavigationBar: const MyNavBar(),
         backgroundColor: primaryBgColor,
         body: SafeArea(
           child: Container(

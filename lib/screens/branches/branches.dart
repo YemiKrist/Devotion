@@ -17,6 +17,7 @@ class Branches extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     return Scaffold(
+      bottomNavigationBar: const MyNavBar(),
       backgroundColor: primaryBgColor,
       body: SafeArea(
         child: Container(

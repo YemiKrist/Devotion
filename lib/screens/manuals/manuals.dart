@@ -9,6 +9,7 @@ import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../commons/navigation_bar.dart';
 import '../../utils/widget_functions.dart';
 
 class Manuals extends StatelessWidget {
@@ -19,6 +20,7 @@ class Manuals extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     return Scaffold(
+      bottomNavigationBar: const MyNavBar(),
       backgroundColor: primaryBgColor,
       body: SafeArea(
         child: Container(

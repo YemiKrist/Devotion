@@ -6,6 +6,7 @@ import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 
 import '../commons/appbar.dart';
+import '../commons/navigation_bar.dart';
 
 class DayWalk extends StatelessWidget {
   final String month;
@@ -18,6 +19,7 @@ class DayWalk extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     daily_walks = daily_walks.where((walk) => walk.month == month).toList();
     return Scaffold(
+        bottomNavigationBar: const MyNavBar(),
         backgroundColor: primaryBgColor,
         body: SafeArea(
           child: Container(

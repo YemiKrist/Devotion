@@ -14,6 +14,7 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     return Scaffold(
+      bottomNavigationBar: const MyNavBar(),
       backgroundColor: bgGrey,
       body: SafeArea(
           child: Container(

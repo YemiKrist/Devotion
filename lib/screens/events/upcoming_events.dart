@@ -1,3 +1,4 @@
+import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/commons/title.dart';
 import 'package:cacsa/constants/months.dart';
 import 'package:cacsa/screens/events/months_event_view.dart';
@@ -18,6 +19,7 @@ class UpcomingEvents extends StatelessWidget {
       },
       child: Scaffold(
           backgroundColor: primaryBgColor,
+          bottomNavigationBar:const  MyNavBar(),
           body: SafeArea(
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),

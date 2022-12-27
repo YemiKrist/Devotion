@@ -4,6 +4,7 @@ import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/screens/Bottombar.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
 import 'package:cacsa/screens/auth/success_view.dart';
+import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
+
   static AuthController instance = Get.find();
   late Rx<User?> _user;
   Rx<bool> isLoging = false.obs;
@@ -40,7 +42,7 @@ class AuthController extends GetxController {
       } else {
         isLoging.value = true;
         update();
-        Get.off(() => const BottomBar());
+        Get.off(() =>const WelcomePage());
       }
     });
   }

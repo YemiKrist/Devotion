@@ -18,9 +18,7 @@ import 'package:cacsa/screens/settings/settings.dart';
 import 'package:cacsa/screens/splash_screen.dart';
 import 'package:cacsa/screens/support/support.dart';
 import 'package:cacsa/screens/welcome_page.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../screens/manuals/study_list.dart';
 
 class Routes {
@@ -44,6 +42,7 @@ class Routes {
   static const MISSION = '/mission';
   static const SETTINGS = '/settings';
   static const MEDIA = "/media";
+  static const BOTTOMBAR = "/bottombar";
 
   // routes for miscelleaneus
   static const MISC = "/misc";
@@ -80,6 +79,7 @@ class Pages {
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
     GetPage(name: Routes.SETTINGS, page: () => const Settings()),
     GetPage(name: Routes.MEDIA, page: (() => const MediaView())),
+    GetPage(name: Routes.NOTIFICATIONS, page: (() =>  NotificationWidget())),
 
     GetPage(
         name: Routes.LOGIN, page: () => const Login(), binding: AuthBinding()),

@@ -1,4 +1,5 @@
 import 'package:cacsa/commons/appbar.dart';
+import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class NotificationWidget extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: bgGrey,
+        bottomNavigationBar:const  MyNavBar(),
         body: SafeArea(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

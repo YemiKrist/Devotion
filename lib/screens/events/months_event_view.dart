@@ -8,6 +8,8 @@ import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../commons/navigation_bar.dart';
+
 class Events extends StatefulWidget {
   final String month;
   Events(this.month, {Key? key}) : super(key: key);
@@ -27,6 +29,7 @@ class _EventsState extends State<Events> {
     months_events =
         months_events.where((event) => event.month == widget.month).toList();
     return Scaffold(
+        bottomNavigationBar: const MyNavBar(),
         backgroundColor: bgGrey,
         body: SafeArea(
           child: Container(

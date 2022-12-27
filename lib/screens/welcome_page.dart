@@ -1,4 +1,5 @@
 import 'package:cacsa/c_a_c_s_a_icons_icons.dart';
+import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/models/user_model.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
@@ -6,6 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/menuItems.dart';
 import '../models/menu.dart';
@@ -20,6 +22,7 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   List<Menu> menuItems = MenuItems.getMenuItems();
   String iconName = "dailyworkbold";
+  String userName = "";
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 
@@ -40,8 +43,16 @@ class _WelcomePageState extends State<WelcomePage> {
         .get()
         .then((value) {
       loggedInUser = UserModel.fromMap(value.data());
-      setState(() {});
+      storeUser(loggedInUser.firstName!);
+      setState(() {
+        userName = loggedInUser.firstName!;
+      });
     });
+  }
+
+  storeUser(String name) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setString('CACSA', name);
   }
 
   //Future<String> name = AuthController.instance.getUserDetails().then((value) => );
@@ -52,6 +63,7 @@ class _WelcomePageState extends State<WelcomePage> {
     //print(name);
     return Scaffold(
         backgroundColor: primaryBgColor,
+        bottomNavigationBar:const MyNavBar(),
         body: Container(
           margin: const EdgeInsets.all(kDefaultPadding),
           child: Column(
@@ -83,7 +95,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 0.0),
                     child: Text(
-                      'Welcome, ${loggedInUser.firstName}',
+                      'Welcome, $userName',
                       style: themeData.textTheme.headline3,
                     ),
                   ),
@@ -192,7 +204,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       },
                       child: Container(
                         alignment: Alignment.topLeft,
-                        padding: const EdgeInsets.all(20),
+                        padding: const EdgeInsets.only(bottom: 15, top: 10),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
                             color: splashBackgroundColor),
@@ -209,7 +221,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
                               // Image.asset(
                               //     'assets/icons/${menuItems[index].icon}.png'),
-                              addVerticalSpace(5),
+                              // addVerticalSpace(5),
 
                               Text(
                                 menuItems[index].name,

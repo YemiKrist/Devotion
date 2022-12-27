@@ -1,4 +1,5 @@
 import 'package:cacsa/commons/appbar.dart';
+import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/constants/about.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
@@ -16,6 +17,7 @@ class MissionVision extends StatelessWidget {
     String vision = AboutData.getVision();
     String coreValues = AboutData.getCoreValues();
     return Scaffold(
+        bottomNavigationBar: const MyNavBar(),
         backgroundColor: splashBackgroundColor,
         body: SafeArea(
           child: Container(

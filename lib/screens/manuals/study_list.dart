@@ -6,6 +6,7 @@ import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 
 import '../../commons/appbar.dart';
+import '../../commons/navigation_bar.dart';
 import '../../constants/studies.dart';
 
 class Studies extends StatelessWidget {
@@ -18,6 +19,7 @@ class Studies extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
 
     return Scaffold(
+        bottomNavigationBar: const MyNavBar(),
         backgroundColor: primaryBgColor,
         body: SafeArea(
           child: Container(

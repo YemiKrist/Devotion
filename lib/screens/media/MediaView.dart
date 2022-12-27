@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../commons/appbar.dart';
+import '../../commons/navigation_bar.dart';
 import '../../constants/assets_path.dart';
 
 class MediaView extends StatefulWidget {
@@ -47,6 +48,7 @@ class _MediaViewState extends State<MediaView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const MyNavBar(),
       backgroundColor: primaryBgColor,
       body: SafeArea(
           child: Container(

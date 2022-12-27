@@ -3,6 +3,7 @@ import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 
+import '../../commons/navigation_bar.dart';
 import '../../models/branches.dart';
 
 class BranchList extends StatelessWidget {
@@ -13,6 +14,7 @@ class BranchList extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     return Scaffold(
+        bottomNavigationBar: const MyNavBar(),
         backgroundColor: splashBackgroundColor,
         body: SafeArea(
           child: Container(
