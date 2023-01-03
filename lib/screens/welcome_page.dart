@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cacsa/c_a_c_s_a_icons_icons.dart';
 import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/models/user_model.dart';
@@ -5,6 +7,7 @@ import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -25,6 +28,7 @@ class _WelcomePageState extends State<WelcomePage> {
   String userName = "";
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
+  FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
 
   List<IconData> icons = [
     CACSAIcons.dailyworkbold,
@@ -37,33 +41,44 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   void initState() {
     super.initState();
+    getData();
+  }
+
+  getData() async {
     FirebaseFirestore.instance
         .collection("users")
         .doc(user?.uid)
         .get()
-        .then((value) {
+        .then((value) async {
       loggedInUser = UserModel.fromMap(value.data());
-      storeUser(loggedInUser.firstName!);
+      storeUser(loggedInUser.firstName!, user!.email!);
+      String token = await firebaseMessaging.getToken() ?? "";
+      FirebaseFirestore.instance
+          .collection("users")
+          .doc(user?.uid)
+          .update({"token": token});
       setState(() {
         userName = loggedInUser.firstName!;
       });
     });
   }
 
-  storeUser(String name) async {
+  storeUser(String name, String email) async {
+    log("------____$email");
     SharedPreferences pref = await SharedPreferences.getInstance();
     pref.setString('CACSA', name);
+    pref.setString('userEmail', email);
   }
 
   //Future<String> name = AuthController.instance.getUserDetails().then((value) => );
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
+    log(MediaQuery.of(context).size.width.toString());
 
-    //print(name);
     return Scaffold(
         backgroundColor: primaryBgColor,
-        bottomNavigationBar:const MyNavBar(),
+        bottomNavigationBar: const MyNavBar(),
         body: Container(
           margin: const EdgeInsets.all(kDefaultPadding),
           child: Column(

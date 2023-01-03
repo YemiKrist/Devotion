@@ -7,16 +7,19 @@ class UserModel {
   String? state;
   String? churchName;
   bool? subscribed;
+  String? token;
 
-  UserModel(
-      {this.uid,
-      this.firstName,
-      this.lastName,
-      this.email,
-      this.password,
-      this.state,
-      this.churchName,
-      this.subscribed});
+  UserModel({
+    this.uid,
+    this.firstName,
+    this.lastName,
+    this.email,
+    this.password,
+    this.state,
+    this.churchName,
+    this.subscribed,
+    this.token,
+  });
 
   UserModel.fromMap(data)
       : uid = data['uid'],
@@ -32,6 +35,7 @@ class UserModel {
       'state': state,
       'churchName': churchName,
       'subscribed': subscribed,
+      "token": token,
     };
   }
 }

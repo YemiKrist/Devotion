@@ -12,7 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
-
   static AuthController instance = Get.find();
   late Rx<User?> _user;
   Rx<bool> isLoging = false.obs;
@@ -42,7 +41,7 @@ class AuthController extends GetxController {
       } else {
         isLoging.value = true;
         update();
-        Get.off(() =>const WelcomePage());
+        Get.off(() => const WelcomePage());
       }
     });
   }
@@ -86,6 +85,7 @@ class AuthController extends GetxController {
     userModel.email = user!.email;
     userModel.uid = user!.uid;
     userModel.subscribed = false;
+    userModel.token = '';
 
     // print(userModel.toMap());
 

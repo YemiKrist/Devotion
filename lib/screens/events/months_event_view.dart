@@ -1,9 +1,7 @@
-import 'package:cacsa/c_a_c_s_a_icons_icons.dart';
 import 'package:cacsa/commons/appbar.dart';
 import 'package:cacsa/constants/events.dart';
 import 'package:cacsa/models/event.dart';
 import 'package:cacsa/utils/colors.dart';
-import 'package:cacsa/utils/sizes.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,7 +10,7 @@ import '../../commons/navigation_bar.dart';
 
 class Events extends StatefulWidget {
   final String month;
-  Events(this.month, {Key? key}) : super(key: key);
+  const Events(this.month, {Key? key}) : super(key: key);
 
   @override
   State<Events> createState() => _EventsState();
@@ -89,17 +87,17 @@ class _EventsState extends State<Events> {
                                             fontWeight: FontWeight.bold,
                                             color: primaryBgColor),
                                       ),
-                                      GestureDetector(
-                                        onTap: () {},
-                                        child: Icon(
-                                          cleared.value == false
-                                              ? CACSAIcons.notificationbold
-                                              : CACSAIcons.notificationnormal,
-                                          color: cleared.value == true
-                                              ? null
-                                              : primaryBgColor,
-                                        ),
-                                      )
+                                      // GestureDetector(
+                                      //   onTap: () {},
+                                      //   child: Icon(
+                                      //     cleared.value == false
+                                      //         ? CACSAIcons.notificationbold
+                                      //         : CACSAIcons.notificationnormal,
+                                      //     color: cleared.value == true
+                                      //         ? null
+                                      //         : primaryBgColor,
+                                      //   ),
+                                      // )
                                     ]),
                                 Row(
                                   children: [

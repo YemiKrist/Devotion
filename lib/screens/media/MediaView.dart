@@ -199,7 +199,7 @@ class _YTStreamState extends State<YTStream> {
       _controller = YoutubePlayerController(
         initialVideoId: YoutubePlayer.convertUrlToId(widget.link)!,
         flags: const YoutubePlayerFlags(
-          autoPlay: true,
+          autoPlay: false,
           isLive: true,
         ),
       );
@@ -208,7 +208,7 @@ class _YTStreamState extends State<YTStream> {
         initialVideoId: YoutubePlayer.convertUrlToId(
             "https://www.youtube.com/watch?v=-uzlNcoN934")!,
         flags: const YoutubePlayerFlags(
-          autoPlay: true,
+          autoPlay: false,
         ),
       );
     }

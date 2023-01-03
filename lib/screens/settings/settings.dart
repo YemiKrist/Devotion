@@ -1,14 +1,39 @@
+import 'dart:developer';
+
 import 'package:cacsa/commons/appbar.dart';
+import 'package:cacsa/commons/strings.dart';
+import 'package:cacsa/screens/settings/admin_notification.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../commons/navigation_bar.dart';
 import '../../utils/widget_functions.dart';
 import '../auth/auth_controller.dart';
 
-class Settings extends StatelessWidget {
+class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
+
+  @override
+  State<Settings> createState() => _SettingsState();
+}
+
+class _SettingsState extends State<Settings> {
+  String email = "";
+
+  getUser() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    email = pref.getString('userEmail') ?? "";
+    log("------____$email");
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    getUser();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,27 +66,32 @@ class Settings extends StatelessWidget {
               flex: 3,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
-                  Item(
+                children: [
+                  const Item(
                     text: "About CACSA App",
                     route: "/about",
                   ),
-                  Item(
+                  const Item(
                     text: "Subscribe (Premium Access)",
                     route: "/",
                   ),
-                  Item(
+                  const Item(
                     text: "Contact Support",
                     route: "/",
                   ),
-                  Item(
+                  const Item(
                     text: "Check for Update",
                     route: "/",
                   ),
-                  Item(
+                  const Item(
                     text: "Log Out",
                     route: "logout",
                   ),
+                  if (allowedEmailList.contains(email))
+                    const Item(
+                      text: "Send Notification (Admin)",
+                      route: "admin",
+                    ),
                 ],
               ),
             )
@@ -116,7 +146,7 @@ class Item extends StatelessWidget {
                           AuthController.instance.logout();
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.white,
+                          backgroundColor: Colors.white,
                           side: const BorderSide(color: borderColor),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0)),
@@ -146,6 +176,10 @@ class Item extends StatelessWidget {
                   )
                 ],
               )
+            }
+          else if (route == "admin")
+            {
+              Get.to(() => const AdminNotification()),
             }
           else
             Get.toNamed('/$route')
