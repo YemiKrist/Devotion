@@ -29,6 +29,7 @@ class _WelcomePageState extends State<WelcomePage> {
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
   FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
+  bool hasFullAccess = false;
 
   List<IconData> icons = [
     CACSAIcons.dailyworkbold,
@@ -52,6 +53,7 @@ class _WelcomePageState extends State<WelcomePage> {
         .then((value) async {
       loggedInUser = UserModel.fromMap(value.data());
       storeUser(loggedInUser.firstName!, user!.email!);
+      getSubscriptionState();
       String token = await firebaseMessaging.getToken() ?? "";
       FirebaseFirestore.instance
           .collection("users")
@@ -68,6 +70,22 @@ class _WelcomePageState extends State<WelcomePage> {
     SharedPreferences pref = await SharedPreferences.getInstance();
     pref.setString('CACSA', name);
     pref.setString('userEmail', email);
+  }
+
+  getSubscriptionState() async {
+    try {
+      var result = await FirebaseFirestore.instance
+          .collection("subscriptions")
+          .doc(user!.uid)
+          .get();
+      if (result.exists) {
+        setState(() {
+          hasFullAccess = true;
+        });
+      }
+    } catch (e) {
+      log(e.toString());
+    }
   }
 
   //Future<String> name = AuthController.instance.getUserDetails().then((value) => );
@@ -138,7 +156,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   itemCount: menuItems.length,
                   itemBuilder: (BuildContext cont, int index) {
                     return GestureDetector(
-                      onTap: () => {
+                      onTap: () {
                         //if (menuItems[index].route == 'logout')
                         // {
                         //   Get.defaultDialog(
@@ -215,7 +233,18 @@ class _WelcomePageState extends State<WelcomePage> {
                         //   )
                         // }
                         // else
-                        Get.toNamed('/${menuItems[index].route}')
+
+                        if (menuItems[index].route == 'months' ||
+                            menuItems[index].route == 'manuals') {
+                          if (hasFullAccess == true) {
+                            Get.toNamed('/${menuItems[index].route}');
+                          } else {
+                            Get.snackbar("Notice",
+                                "You need to subscribe to access this feature");
+                          }
+                        } else {
+                          Get.toNamed('/${menuItems[index].route}');
+                        }
                       },
                       child: Container(
                         alignment: Alignment.topLeft,

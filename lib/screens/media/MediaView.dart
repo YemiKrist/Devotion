@@ -57,9 +57,12 @@ class _MediaViewState extends State<MediaView> {
           const MyWAppBar(),
           const Center(
             child: Text(
-              'Media Links',
+              'CACSA TV',
               style: TextStyle(
-                  fontSize: 20, fontWeight: FontWeight.w500, color: bgWhite),
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: bgWhite,
+              ),
             ),
           ),
           addVerticalSpace(20),
@@ -97,14 +100,16 @@ class _MediaViewState extends State<MediaView> {
           //             width: 50,
           //           ))),
           // ),
-
-          Center(
-            child: Card(
-              color: bgWhite,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(3)),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 12.0, right: 12),
+          addVerticalSpace(5),
+          Align(
+            child: Container(
+              width: 150,
+              height: 40,
+              decoration: BoxDecoration(
+                color: bgWhite,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Center(
                 child: Text(
                   "LIVE CHAT",
                   style: TextStyle(fontWeight: FontWeight.bold),
@@ -113,65 +118,85 @@ class _MediaViewState extends State<MediaView> {
             ),
           ),
           addVerticalSpace(30),
-          Expanded(
-            child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.only(bottom: 10),
-                shrinkWrap: true,
-                itemCount: medialist.length,
-                itemBuilder: ((context, index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          launchLocalView(medialist[index].route);
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            color: bgWhite,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: Image(
-                                  image: AssetImage(medialist[index].icons),
-                                  height: 30,
-                                  width: 30,
-                                ),
-                              ),
-                              addHorizontalSpace(20),
-                              Expanded(
-                                child: Text(
-                                  medialist[index].title,
-                                  style: const TextStyle(
-                                      color: textColorBlack,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              ClipRRect(
-                                  borderRadius: BorderRadius.circular(30),
-                                  child: Image(
-                                      image: AssetImage(ArrowIcon),
-                                      height: 20,
-                                      width: 20))
-                            ],
-                          ),
-                        ),
-                      ),
-                      addVerticalSpace(20)
-                    ],
-                  );
-                })),
-          )
+          item(
+            image: "assets/facebook.png",
+            route: "https://m.facebook.com/1187002744772922/",
+            title: "FACEBOOK",
+          ),
+          item(
+            image: "assets/Mask.png",
+            route: "https://m.youtube.com/@cacsagroup1589",
+            title: "MIXLR",
+          ),
+          item(
+            image: "assets/youtube.png",
+            route: "https://m.youtube.com/@cacsagroup1589",
+            title: "YOUTUBE",
+          ),
+          item(
+            image: "assets/instagram.png",
+            route: "https://m.facebook.com/1187002744772922/",
+            title: "INSTAGRAM",
+          ),
+          item(
+            image: "assets/dribble.png",
+            route: "www.cacsa.org",
+            title: "WEBSITE",
+          ),
+          addVerticalSpace(20)
         ]),
       )),
+    );
+  }
+
+  Widget item(
+      {required String image, required String route, required String title}) {
+    return GestureDetector(
+      onTap: () {
+        launchLocalView(route);
+      },
+      child: Container(
+        padding: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.only(bottom: 20),
+        decoration: BoxDecoration(
+          color: bgWhite,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Image(
+                image: AssetImage(image),
+                height: 30,
+                width: 30,
+              ),
+            ),
+            addHorizontalSpace(20),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text(
+                title,
+                style: const TextStyle(
+                    color: textColorBlack,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
+                child:
+                    Image(image: AssetImage(ArrowIcon), height: 20, width: 20),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -234,19 +259,22 @@ class _YTStreamState extends State<YTStream> {
       width: double.infinity,
       height: 180,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-      child: YoutubePlayerBuilder(
-        player: YoutubePlayer(
-          controller: _controller,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: YoutubePlayerBuilder(
+          player: YoutubePlayer(
+            controller: _controller,
+          ),
+          builder: (context, player) {
+            return Column(
+              children: [
+                // some widgets
+                player,
+                // some other widgets
+              ],
+            );
+          },
         ),
-        builder: (context, player) {
-          return Column(
-            children: [
-              // some widgets
-              player,
-              //some other widgets
-            ],
-          );
-        },
       ),
     );
   }

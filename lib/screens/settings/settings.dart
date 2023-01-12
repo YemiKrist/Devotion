@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:cacsa/commons/appbar.dart';
 import 'package:cacsa/commons/strings.dart';
+import 'package:cacsa/screens/settings/about_the_app.dart';
 import 'package:cacsa/screens/settings/admin_notification.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -69,10 +70,10 @@ class _SettingsState extends State<Settings> {
                 children: [
                   const Item(
                     text: "About CACSA App",
-                    route: "/about",
+                    route: "about",
                   ),
                   const Item(
-                    text: "Subscribe (Premium Access)",
+                    text: "Subscribe (Premium Access)", 
                     route: "/",
                   ),
                   const Item(
@@ -162,7 +163,7 @@ class Item extends StatelessWidget {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0)),
+                                borderRadius: BorderRadius.circular(12.0)), 
                             minimumSize: const Size(120, 35),
                           ),
                           onPressed: () {
@@ -180,6 +181,9 @@ class Item extends StatelessWidget {
           else if (route == "admin")
             {
               Get.to(() => const AdminNotification()),
+            }else if (route == "about") 
+            {
+              Get.to(() => const AboutTheApp()),
             }
           else
             Get.toNamed('/$route')

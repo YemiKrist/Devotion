@@ -31,13 +31,22 @@ class _AdminNotificationState extends State<AdminNotification> {
   }
 
   getTokenList() async {
-    FirebaseFirestore.instance.collection("users").get().then((value) {
-      for (var i in value.docs) {
-        if (i.get("token").toString().isNotEmpty) {
-          tokens.add(i.get("token"));
+    try {
+      log("hhh");
+      FirebaseFirestore.instance.collection("users").get().then((value) {
+        log(value.toString());
+        log(value.docs.length.toString());
+        for (var i in value.docs.toList()) {
+          //log(i.data().toString());
+
+          if (i.get("token").toString().isNotEmpty) {
+            tokens.add(i.get("token"));
+          }
         }
-      }
-    });
+      });
+    } catch (e) {
+      log(e.toString());
+    }
   }
 
   sendBroadcast() async {
@@ -59,9 +68,9 @@ class _AdminNotificationState extends State<AdminNotification> {
   broadcast(token) async {
     try {
       var serverkey =
-          "AAAAIkWTVAw:APA91bFYbDDLTGumccDleINCiAPWr06OV60_4N1Ky7XCB9nG6W5Wo2uxDu7AwATHu-7zCbce7uMLrQ6RRIFkkDylDEvl1yti4n-JbJ2UO5qunFSyj2UnlvbKt2aCvNPAIoxJ-5So9-oi";
+          "AAAAv02ey5A:APA91bG0ySSz1zM0yZ9mz6F5GVAfB8nOgTkt78LyHtGzVdtVi-dfIltNpIU9RrasVVPOxz-dgtoiSuutzHr5c9FPxTxzW4XrBXXgYr636HHw9Iu2POByCZV9eV3duHT4VEh8Gr-h-lre";
       var url = Uri.parse('https://fcm.googleapis.com/fcm/send');
-      await http.post(
+      var response = await http.post(
         url,
         headers: <String, String>{
           'Authorization': 'key=$serverkey',
@@ -80,9 +89,11 @@ class _AdminNotificationState extends State<AdminNotification> {
             "sound": "default",
             "click_action": "FLUTTER_NOTIFICATION_CLICK",
           }
-          // }
         }),
       );
+      var data = response.body;
+
+      log(data.toString());
 
       final Completer<RemoteMessage> completerr = Completer<RemoteMessage>();
       FirebaseMessaging.onMessage.listen((RemoteMessage message) {
@@ -95,6 +106,7 @@ class _AdminNotificationState extends State<AdminNotification> {
 
   @override
   Widget build(BuildContext context) {
+    getTokenList();
     return Scaffold(
       bottomNavigationBar: const MyNavBar(),
       backgroundColor: bgGrey,

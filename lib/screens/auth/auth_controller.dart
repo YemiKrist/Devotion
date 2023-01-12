@@ -68,7 +68,7 @@ class AuthController extends GetxController {
       await auth
           .createUserWithEmailAndPassword(email: email, password: password)
           .then((value) =>
-              {postDetailsToFirestore(firstName, lastName, state, churchName)});
+              {postDetailsToFirestore(firstName, lastName, state, churchName)}); 
     } on FirebaseAuthException catch (e) {
       getErrorSnackBar("Account creation Failed", e);
     }

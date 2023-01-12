@@ -17,6 +17,17 @@ Ours truly is a divine vision with a divine mission. It cannot die! Christ surel
 ''';
   }
 
+  static String getAbout2() {
+    return '''
+The CACSA App is a joint innovation of Thinktech and CACSA born out of the desire and necessity to continue to make the Church relevant in this age and time.
+
+The purpose of this Mobile Application is to serve as a coordinative base for all information about CACSA and to make it accessible to anyone, anywhere, anytime. Everything at our fingertips including devotionals, about CACSA, calendar, Bible Study manuals and so on.
+
+As Thinktech itself is a company founded to provide technological solutions, and find simpler and effective methods to go about regular or even irregular activities. We believe this is one of our best work yet and that the CACSA App is a huge step forward  in the overall development of the church.
+
+''';
+  }
+
   static String getVision() {
     return '''Becoming a dynamic group of Christians committed to rescuing the lost and discipling them for Christ''';
   }
