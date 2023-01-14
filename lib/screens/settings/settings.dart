@@ -4,6 +4,7 @@ import 'package:cacsa/commons/appbar.dart';
 import 'package:cacsa/commons/strings.dart';
 import 'package:cacsa/screens/settings/about_the_app.dart';
 import 'package:cacsa/screens/settings/admin_notification.dart';
+import 'package:cacsa/screens/settings/subscribe.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -74,7 +75,7 @@ class _SettingsState extends State<Settings> {
                   ),
                   const Item(
                     text: "Subscribe (Premium Access)", 
-                    route: "/",
+                    route: "subscribe",
                   ),
                   const Item(
                     text: "Contact Support",
@@ -99,6 +100,7 @@ class _SettingsState extends State<Settings> {
           ],
         ),
       )),
+    
     );
   }
 }
@@ -184,6 +186,9 @@ class Item extends StatelessWidget {
             }else if (route == "about") 
             {
               Get.to(() => const AboutTheApp()),
+            }
+            else if (route == "subscribe"){
+              Get.to(() => const SubscribeToApp())
             }
           else
             Get.toNamed('/$route')

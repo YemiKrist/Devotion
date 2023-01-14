@@ -1,13 +1,13 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:cacsa/commons/button.dart';
-import 'package:cacsa/constants/assets_path.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:cacsa/utils/colors.dart';
+import 'package:cacsa/utils/sizes.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:flutterwave_standard/flutterwave.dart';
 import 'package:flutter_paystack/flutter_paystack.dart';
 import 'package:get/get.dart';
@@ -75,53 +75,110 @@ class _MakePaymentState extends State<MakePayment> {
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 21),
-            height: deviceHeight * 0.85,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const Text(
-                    "Make Payment",
-                  ),
-                  Image.asset(creditCard),
-                  RichText(
-                    textAlign: TextAlign.center,
-                    text: const TextSpan(
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                        text: 'Proceed to make a payment',
-                        children: <TextSpan>[
-                          TextSpan(text: " of\n"),
-                          TextSpan(
-                              text: "NGN3000",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                        ]),
-                  ),
-                  AppButtons(
-                    textColor: Colors.white,
-                    backgroundColor: primaryBgColor,
-                    borderColor: Colors.transparent,
-                    text: "Subscribe",
-                    onTap: () {
-                      startPayment(context);
-
-                      //Get.offAllNamed(Routes.REFERAL);
-                    },
-                  ),
-                ],
+          child: Container(
+        // padding: const EdgeInsets.all(24.0),
+        margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: size.height * 0.15),
+            const Align(
+              child: Text(
+                "Congrats!",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: textColorBlack,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 30,
+                  fontFamily: 'Euclid-Bold',
+                ),
               ),
             ),
-          )
-        ],
+            SizedBox(height: heightSize(40)),
+            const Align(
+              child: Icon(
+                Octicons.check_circle,
+                color: primaryBgColor,
+                size: 80,
+              ),
+            ),
+            SizedBox(height: heightSize(40)),
+            Align(
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: const TextSpan(
+                  text:
+                      "Your account has been\nsuccessfully created! Proceed\nto make a ",
+                  style: TextStyle(
+                      color: textColorBlack,
+                      fontSize: 16,
+                      fontFamily: 'Euclid-Medium'),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text:
+                          'payment of NGN1000\nfor Premium Access Subscription ',
+                      style: TextStyle(
+                        color: textColorBlack,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        fontFamily: 'Euclid-Bold',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: heightSize(50)),
+            GestureDetector(
+              onTap: () {
+                startPayment(context);
+              },
+              child: Container(
+                height: heightSize(60),
+                decoration: BoxDecoration(
+                  color: primaryBgColor,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Subscribe",
+                    style: TextStyle(
+                        color: textColorWhite,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                        fontFamily: 'Euclid-Medium'),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: heightSize(20)),
+            GestureDetector(
+              onTap: () {
+                Get.off(() => const WelcomePage());
+              },
+              child: Container(
+                height: heightSize(60),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(color: textColorBlack)),
+                child: const Center(
+                  child: Text(
+                    "Later",
+                    style: TextStyle(
+                        color: textColorBlack,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                        fontFamily: 'Euclid-Medium'),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       )),
     );
   }
