@@ -74,12 +74,12 @@ class _SettingsState extends State<Settings> {
                     route: "about",
                   ),
                   const Item(
-                    text: "Subscribe (Premium Access)", 
+                    text: "Subscribe (Premium Access)",
                     route: "subscribe",
                   ),
                   const Item(
                     text: "Contact Support",
-                    route: "/",
+                    route: "support",
                   ),
                   const Item(
                     text: "Check for Update",
@@ -100,7 +100,6 @@ class _SettingsState extends State<Settings> {
           ],
         ),
       )),
-    
     );
   }
 }
@@ -165,7 +164,7 @@ class Item extends StatelessWidget {
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0)), 
+                                borderRadius: BorderRadius.circular(12.0)),
                             minimumSize: const Size(120, 35),
                           ),
                           onPressed: () {
@@ -183,13 +182,15 @@ class Item extends StatelessWidget {
           else if (route == "admin")
             {
               Get.to(() => const AdminNotification()),
-            }else if (route == "about") 
+            }
+          else if (route == "about")
             {
               Get.to(() => const AboutTheApp()),
             }
-            else if (route == "subscribe"){
-              Get.to(() => const SubscribeToApp())
-            }
+          else if (route == "subscribe")
+            {Get.to(() => const SubscribeToApp())}
+          else if (route == "support")
+            {}
           else
             Get.toNamed('/$route')
         },

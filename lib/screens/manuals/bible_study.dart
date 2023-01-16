@@ -103,6 +103,9 @@ class BelieversTreasure extends StatelessWidget {
                             Section(
                                 title: "CONCLUSION", content: study.conclusion),
                             addVerticalSpace(10),
+                            DiscussionSection(
+                              discusions: study.discussion,
+                            )
                             // Section(
                             //     title: "DISCUSSION", content: study.discussion),
                           ],
@@ -158,7 +161,7 @@ class SectionOutline extends StatelessWidget {
         TextSpan(text: '$title: ', style: themeData.textTheme.headline4),
         for (Outline outline in outlines) ...{
           TextSpan(
-              text: '\n${index++}. ${outline.topic}',
+              text: '\n\n${index++}. ${outline.topic}',
               style: themeData.textTheme.bodyText1),
         }
       ])),
@@ -180,11 +183,39 @@ class OutlineSection extends StatelessWidget {
           text: TextSpan(children: [
         for (Outline outline in outlines) ...{
           TextSpan(
-              text: '\n${index++}. ${outline.topic}',
+              text: '\n\n${index++}. ${outline.topic}',
               style: themeData.textTheme.headline4),
           for (String titles in outline.body) ...{
             TextSpan(text: '\n$titles', style: themeData.textTheme.bodyText1),
           }
+        }
+      ])),
+    );
+  }
+}
+
+class DiscussionSection extends StatelessWidget {
+  final List<Discussion> discusions;
+
+  const DiscussionSection({Key? key, required this.discusions})
+      : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData themeData = Theme.of(context);
+    int index = 1;
+    return Align(
+      alignment: Alignment.topLeft,
+      child: RichText(
+          text: TextSpan(children: [
+        for (Discussion discusion in discusions) ...{
+          TextSpan(
+              text: discusions.length == 1
+                  ? 'DISCUSSION'
+                  : 'DISCUSSION ${index++}.',
+              style: themeData.textTheme.headline4),
+          TextSpan(
+              text: '\n${discusion.body}\n',
+              style: themeData.textTheme.bodyText1),
         }
       ])),
     );
