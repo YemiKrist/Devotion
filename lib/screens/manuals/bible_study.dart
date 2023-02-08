@@ -10,11 +10,11 @@ import '../../commons/navigation_bar.dart';
 
 class BelieversTreasure extends StatelessWidget {
   final Study study;
+  final bool isEnglish;
 
-  const BelieversTreasure(this.study);
+  const BelieversTreasure(this.study, this.isEnglish, {super.key});
   @override
   Widget build(BuildContext context) {
-    final ThemeData themeData = Theme.of(context);
     return Scaffold(
         bottomNavigationBar: const MyNavBar(),
         backgroundColor: splashBackgroundColor,
@@ -84,15 +84,17 @@ class BelieversTreasure extends StatelessWidget {
                           children: [
                             //  Section(title:'READ', content: walk.devotion.read),
                             Section(
-                                title: "MEMORY VERSE",
+                                title:
+                                    isEnglish ? "MEMORY VERSE" : "BIBELI KIKA",
                                 content: study.memoryVerse),
                             addVerticalSpace(10),
                             Section(
-                                title: "INTRODUCTION",
+                                title: isEnglish ? "INTRODUCTION" : "ORO AKOSO",
                                 content: study.introduction),
                             addVerticalSpace(10),
                             SectionOutline(
-                              title: "STUDY OUTLINE",
+                              title:
+                                  isEnglish ? "STUDY OUTLINE" : "ITUPALE EKO",
                               outlines: study.studyOutline,
                             ),
                             addVerticalSpace(5),
@@ -101,10 +103,12 @@ class BelieversTreasure extends StatelessWidget {
                             ),
                             addVerticalSpace(10),
                             Section(
-                                title: "CONCLUSION", content: study.conclusion),
+                                title: isEnglish ? "CONCLUSION" : "IPAARI",
+                                content: study.conclusion),
                             addVerticalSpace(10),
                             DiscussionSection(
                               discusions: study.discussion,
+                              isEnglish: isEnglish,
                             )
                             // Section(
                             //     title: "DISCUSSION", content: study.discussion),
@@ -196,8 +200,10 @@ class OutlineSection extends StatelessWidget {
 
 class DiscussionSection extends StatelessWidget {
   final List<Discussion> discusions;
+  final bool isEnglish;
 
-  const DiscussionSection({Key? key, required this.discusions})
+  const DiscussionSection(
+      {Key? key, required this.discusions, required this.isEnglish})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -210,8 +216,12 @@ class DiscussionSection extends StatelessWidget {
         for (Discussion discusion in discusions) ...{
           TextSpan(
               text: discusions.length == 1
-                  ? 'DISCUSSION'
-                  : 'DISCUSSION ${index++}.',
+                  ? isEnglish
+                      ? 'DISCUSSION'
+                      : "IJIRORO"
+                  : isEnglish
+                      ? 'DISCUSSION ${index++}.'
+                      : 'IJIRORO ${index++}.',
               style: themeData.textTheme.headline4),
           TextSpan(
               text: '\n${discusion.body}\n',

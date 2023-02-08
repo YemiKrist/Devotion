@@ -1,21 +1,21 @@
-import 'package:cacsa/models/believers_treasure.dart';
-import 'package:cacsa/screens/manuals/bible_study.dart';
+import 'package:cacsa/constants/discipleship_manual.dart';
+import 'package:cacsa/models/believers_class.dart';
+import 'package:cacsa/screens/manuals/discipleship/study.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 
-import '../../commons/appbar.dart';
-import '../../commons/navigation_bar.dart';
-import '../../constants/studies.dart';
+import '../../../commons/appbar.dart';
+import '../../../commons/navigation_bar.dart';
 
-class Studies extends StatelessWidget {
-  Studies({Key? key}) : super(key: key);
-
-  List<Study> treasure = SudyList.getStudies();
+class DiscipleshipManuals extends StatelessWidget {
+  const DiscipleshipManuals({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
+
+    List<Class> manuals = BelieversClassList.getList();
 
     return Scaffold(
         bottomNavigationBar: const MyNavBar(),
@@ -30,13 +30,13 @@ class Studies extends StatelessWidget {
                 const MyWAppBar(),
                 addVerticalSpace(25),
                 Text(
-                  'Believers\' Treasure',
+                  'Believers\' Class',
                   style: themeData.textTheme.headline3,
                 ),
                 addVerticalSpace(15),
                 Expanded(
                     child: ListView.builder(
-                  itemCount: treasure.length,
+                  itemCount: manuals.length,
                   itemBuilder: (BuildContext cont, int index) {
                     return SizedBox(
                       height: 72,
@@ -49,19 +49,21 @@ class Studies extends StatelessWidget {
                                           BorderRadius.circular(10.0)),
                                   child: ListTile(
                                     title: Text(
-                                      "STUDY ${treasure[index].id}",
+                                      manuals[index].number == "Zero"
+                                          ? "Preface"
+                                          : "STUDY ${manuals[index].number}",
                                       style: themeData.textTheme.headline4,
                                     ),
                                     subtitle: Text(
-                                      treasure[index].topic,
+                                      manuals[index].topic,
                                     ),
                                     onTap: () {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  BelieversTreasure(
-                                                      treasure[index], true)));
+                                                  DiscipleshipStudy(
+                                                      manuals[index].number)));
                                     },
                                   ))),
                         ],

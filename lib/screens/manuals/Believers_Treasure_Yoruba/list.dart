@@ -4,15 +4,36 @@ import 'package:cacsa/utils/colors.dart';
 import 'package:cacsa/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 
-import '../../commons/appbar.dart';
-import '../../commons/navigation_bar.dart';
-import '../../constants/studies.dart';
+import '../../../commons/appbar.dart';
+import '../../../commons/navigation_bar.dart';
+import '../../../constants/studies_yoruba.dart';
 
-class Studies extends StatelessWidget {
-  Studies({Key? key}) : super(key: key);
+class AwonEko extends StatelessWidget {
+  AwonEko({Key? key}) : super(key: key);
 
-  List<Study> treasure = SudyList.getStudies();
-
+  List<Study> treasure = YorubaSudyList.getYorubaStudies();
+  Map<int, String> numbers = {
+    1: "KIN-IN-NI",
+    2: "KEJI",
+    3: "KETA",
+    4: "KERIN",
+    5: "KARUN",
+    6: "KEFA",
+    7: "KEJE",
+    8: "KEJO",
+    9: "KESAN",
+    10: "KEWA",
+    11: "KOKANLA",
+    12: "KEJILA",
+    13: "KETALA",
+    14: "KERINLA",
+    15: "KEEDOGUN",
+    16: "KERINDINLOGUN",
+    17: "KETADINLOGUN",
+    18: "KEJIDINLOGUN",
+    19: "KOKANDINLOGUN",
+    20: "OGUN",
+  };
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
@@ -49,7 +70,7 @@ class Studies extends StatelessWidget {
                                           BorderRadius.circular(10.0)),
                                   child: ListTile(
                                     title: Text(
-                                      "STUDY ${treasure[index].id}",
+                                      "EKO ${numbers[treasure[index].id]}",
                                       style: themeData.textTheme.headline4,
                                     ),
                                     subtitle: Text(
@@ -61,7 +82,7 @@ class Studies extends StatelessWidget {
                                           MaterialPageRoute(
                                               builder: (context) =>
                                                   BelieversTreasure(
-                                                      treasure[index], true)));
+                                                      treasure[index], false)));
                                     },
                                   ))),
                         ],

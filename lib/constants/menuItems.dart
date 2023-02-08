@@ -18,10 +18,12 @@ class MenuItems {
 
   static List<ManualsMenu> getManualsItems() {
     return [
-      ManualsMenu(name: 'Believers\nTreasure', route: 'studies'),
+      ManualsMenu(name: 'Believers\nTreasure English', route: 'studies'),
+      ManualsMenu(name: 'Believers\nTreasure Yoruba', route: 'studies_yoruba'),
       ManualsMenu(name: 'Workers\nManual', route: 'workers'),
-      ManualsMenu(name: 'CACSA\nConstitution', route: 'workers'),
-      ManualsMenu(name: 'Discipleship\nManual', route: 'workers'),
+      ManualsMenu(name: 'CACSA\nConstitution', route: 'constitution'),
+      ManualsMenu(name: 'Believers\nClass', route: 'believers'),
+      ManualsMenu(name: 'Discipleship\nManual', route: 'discipleship'),
     ];
   }
 }

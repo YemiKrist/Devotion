@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:cacsa/screens/Misc.dart';
 import 'package:cacsa/screens/about/about_menu.dart';
 import 'package:cacsa/screens/about/history.dart';
@@ -10,6 +12,9 @@ import 'package:cacsa/screens/auth/success_view.dart';
 import 'package:cacsa/screens/branches/branches.dart';
 import 'package:cacsa/screens/events/upcoming_events.dart';
 import 'package:cacsa/screens/give/give.dart';
+import 'package:cacsa/screens/manuals/Believers_Treasure_Yoruba/list.dart';
+import 'package:cacsa/screens/manuals/constitution.dart';
+import 'package:cacsa/screens/manuals/discipleship/table_of_content.dart';
 import 'package:cacsa/screens/manuals/manuals.dart';
 import 'package:cacsa/screens/media/MediaView.dart';
 import 'package:cacsa/screens/months_screen.dart';
@@ -43,12 +48,16 @@ class Routes {
   static const SETTINGS = '/settings';
   static const MEDIA = "/media";
   static const BOTTOMBAR = "/bottombar";
+  static const CONSTITUTION = "/constitution";
+  static const BELIEVERS = "/believers";
 
   // routes for miscelleaneus
   static const MISC = "/misc";
 
   // routes for bible study
   static const STUDIES = '/studies';
+  //yoruba bible studies
+  static const YORUBASTUDIES = '/studies_yoruba';
 }
 
 class Pages {
@@ -61,7 +70,7 @@ class Pages {
     ),
     GetPage(
       name: Routes.MAIN_PAGE,
-      page: () => WelcomePage(),
+      page: () => const WelcomePage(),
       binding: AuthBinding(),
     ),
     GetPage(
@@ -79,7 +88,8 @@ class Pages {
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
     GetPage(name: Routes.SETTINGS, page: () => const Settings()),
     GetPage(name: Routes.MEDIA, page: (() => const MediaView())),
-    GetPage(name: Routes.NOTIFICATIONS, page: (() =>  NotificationWidget())),
+    GetPage(
+        name: Routes.NOTIFICATIONS, page: (() => const NotificationWidget())),
 
     GetPage(
         name: Routes.LOGIN, page: () => const Login(), binding: AuthBinding()),
@@ -92,10 +102,13 @@ class Pages {
 
     // pages route for bible study
     GetPage(name: Routes.STUDIES, page: () => Studies()),
+    GetPage(name: Routes.YORUBASTUDIES, page: () => AwonEko()),
     GetPage(name: Routes.MISC, page: (() => const Misc())),
     // GetPage(
     //   name: Routes.DEVOTION,
     //   page: () => DayWalk(),
     // ),
+    GetPage(name: Routes.CONSTITUTION, page: (() => Constitution())),
+    GetPage(name: Routes.BELIEVERS, page: (() => const DiscipleshipManuals())),
   ];
 }

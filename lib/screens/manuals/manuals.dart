@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cacsa/commons/appbar.dart';
 import 'package:cacsa/commons/title.dart';
 import 'package:cacsa/constants/assets_path.dart';
