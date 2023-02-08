@@ -20,3 +20,21 @@ class BelieversClassList {
     ];
   }
 }
+
+class WorkersMaualList {
+  static List<Class> getList() {
+    return [
+      Class(number: 'FORWARD', topic: 'Forward'),
+      Class(number: 'PREFACE', topic: 'Preface'),
+      Class(number: 'ONE', topic: 'Workers’ Guide'),
+      Class(number: 'TWO', topic: 'Ministers’ Code of Conduct'),
+      Class(
+          number: 'THREE',
+          topic:
+              'Promotion Arrangement for CACSA Ministerial and Non-Ministerial Officers'),
+      Class(number: 'FOUR', topic: 'Church Policy Guidelines'),
+      Class(number: 'FIVE', topic: 'Financial Matters'),
+      Class(number: 'SIX', topic: 'Marriage Policy Guideline'),
+    ];
+  }
+}

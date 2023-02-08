@@ -86,7 +86,7 @@ class BelieversTreasure extends StatelessWidget {
                             //  Section(title:'READ', content: walk.devotion.read),
                             Section(
                                 title:
-                                    isEnglish ? "MEMORY VERSE" : "BIBELI KIKA",
+                                    isEnglish ? "MEMORY VERSE" : "ESE AKOSORI",
                                 content: study.memoryVerse),
                             addVerticalSpace(10),
                             Section(

@@ -25,6 +25,7 @@ import 'package:cacsa/screens/support/support.dart';
 import 'package:cacsa/screens/welcome_page.dart';
 import 'package:get/get.dart';
 import '../screens/manuals/study_list.dart';
+import '../screens/manuals/workers_manual/table_of_content.dart';
 
 class Routes {
   static const NOTIFICATIONS = "/notifications";
@@ -50,6 +51,7 @@ class Routes {
   static const BOTTOMBAR = "/bottombar";
   static const CONSTITUTION = "/constitution";
   static const BELIEVERS = "/believers";
+  static const WORKERS = "/workers";
 
   // routes for miscelleaneus
   static const MISC = "/misc";
@@ -110,5 +112,6 @@ class Pages {
     // ),
     GetPage(name: Routes.CONSTITUTION, page: (() => Constitution())),
     GetPage(name: Routes.BELIEVERS, page: (() => const DiscipleshipManuals())),
+    GetPage(name: Routes.WORKERS, page: (() => const WorkersManuals())),
   ];
 }
