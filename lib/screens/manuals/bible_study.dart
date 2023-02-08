@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../commons/navigation_bar.dart';
+import '../../commons/numbers.dart';
 
 class BelieversTreasure extends StatelessWidget {
   final Study study;
@@ -28,7 +29,7 @@ class BelieversTreasure extends StatelessWidget {
                 const MyAppBar(),
                 addVerticalSpace(25),
                 Text(
-                  "Study ${study.id}",
+                  isEnglish ? "Study ${study.id}" : "Eko ${numbers[study.id]}",
                   style: const TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 16,
@@ -54,7 +55,7 @@ class BelieversTreasure extends StatelessWidget {
                             type: SelectableMenuItemType.webSearch),
                         SelectableMenuItem(type: SelectableMenuItemType.copy),
                         SelectableMenuItem(
-                          title: 'Share',
+                          title: isEnglish ? 'Share' : 'Pin',
                           isEnabled: (controller) => controller!.isTextSelected,
                           handler: (controller) {
                             Share.share(controller!.getSelection()!.text!);
