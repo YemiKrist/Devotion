@@ -19,7 +19,7 @@ class AboutMenu extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
 
     return Scaffold(
-      bottomNavigationBar:const MyNavBar(),
+      bottomNavigationBar: const MyNavBar(),
       backgroundColor: primaryBgColor,
       body: SafeArea(
         child: Container(
@@ -57,7 +57,7 @@ class AboutMenu extends StatelessWidget {
                               ),
                               trailing: Padding(
                                 padding: const EdgeInsets.only(top: 10.0),
-                                child: Image.asset(ArrowIcon),
+                                child: Image.asset(arrowIcon),
                               ),
                               onTap: () =>
                                   Get.toNamed('/${aboutItems[index].route}')));

@@ -16,6 +16,7 @@ class BelieversTreasure extends StatelessWidget {
   const BelieversTreasure(this.study, this.isEnglish, {super.key});
   @override
   Widget build(BuildContext context) {
+    final ThemeData themeData = Theme.of(context);
     return Scaffold(
         bottomNavigationBar: const MyNavBar(),
         backgroundColor: splashBackgroundColor,
@@ -83,7 +84,22 @@ class BelieversTreasure extends StatelessWidget {
                         padding: const EdgeInsets.all(0.0),
                         child: Column(
                           children: [
-                            //  Section(title:'READ', content: walk.devotion.read),
+                            Align(
+                                alignment: Alignment.topLeft,
+                                child: RichText(
+                                  text: TextSpan(children: [
+                                    TextSpan(
+                                        text: isEnglish
+                                            ? "READ: "
+                                            : 'BIBELI KIKA: ',
+                                        style: themeData.textTheme.headline4),
+                                    TextSpan(
+                                        text: study.text,
+                                        style: themeData.textTheme.bodyText1)
+                                  ]),
+                                  textAlign: TextAlign.left,
+                                )),
+                            addVerticalSpace(12),
                             Section(
                                 title:
                                     isEnglish ? "MEMORY VERSE" : "ESE AKOSORI",

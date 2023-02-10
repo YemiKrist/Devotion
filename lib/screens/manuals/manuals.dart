@@ -32,6 +32,7 @@ class Manuals extends StatelessWidget {
                 addVerticalSpace(35),
                 const Expanded(child: MyTitle(text: 'CACSA\nManuals')),
                 Expanded(
+                  flex: 3,
                   child: Align(
                     alignment: FractionalOffset.bottomCenter,
                     child: GridView.builder(
@@ -55,7 +56,7 @@ class Manuals extends StatelessWidget {
                             ),
                             trailing: Padding(
                               padding: const EdgeInsets.only(top: 10.0),
-                              child: Image.asset(ArrowIcon),
+                              child: Image.asset(arrowIcon),
                             ),
                             onTap: () {
                               Get.toNamed('/${manuals[index].route}');

@@ -54,7 +54,7 @@ class Branches extends StatelessWidget {
                               branches[index].state,
                               style: themeData.textTheme.headline4,
                             ),
-                            trailing: Image.asset(ArrowIcon),
+                            trailing: Image.asset(arrowIcon),
                             onTap: () {
                               Navigator.push(
                                   context,

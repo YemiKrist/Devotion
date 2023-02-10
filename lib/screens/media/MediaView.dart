@@ -191,7 +191,7 @@ class _MediaViewState extends State<MediaView> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
                 child:
-                    Image(image: AssetImage(ArrowIcon), height: 20, width: 20),
+                    Image(image: AssetImage(arrowIcon), height: 20, width: 20),
               ),
             ),
           ],
