@@ -12,7 +12,7 @@ import '../../models/branches.dart';
 class Branches extends StatelessWidget {
   Branches({Key? key}) : super(key: key);
 
-  List<BranchState> branches = BranchLocations.getBranches();
+  final List<BranchState> branches = BranchLocations.getBranches();
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);

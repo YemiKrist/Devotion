@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'package:cacsa/models/user_model.dart';
-import 'package:cacsa/routes/routes.dart';
-import 'package:cacsa/screens/Bottombar.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
 import 'package:cacsa/screens/auth/success_view.dart';
 import 'package:cacsa/screens/welcome_page.dart';
@@ -68,7 +66,7 @@ class AuthController extends GetxController {
       await auth
           .createUserWithEmailAndPassword(email: email, password: password)
           .then((value) =>
-              {postDetailsToFirestore(firstName, lastName, state, churchName)}); 
+              {postDetailsToFirestore(firstName, lastName, state, churchName)});
     } on FirebaseAuthException catch (e) {
       getErrorSnackBar("Account creation Failed", e);
     }

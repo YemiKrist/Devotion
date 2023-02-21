@@ -12,7 +12,6 @@ class BranchList extends StatelessWidget {
   const BranchList(this.stateBranches, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final ThemeData themeData = Theme.of(context);
     return Scaffold(
         bottomNavigationBar: const MyNavBar(),
         backgroundColor: splashBackgroundColor,

@@ -35,7 +35,7 @@ class Months extends StatelessWidget {
                 addVerticalSpace(35),
                 const Expanded(
                   child: MyTitle(
-                    text: 'Daily Walk\n2022',
+                    text: 'Daily Walk\n2023',
                   ),
                 ),
                 Expanded(

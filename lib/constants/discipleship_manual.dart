@@ -24,8 +24,8 @@ class BelieversClassList {
 class WorkersMaualList {
   static List<Class> getList() {
     return [
-      Class(number: 'FORWARD', topic: 'Forward'),
-      Class(number: 'PREFACE', topic: 'Preface'),
+      Class(number: 'FOREWARD', topic: 'Forward'),
+      // Class(number: 'PREFACE', topic: 'Preface'),
       Class(number: 'ONE', topic: 'Workers’ Guide'),
       Class(number: 'TWO', topic: 'Ministers’ Code of Conduct'),
       Class(

@@ -37,12 +37,11 @@ As Thinktech itself is a company founded to provide technological solutions, and
   }
 
   static String getCoreValues() {
-    return '''\u2022 Indwelling and guidiance of Holyghost
-\u2022 Seeking the lost, Evangelism
-\u2022 Establishing them in the Lord through the Word, especially the young ones
-\u2022 Love aming the brethren
-\u2022 Power of prayers
-\u2022 Holiness
-\u2022 Loyalty''';
+    return '''
+\u2022 Integrity.
+\u2022 Commitment.
+\u2022 Love.
+\u2022 Family sanctity
+''';
   }
 }

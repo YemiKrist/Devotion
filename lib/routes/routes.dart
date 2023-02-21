@@ -2,7 +2,9 @@
 
 import 'package:cacsa/screens/Misc.dart';
 import 'package:cacsa/screens/about/about_menu.dart';
+import 'package:cacsa/screens/about/founder.dart';
 import 'package:cacsa/screens/about/history.dart';
+import 'package:cacsa/screens/about/leader.dart';
 import 'package:cacsa/screens/about/mission_vision.dart';
 import 'package:cacsa/screens/auth/auth_binding.dart';
 import 'package:cacsa/screens/auth/login_view.dart';
@@ -46,6 +48,8 @@ class Routes {
   static const REFERAL = '/refral';
   static const HISTORY = '/history';
   static const MISSION = '/mission';
+  static const LEADER = "/leader";
+  static const FOUNDER = "/founder";
   static const SETTINGS = '/settings';
   static const MEDIA = "/media";
   static const BOTTOMBAR = "/bottombar";
@@ -82,6 +86,8 @@ class Pages {
     ),
     GetPage(name: Routes.ABOUT, page: () => AboutMenu()),
     GetPage(name: Routes.HISTORY, page: () => const History()),
+    GetPage(name: Routes.LEADER, page: () => const LeadersBio()),
+    GetPage(name: Routes.FOUNDER, page: () => const FounderBio()),
     GetPage(name: Routes.MISSION, page: () => const MissionVision()),
     GetPage(name: Routes.EVENTS, page: () => const UpcomingEvents()),
     GetPage(name: Routes.BRANCHES, page: () => Branches()),

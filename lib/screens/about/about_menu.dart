@@ -34,6 +34,7 @@ class AboutMenu extends StatelessWidget {
                 const MyWAppBar(),
                 const Expanded(child: MyTitle(text: 'About\nCACSA')),
                 Expanded(
+                  flex: 2,
                   child: GridView.builder(
                     //padding: const EdgeInsets.only(bottom: 60),
                     gridDelegate:

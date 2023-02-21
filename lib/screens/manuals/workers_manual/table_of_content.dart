@@ -49,8 +49,8 @@ class WorkersManuals extends StatelessWidget {
                                           BorderRadius.circular(10.0)),
                                   child: ListTile(
                                     title: Text(
-                                      manuals[index].number == "FORWARD"
-                                          ? "FORWARD"
+                                      manuals[index].number == "FOREWARD"
+                                          ? "FOREWARD"
                                           : (manuals[index].number == "PREFACE"
                                               ? "PREFACE"
                                               : "CHAPTER ${manuals[index].number}"),

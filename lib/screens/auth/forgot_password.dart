@@ -1,12 +1,9 @@
 import 'package:cacsa/commons/appbar.dart';
 import 'package:cacsa/commons/button.dart';
 import 'package:cacsa/commons/input_textfield.dart';
-import 'package:cacsa/constants/assets_path.dart';
-import 'package:cacsa/routes/routes.dart';
 import 'package:cacsa/screens/auth/auth_controller.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../utils/widget_functions.dart';
 
@@ -26,7 +23,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
-    final deviceWidth = MediaQuery.of(context).size.width;
+    // final deviceWidth = MediaQuery.of(context).size.width;
     final ThemeData themeData = Theme.of(context);
 
     return Scaffold(

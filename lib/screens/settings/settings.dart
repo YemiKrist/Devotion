@@ -200,7 +200,7 @@ class Item extends StatelessWidget {
               color: textColorBlack,
               fontWeight: FontWeight.w500,
               fontSize: 18,
-              fontFamily: 'Euclid-Medium'),
+              fontFamily: 'Euclid-Regular'),
         ),
       ),
       const Divider(
