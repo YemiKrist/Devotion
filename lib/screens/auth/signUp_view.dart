@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cacsa/commons/button.dart';
 import 'package:cacsa/commons/input_textfield.dart';
 import 'package:cacsa/screens/auth/auth_controller.dart';
@@ -96,6 +98,8 @@ class _SignUpState extends State<SignUp> {
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'password cannot be left empty';
+                          } else if (value.length < 6) {
+                            return 'password needs to be 6 character or more';
                           } else {
                             return null;
                           }
