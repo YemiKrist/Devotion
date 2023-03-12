@@ -396,3 +396,20 @@ class BranchLocations {
     ];
   }
 }
+
+class HigherInstitutionLocations {
+  static List<HigherInstitutionByState> getFellowships() {
+    return [
+      HigherInstitutionByState(state: "Kwara State", fellowships: [
+        HigherInstitution(
+            name: "Unilorin Permanent site",
+            address:
+                "Beside small hostel, off Stella Maris Road, Tanke Oke Odo Ilorin"),
+        HigherInstitution(name: "Unilorin UITH (Mini Campus)", address: "Casa")
+      ]),
+      HigherInstitutionByState(
+          state: "Oyo State",
+          fellowships: [HigherInstitution(name: "", address: "")])
+    ];
+  }
+}

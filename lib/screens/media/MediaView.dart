@@ -125,12 +125,22 @@ class _MediaViewState extends State<MediaView> {
           ),
           item(
             image: "assets/Mask.png",
+            route: "https://mobile.twitter.com/cacsaofficial",
+            title: "TWEETTER",
+          ),
+          item(
+            image: "assets/Mask.png",
+            route: "https://t.me/cacsaofficial",
+            title: "TELEGRAM",
+          ),
+          item(
+            image: "assets/Mask.png",
             route: "https://m.youtube.com/@cacsagroup1589",
             title: "MIXLR",
           ),
           item(
             image: "assets/youtube.png",
-            route: "https://m.youtube.com/@cacsagroup1589",
+            route: "https://m.youtube.com/@cacsagroup1970",
             title: "YOUTUBE",
           ),
           item(
@@ -153,6 +163,7 @@ class _MediaViewState extends State<MediaView> {
       {required String image, required String route, required String title}) {
     return GestureDetector(
       onTap: () {
+        log(route);
         launchLocalView(route);
       },
       child: Container(

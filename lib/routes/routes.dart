@@ -11,6 +11,7 @@ import 'package:cacsa/screens/auth/login_view.dart';
 import 'package:cacsa/screens/auth/refral_view.dart';
 import 'package:cacsa/screens/auth/signUp_view.dart';
 import 'package:cacsa/screens/auth/success_view.dart';
+import 'package:cacsa/screens/branches/Branch_menu.dart';
 import 'package:cacsa/screens/branches/branches.dart';
 import 'package:cacsa/screens/events/upcoming_events.dart';
 import 'package:cacsa/screens/give/give.dart';
@@ -39,6 +40,7 @@ class Routes {
   static const MANUALS = '/manuals';
   static const EVENTS = '/events';
   static const BRANCHES = '/branches';
+  static const CHURCHES = '/churches';
   static const ABOUT = '/about';
   static const GIVE = '/give';
   static const SUPPORT = '/support';
@@ -90,10 +92,11 @@ class Pages {
     GetPage(name: Routes.FOUNDER, page: () => const FounderBio()),
     GetPage(name: Routes.MISSION, page: () => const MissionVision()),
     GetPage(name: Routes.EVENTS, page: () => const UpcomingEvents()),
-    GetPage(name: Routes.BRANCHES, page: () => Branches()),
+    GetPage(name: Routes.BRANCHES, page: () => BranchLocationsMenu()),
     GetPage(name: Routes.GIVE, page: () => const Give()),
     GetPage(name: Routes.MANUALS, page: () => Manuals()),
     GetPage(name: Routes.SUPPORT, page: () => const Support()),
+    GetPage(name: Routes.CHURCHES, page: () => Branches()),
     GetPage(name: Routes.SETTINGS, page: () => const Settings()),
     GetPage(name: Routes.MEDIA, page: (() => const MediaView())),
     GetPage(

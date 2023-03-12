@@ -2,17 +2,25 @@ import 'package:cacsa/commons/appbar.dart';
 import 'package:cacsa/commons/navigation_bar.dart';
 import 'package:cacsa/commons/title.dart';
 import 'package:cacsa/constants/assets_path.dart';
-import 'package:cacsa/constants/branch_locations.dart';
-import 'package:cacsa/screens/branches/Branch_list.dart';
 import 'package:cacsa/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../models/branches.dart';
+class Location {
+  String name;
+  String route;
 
-class Branches extends StatelessWidget {
-  Branches({Key? key}) : super(key: key);
+  Location({required this.name, required this.route});
+}
 
-  final List<BranchState> branches = BranchLocations.getBranches();
+class BranchLocationsMenu extends StatelessWidget {
+  BranchLocationsMenu({Key? key}) : super(key: key);
+
+  List<Location> locations = [
+    Location(name: "Churches", route: "churches"),
+    Location(name: "Higher Institutions Fellowships", route: "higher")
+  ];
+  //final List<BranchState> branches = BranchLocations.getBranches();
   @override
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
@@ -30,9 +38,9 @@ class Branches extends StatelessWidget {
                 const MyWAppBar(),
                 //addVerticalSpace(5),
                 const Expanded(
-                    child: MyTitle(text: 'Church Locations\nBy State')),
+                    flex: 3, child: MyTitle(text: 'Branch\nLocations')),
                 Expanded(
-                  flex: 3,
+                  flex: 1,
                   child: Align(
                     alignment: FractionalOffset.bottomCenter,
                     child: GridView.builder(
@@ -44,7 +52,7 @@ class Branches extends StatelessWidget {
                               childAspectRatio: 6),
                       padding: const EdgeInsets.only(bottom: 20),
                       shrinkWrap: true,
-                      itemCount: branches.length,
+                      itemCount: locations.length,
                       itemBuilder: (BuildContext cont, int index) {
                         return Card(
                           elevation: 10,
@@ -52,16 +60,12 @@ class Branches extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10.0)),
                           child: ListTile(
                             title: Text(
-                              branches[index].state,
+                              locations[index].name.toString(),
                               style: themeData.textTheme.headline4,
                             ),
                             trailing: Image.asset(arrowIcon),
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          BranchList(branches[index])));
+                              Get.toNamed('/${locations[index].route}');
                             },
                           ),
                           //addVerticalSpace(20),

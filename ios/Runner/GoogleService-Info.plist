@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>821641005968-31bdmg140p50flkvt8l75gtn37br3287.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.821641005968-31bdmg140p50flkvt8l75gtn37br3287</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>821641005968-rv4gqrrubn1i9a14q8fbe595vh4d9mpm.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBJyyPJkgYWmXAODJIYhBL9x8F4_OXxolQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>821641005968</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.cacsa</string>
+	<key>PROJECT_ID</key>
+	<string>cacsa-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cacsa-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:821641005968:ios:324f9ed08a5a730f6dc115</string>
+</dict>
+</plist>

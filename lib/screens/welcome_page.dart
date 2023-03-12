@@ -240,11 +240,7 @@ class _WelcomePageState extends State<WelcomePage> {
 
                         if (menuItems[index].route == 'months' ||
                             menuItems[index].route == 'manuals') {
-                          if (hasFullAccess == true) {
-                            Get.toNamed('/${menuItems[index].route}');
-                          } else {
-                            Get.to(() => const PremiumSubscriber());
-                          }
+                          Get.toNamed('/${menuItems[index].route}');
                         } else {
                           Get.toNamed('/${menuItems[index].route}');
                         }
