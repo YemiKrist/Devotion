@@ -16,7 +16,7 @@ class BranchLocations {
             Branch(
                 name: "CAC Chapel of Success, Efon Alaaye",
                 address:
-                    "Teacher's House NUT Hall, near Babalola junction, Efon Alaaye"),
+                    "2nd junction, Oniyo-Alajo Road, Efon Alaaye"),
             Branch(
                 name: "CAC Chapel of Peace, Aramoko",
                 address: "Iwaro Street, Aramoko Ekiti"),
@@ -69,8 +69,8 @@ class BranchLocations {
               address: "Abiola Way, Madojutimi Junction, off Ima Rd, Abeokuta"),
           otherAssemblies: [
             Branch(
-                name: "CAC Christ Center, Ilara",
-                address: "Lesslie, Opposite Corpers' Lodge, Ilaro"),
+                name: "CAC Christ Center, Ilaro",
+                address: "Kumoye Street, Behind Elegant Building, Ilaro"),
             Branch(
                 name: "CAC Christ Ambassador, Abeokuta",
                 address: "Ilekun Area, Olokuta, Abeokuta"),
@@ -102,7 +102,7 @@ class BranchLocations {
           state: "Osun State",
           headQuarters: Branch(
               name: "CAC Ogo-Oluwa Assembly",
-              address: "Behind Capital Hotel, Arungbo Estate, Osogbo"),
+              address: "Behind Osun Capital Hotel, Zone 2, Oke Arungbo, Osogbo"),
           otherAssemblies: [
             Branch(
                 name: "CAC Volunteer, Osogbo",
@@ -164,19 +164,16 @@ class BranchLocations {
             Branch(
                 name: "CAC, Redeemed Chapel",
                 address:
-                    "34, Olubuse Estate, by Odo Eran Bus Stop, Ere Rd, Ile Ife"),
+                    "34, Olubuse Estate, by Odo Eran Bus Stop, Ede Rd, Ile Ife"),
             Branch(
                 name: "CAC, Fulfillment Chapel",
-                address: "Oke Opa, by Ile funfun Bus Stop, Ile Ife"),
+                address: "Ile funfun Bus Stop, Ile Ife"),
             Branch(
                 name: "CAC, Glorious Assembly",
                 address: "Oke Ayetoro, by Arubidi Bus Stop, Ile Ife"),
             Branch(
                 name: "CAC, Victorious Assembly",
-                address: "Oke Ayetoro, by Arubidi Bus Stop, Ile Ife"),
-            Branch(
-                name: "CAC, Victorious Assembly",
-                address: "Igboya Street, Ile Ife"),
+                address: "No1, Adedeji Close, Igboya, Ile Ife"),
             Branch(name: "CACSA Assembly, Awosun", address: "Awosun Village"),
             Branch(name: "CACSA Assembly, Elekiri", address: "Elekiri"),
           ]),
@@ -189,7 +186,7 @@ class BranchLocations {
           otherAssemblies: [
             Branch(
                 name: "CAC, Mountain of Solution",
-                address: "Jakan Area, Jao Estate, Agbowa Express, Ibadan"),
+                address: "Jakan Area, Ajao Estate, Agbowa Express, Ibadan"),
             Branch(
                 name: "CAC, Chapel of Redemption- District Headquarters",
                 address: "Surulere, Jegede, Ibadan"),
@@ -263,7 +260,7 @@ class BranchLocations {
                 address: "Wasimi, Ogun State"),
             Branch(name: "CAC City of Praise", address: "Abekoko Area, Ifo"),
             Branch(
-                name: "CAC Glory of Carrier Assembly",
+                name: "CAC Glory Carrier Assembly",
                 address: "Longer Bus Stop, Agbado Power Line"),
             Branch(
                 name: "CAC Fountain of Praise",
@@ -342,9 +339,9 @@ class BranchLocations {
       BranchState(
           state: "Kwara State",
           headQuarters: Branch(
-              name: "CAC, Miracle Centre, Adewole Estate, Ilorin",
+              name: "CAC, Miracle Centre",
               address:
-                  "Adewole Housing Estate, Near Amir Hall, Off Atiku Road, Ajase Ipo, Ilorin"),
+                  "Ajase-ipo Road, off Atiku Road, Adewole, Ilorin"),
           otherAssemblies: [
             Branch(
                 name: "CAC, Chapel of Grace, Agba Dam Road, Ilorin",
